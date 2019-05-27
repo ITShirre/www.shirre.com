@@ -1,6 +1,6 @@
 ---
 title:  ""
-picture: /static/assets/img/products/product.png
+picture: /static/assets/img/products/datacenter.jpg
 ---
 
 Shirre Lab Corp. offers proven solutions for high-speed digital and high-frequency circuit applications and is fast becoming preferred FCCL supplier in the FPC and rigid-flex market.
