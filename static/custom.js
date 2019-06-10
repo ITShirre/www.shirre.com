@@ -36,9 +36,18 @@ $(document).ready(function() {
     $(".navbar-collapse").collapse('hide');
 });
 
-setTimeout(function(){
-  $('#a_news').trigger('click');
-},2000);
-
 });
 
+function funOpenNews(sDivId) {
+	$.fancybox.open({
+    src: "#" + sDivId,
+    smallBtn : false,
+    toolbar  : true,
+		width:  1024,
+		height: 1024,
+		autoSize: false,
+		fitToView : true,
+		padding: 20,
+		margin: 30
+	});	 
+}
