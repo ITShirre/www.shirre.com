@@ -51,3 +51,10 @@ function funOpenNews(sDivId) {
 		margin: 30
 	});	 
 }
+
+function activeProductTab(tabName) {
+ 	$('html, body').animate({
+        scrollTop: $("#products").offset().top
+    }, 1000);
+	$('.nav-tabs a[href="#' + tabName + '"]').tab('show');
+}
