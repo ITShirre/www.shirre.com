@@ -185,6 +185,16 @@ body {
       background-repeat:no-repeat;
       background-size: 100% auto;
     }
+    &.four {
+      background-color: $white-color;
+      background-image: url(../assets/img/main_4b.gif);
+      @media screen and (orientation: portrait) {
+        background-image: url(../assets/img/vertical_main_4b.gif);
+      }
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: 100% auto;
+    }    
   }
 }
 
@@ -224,6 +234,16 @@ body {
       background-repeat:no-repeat;
       background-size: auto 100%;
     }
+    &.four {
+      background-color: $white-color;
+      background-image: url(../assets/img/main_4b.gif);
+      @media screen and (orientation: portrait) {
+        background-image: url(../assets/img/vertical_main_4b.gif);
+      }
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: auto 100%;
+    }    
   }
 }
 
