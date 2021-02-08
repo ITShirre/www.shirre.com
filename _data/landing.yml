@@ -6,6 +6,18 @@
   tpl: home.html
   css:
 
+- id: designs
+  name: DESIGN GUIDE
+  footer_name: Design Guide
+  tpl: designs.html
+  css:
+
+- id: appnotes
+  name: APPLICATION NOTE
+  footer_name: Application Note
+  tpl: appnotes.html
+  css:
+
 - id: about
   name: ABOUT
   footer_name: About
@@ -36,8 +48,11 @@
   tpl: contact.html
   css:
 
-- id: resources
-  name: RESOURCES
-  footer_name: resources
-  tpl: resources.html
-  css:
+# - id: resources
+#   name: RESOURCES
+#   footer_name: resources
+#   tpl: resources.html
+#   css:
+
+
+
