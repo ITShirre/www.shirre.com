@@ -7,6 +7,10 @@ layout: compress
 
 {% include index_head.html %}
 
+<script>
+    if (!(window.location.host.startsWith("127.0.0.1")) && (window.location.protocol != "https:")) 
+        window.location.protocol = "https";
+</script>
 <body id="page-top" class="landing-page">
 
 {{ content }}
