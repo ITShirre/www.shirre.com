@@ -214,7 +214,17 @@ body {
       background-position: center;
       background-repeat:no-repeat;
       background-size: 100% auto;
-    }      
+    }    
+    &.six {
+      background-color: $white-color;
+      background-image: url(../assets/img/main_6b.gif);
+      @media screen and (orientation: portrait) {
+        background-image: url(../assets/img/vertical_main_6b.gif);
+      }
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: 100% auto;
+    }         
   }
 }
 
