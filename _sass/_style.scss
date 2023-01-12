@@ -217,9 +217,19 @@ body {
     }    
     &.six {
       background-color: $white-color;
-      background-image: url(../assets/img/main_6b.gif);
+      background-image: url(../assets/img/main_6b1.gif);
       @media screen and (orientation: portrait) {
-        background-image: url(../assets/img/vertical_main_6b.gif);
+        background-image: url(../assets/img/vertical_main_6b1.gif);
+      }
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: 100% auto;
+    }     
+    &.seven {
+      background-color: $white-color;
+      background-image: url(../assets/img/main_rabbit.jpg);
+      @media screen and (orientation: portrait) {
+        background-image: url(../assets/img/vertical_main_rabbit.jpg);
       }
       background-position: center;
       background-repeat:no-repeat;
@@ -296,14 +306,24 @@ body {
     }    
     &.six {
       background-color: $white-color;
-      background-image: url(../assets/img/main_6b.gif);
+      background-image: url(../assets/img/main_6b1.gif);
       @media screen and (orientation: portrait) {
-        background-image: url(../assets/img/vertical_main_6b.gif);
+        background-image: url(../assets/img/vertical_main_6b1.gif);
       }
       background-position: center;
       background-repeat:no-repeat;
       background-size: auto 100%;
-    }       
+    }
+    &.seven {
+      background-color: $white-color;
+      background-image: url(../assets/img/main_rabbit.jpg);
+      @media screen and (orientation: portrait) {
+        background-image: url(../assets/img/vertical_main_rabbit.jpg);
+      }
+      background-position: center;
+      background-repeat:no-repeat;
+      background-size: auto 100%;
+    }             
   }
 }
 
