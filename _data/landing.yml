@@ -6,11 +6,11 @@
   tpl: home.html
   css:
 
-- id: designs
-  name: DESIGN GUIDE
-  footer_name: Design Guide
-  tpl: designs.html
-  css:
+#- id: designs
+#  name: DESIGN GUIDE
+#  footer_name: Design Guide
+#  tpl: designs.html
+#  css:
 
 - id: appnotes
   name: APPLICATION NOTE
