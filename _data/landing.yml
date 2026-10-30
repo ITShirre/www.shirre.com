@@ -13,8 +13,8 @@
 #  css:
 
 - id: products
-  name: PRODUCTS
-  footer_name: Products
+  name: "SOLUTION &amp; PLATFORM"
+  footer_name: "Solution &amp; Platform"
   tpl: products.html
   css:
 
