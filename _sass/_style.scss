@@ -556,3 +556,12 @@ body {
 @media (max-width: 767px) {
   .home-process { margin-left: -15px; margin-right: -15px; padding: 10px 0; }
 }
+// Desktop: fit the whole animation in the first screen
+@media (min-width: 768px) {
+  .home-process { padding: 0 0 10px; }
+  .home-process .home-process-media {
+    width: auto;
+    max-width: 100%;
+    max-height: min(calc(100vh - 165px), 700px);
+  }
+}
