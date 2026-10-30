@@ -556,12 +556,15 @@ body {
 @media (max-width: 767px) {
   .home-process { margin-left: -15px; margin-right: -15px; padding: 10px 0; }
 }
-// Desktop: fit the whole animation in the first screen
+// Desktop: same width as the Solution & Platform section below
 @media (min-width: 768px) {
-  .home-process { padding: 0 0 10px; }
+  .home-process { padding: 0 0 10px; overflow: hidden; }
+  // The frame has ~18px of white on each side (of 1600); scale it so the
+  // grey card lines up with the section edges below
   .home-process .home-process-media {
-    width: auto;
-    max-width: 100%;
-    max-height: min(calc(100vh - 165px), 700px);
+    width: 102.3%;
+    max-width: none;
+    height: auto;
+    margin-left: -1.15%;
   }
 }
