@@ -537,3 +537,22 @@ body {
     outline: none;
   }
 }
+
+// Home: process animation (replaces the old carousel)
+.home-process {
+  background: #fff;
+  text-align: center;
+  padding: 20px 0;
+  .home-process-media {
+    display: block;
+    width: 100%;
+    max-width: 1120px;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+// The animation is short, so don't stretch Home to a full screen height
+#home.page { min-height: 0; }
+@media (max-width: 767px) {
+  .home-process { margin-left: -15px; margin-right: -15px; padding: 10px 0; }
+}

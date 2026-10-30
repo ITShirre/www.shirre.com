@@ -26,103 +26,12 @@
             </div>
 
     </div>
-    <div id="inSlider" class="carousel slide carousel-fade" data-ride="carousel">
-        <!--
-        <ol class="carousel-indicators">
-            <li data-target="#inSlider" data-slide-to="0" class="active"></li>
-            <li data-target="#inSlider" data-slide-to="1"></li>
-        </ol>
-        //-->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="header-back ten"></div>
-            </div>             
-            <!--
-            <div class="item active">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="header-back eight"></div>
-            </div>                
-            //-->
-            <div class="item">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div> 
-                <!-- Set background for slide in css -->
-                <div class="header-back seven"></div>
-            </div>    
-            <div class="item">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <!-- Set background for slide in css -->
-                <div class="header-back six"></div>
-            </div>              
-            <!---
-                <div class="item">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <div class="header-back five"></div>
-            </div>                            
-            //-->
-            <div class="item">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <!-- Set background for slide in css -->
-                <a href="#news">
-                    <div class="header-back four"></div>
-                </a>
-            </div>        
-            <!--<div class="item">
-                <div class="container">
-                    <div class="carousel-caption">
-                    </div>
-                </div>
-                <a href="mailto:Ariel.Chen@shirre.com?subject=PheroTetraTM - Live Demo">
-                    <div class="header-back one"></div>
-                </a>
-            </div>
-            //-->
-            <!--
-            <div class="item">
-                <div class="container">
-                    <div class="carousel-caption blank">
-                    </div>
-                </div>
-                <div class="header-back two"></div>
-            </div>
-            //-->
-            <!--
-            <div class="item">
-                <div class="container">
-                    <div class="carousel-caption blank">
-                    </div>
-                </div>
-                <a href="javascript:activeProductTab('product5');">
-                    <div class="header-back three"></div>
-                </a>
-            </div>
-            //-->
-        </div>
-        <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+    <div class="home-process">
+        <video class="home-process-media" autoplay muted loop playsinline preload="auto"
+               poster="{{ "/static/assets/img/home/process_poster.png" | prepend: site.baseurl }}"
+               aria-label="PheroTetra® manufacturing flow: joint design &amp; simulation, compounding, pre-treatment, curing &amp; annealing, PT-FCCL, patterning &amp; assembling, PT-Flex / PT-IOOI">
+            <source src="{{ "/static/assets/img/home/shirre_process_workers.mp4" | prepend: site.baseurl }}" type="video/mp4">
+            <img class="home-process-media" src="{{ "/static/assets/img/home/shirre_process_workers.gif" | prepend: site.baseurl }}" alt="PheroTetra® manufacturing flow: joint design &amp; simulation, compounding, pre-treatment, curing &amp; annealing, PT-FCCL, patterning &amp; assembling, PT-Flex / PT-IOOI">
+        </video>
     </div>
 </div>
