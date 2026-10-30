@@ -1,52 +1,53 @@
+{% comment %}
+  Products tabs are driven by front matter in _products/*.md:
+    tab_order   (required) position of the tab; products WITHOUT tab_order are not shown
+    tab_id      anchor id of the tab pane (used by activeProductTab('...') links)
+    tab_label   tab text (defaults to title; HTML such as <sup>®</sup> allowed)
+    tab_include optional _includes/ file rendered full-width instead of the default layout
+    picture / picture1 / picture2  optional images for the default two-column layout
+  To bring an old product back, add tab_order (and tab_id) to its front matter.
+{% endcomment %}
+{% assign product_tabs = site.products | where_exp: "p", "p.tab_order" | sort: "tab_order" %}
 <div class="container">
     <div class="row">
         <div class="col-xs-12 text-left">
           <h1><span class="title-section">{{section.name}}</span></h1>
         </div>
-    </div>  
+    </div>
     <ul class="nav nav-tabs">
-      <li><a data-toggle="tab" href="#product5">PheroTetra<sup>®</sup></a></li>
-      <!--<li><a data-toggle="tab" href="#product2">L-TYPE</a></li> //-->
-      <li><a data-toggle="tab" href="#product3">H-TYPE</a></li>
-      <li><a data-toggle="tab" href="#product4">U-TYPE</a></li>
-      <!--<li><a data-toggle="tab" href="#product6">S-TYPE</a></li> //-->
-      <li><a data-toggle="tab" href="#product7">PT-Flex</a></li>
+      {% for article in product_tabs %}
+      <li{% if forloop.first %} class="active"{% endif %}><a data-toggle="tab" href="#{{ article.tab_id | default: article.slug }}">{{ article.tab_label | default: article.title }}</a></li>
+      {% endfor %}
     </ul>
-      
-      <div class="tab-content">
-        {% assign varCount = 1 %}
-        {% for article in site.products %}        
-        {%if varCount == 1 %}
-          <div id="product{{ varCount }}" class="col-xs-12 tab-pane fade in active">
-        {% else %}
-          <div id="product{{ varCount }}" class="col-xs-12 tab-pane fade">
-        {% endif %}
-        {%if varCount == 7 %}
-          <div class="col-lg-6">
-            <h3 class="product_title">{{ article.title }}</h3>
-            <img src="{{ article.picture | prepend: site.baseurl }}" class="img-responsive" alt="">
-            <img src="{{ article.picture1 | prepend: site.baseurl }}" class="img-responsive" style="width:100%;" alt="">
-          </div>
-          <div class="col-lg-6">
-            <div class="col-xs-12" style="margin-top: 3vh;">
-              {{ article.content }}
-              <img src="{{ article.picture2 | prepend: site.baseurl }}" class="img-responsive" alt="">
-            </div>
-          </div>        
-        {% else %}
-          <div class="col-lg-6">
-            <h3 class="product_title">{{ article.title }}</h3>
-            <img src="{{ article.picture | prepend: site.baseurl }}" class="img-responsive" alt="">
-          </div>
-          <div class="col-lg-6">
-            <div class="col-xs-12" style="margin-top: 3vh;">
-              {{ article.content }}
-            </div>
-          </div>
-        {% endif %}
-        </div>
-        {% assign varCount = varCount | plus:1 %}  
-        {% endfor %}        
-      </div>
-</div>
 
+    <div class="tab-content clearfix">
+      {% for article in product_tabs %}
+      <div id="{{ article.tab_id | default: article.slug }}" class="col-xs-12 tab-pane fade{% if forloop.first %} in active{% endif %}">
+      {% if article.tab_include %}
+        {% include {{ article.tab_include }} %}
+      {% else %}
+        {% if article.picture %}
+        <div class="col-lg-6">
+          <h3 class="product_title">{{ article.title }}</h3>
+          <img src="{{ article.picture | prepend: site.baseurl }}" class="img-responsive" alt="">
+          {% if article.picture1 %}<img src="{{ article.picture1 | prepend: site.baseurl }}" class="img-responsive" style="width:100%;" alt="">{% endif %}
+        </div>
+        <div class="col-lg-6">
+          <div class="col-xs-12" style="margin-top: 3vh;">
+            {{ article.content }}
+            {% if article.picture2 %}<img src="{{ article.picture2 | prepend: site.baseurl }}" class="img-responsive" alt="">{% endif %}
+          </div>
+        </div>
+        {% else %}
+        <div class="col-xs-12">
+          <h3 class="product_title">{{ article.title }}</h3>
+          <div style="margin-top: 3vh;">
+            {{ article.content }}
+          </div>
+        </div>
+        {% endif %}
+      {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+</div>

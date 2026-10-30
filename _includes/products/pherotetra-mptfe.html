@@ -1,0 +1,307 @@
+{% comment %}
+  PheroTetra(R) mPTFE-based FCCL product content (Products tab 1).
+  Source: designer page /workspace/shirre-pheroteta-page/index.html (BEGIN/END block only).
+  Headings demoted one level (h1->h2, h2->h3, h3->h4) because the section/tab already provide titles.
+  Styles: static/css/pherotetra.css (all rules scoped to .pt-page).
+{% endcomment %}
+<div class="pt-page" id="pheroteta">
+
+  <!-- HERO -->
+  <section class="pt-hero" aria-labelledby="pt-title">
+    <div class="pt-wrap">
+      <nav class="pt-crumb" aria-label="Breadcrumb"><a href="{{ site.baseurl }}/#home">Home</a> / <a href="#products">Products</a> / PheroTetra<sup>®</sup></nav>
+      <p class="pt-eyebrow">Modified-PTFE (mPTFE) FCCL</p>
+      <h2 id="pt-title">PheroTetra<sup>®</sup> FCCL <span class="pt-accent">— the mPTFE material platform behind high-bandwidth flex.</span></h2>
+      <p class="pt-hero-lead">
+        A mature, low-loss flexible copper-clad laminate built on Shirre's own modified-PTFE dielectric.
+        Already in mass production across multiple high-bandwidth transmission applications, and paired with a
+        range of connectors to meet different interface specifications.
+      </p>
+      <div class="pt-actions">
+        <a class="pt-btn pt-btn-primary" href="mailto:Charles@shirre.com?subject=PheroTetra%C2%AE%20FCCL%20%E2%80%94%20sample%20%2F%20datasheet%20request">Request samples &amp; datasheet</a>
+        <a class="pt-btn pt-btn-ghost" href="#pt-roadmap">View grades &amp; properties</a>
+      </div>
+      <ul class="pt-chips" aria-label="Key facts">
+        <li class="pt-chip">In mass production</li>
+        <li class="pt-chip">Dk 2.2–2.8 · Df 0.0009</li>
+        <li class="pt-chip">Connector-ready</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- IN-PAGE NAV -->
+  <nav class="pt-subnav" aria-label="On this page">
+    <div class="pt-wrap">
+      <ul>
+        <li><a href="#pt-why">Why mPTFE</a></li>
+        <li><a href="#pt-roadmap">Roadmap &amp; properties</a></li>
+        <li><a href="#pt-naming">Naming convention</a></li>
+        <li><a href="#pt-apps">Applications &amp; integration</a></li>
+        <li><a href="#pt-proof">Measured results</a></li>
+        <li><a href="#pt-cta">Samples</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- WHY mPTFE -->
+  <section class="pt-section" id="pt-why" aria-labelledby="pt-why-h">
+    <div class="pt-wrap">
+      <p class="pt-label">Core technology</p>
+      <h3 id="pt-why-h">Why modified PTFE</h3>
+      <p class="pt-lede">
+        Our core competence is the dielectric itself. Shirre develops its own mPTFE formulations, turns them into
+        FCCL grades and a matching bonding film, and builds those into flexible high-speed transmission lines.
+      </p>
+
+      <div class="pt-benefits">
+        <article class="pt-benefit">
+          <span class="pt-big">Df 0.0009</span>
+          <h4>Low loss</h4>
+          <p>The 150 µm H type reaches Df 0.0009 for ultra-low insertion loss.</p>
+        </article>
+        <article class="pt-benefit">
+          <span class="pt-big">Dk 2.2–2.38</span>
+          <h4>Low, stable Dk</h4>
+          <p>Low Dk on the high-bandwidth grades supports faster signal propagation; measured PT150 stripline shows a flat Dk across frequency.</p>
+        </article>
+        <article class="pt-benefit">
+          <span class="pt-big">25–150 µm</span>
+          <h4>Thin &amp; flexible</h4>
+          <p>Dielectric from 25 to 150 µm with 12 or 18 µm copper, including high-bendable S and F types for dynamic routing.</p>
+        </article>
+        <article class="pt-benefit">
+          <span class="pt-big">MP</span>
+          <h4>Proven in production</h4>
+          <p>Core FCCL grades and PTNC16R bonding film are in mass production and already used in high-bandwidth products.</p>
+        </article>
+      </div>
+
+      <div class="pt-layers" aria-label="From material to interconnect">
+        <div class="pt-layer pt-core">
+          <span class="pt-step">1 · Core</span>
+          <h4>mPTFE dielectric</h4>
+          <p>Shirre's own modified-PTFE formulation — the source of low Dk and low Df.</p>
+        </div>
+        <div class="pt-layer">
+          <span class="pt-step">2 · Materials</span>
+          <h4>FCCL grades + bonding film</h4>
+          <p>S / F / H / U PheroTetra<sup>®</sup> FCCL with PTNC16R bonding film.</p>
+        </div>
+        <div class="pt-layer">
+          <span class="pt-step">3 · Transmission lines</span>
+          <h4>Flexible high-speed lines</h4>
+          <p>Multilayer stripline flex built and measured on the platform (PT150, Hybrid).</p>
+        </div>
+        <div class="pt-layer">
+          <span class="pt-step">4 · Integration</span>
+          <h4>Connectors &amp; active parts</h4>
+          <p>Connector options for each interface spec; redrivers or ICs can be mounted on the flex line.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="pt-section pt-alt" id="pt-roadmap" aria-labelledby="pt-roadmap-h">
+    <div class="pt-wrap">
+      <p class="pt-label">Material platform</p>
+      <h3 id="pt-roadmap-h">PheroTetra<sup>®</sup> roadmap &amp; properties</h3>
+      <p class="pt-lede">mPTFE dielectric system: FCCL grades and bonding film, with Dk / Df for each grade.</p>
+
+      <figure class="pt-figure">
+
+        <div class="pt-roadmap" role="table" aria-label="PheroTetra material roadmap: grade, Dk, Df, status and timing">
+          <div class="pt-rm-row" role="row">
+            <div class="pt-rm-head" role="columnheader"><span class="pt-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Product family</span></div>
+            <div class="pt-rm-year pt-y1 pt-span-2" role="columnheader">2015 – 2023</div>
+            <div class="pt-rm-year pt-y2" role="columnheader">2025</div>
+            <div class="pt-rm-year pt-y3" role="columnheader">2027</div>
+          </div>
+
+          <div class="pt-rm-row" role="row">
+            <div class="pt-rm-label pt-bend" role="rowheader">High bendable FCCL</div>
+            <div class="pt-rm-cell pt-bend pt-span-3" role="cell">
+              <span class="pt-status pt-mp">MP</span>
+              <span class="pt-t">35</span><span class="pt-g">S type</span>
+              <span class="pt-p">Dk 2.5 · Df 0.0019</span>
+              <span class="pt-yr">2015 – 2025</span>
+            </div>
+            <div class="pt-rm-cell pt-bend" role="cell">
+              <span class="pt-status pt-mp">MP</span>
+              <span class="pt-t">25</span><span class="pt-g">F type</span>
+              <span class="pt-p">Dk 2.8 · Df 0.0035</span>
+              <span class="pt-yr">2027</span>
+            </div>
+          </div>
+
+          <div class="pt-rm-row" role="row">
+            <div class="pt-rm-label pt-bw" role="rowheader">High bandwidth FCCL</div>
+            <div class="pt-rm-cell pt-bw" role="cell">
+              <span class="pt-status pt-mp">MP</span>
+              <span class="pt-t">50/75/100</span><span class="pt-g">H type</span>
+              <span class="pt-p">Dk 2.38 · Df 0.0016</span>
+              <span class="pt-yr">2015 – 2023</span>
+            </div>
+            <div class="pt-rm-cell pt-bw" role="cell">
+              <span class="pt-status pt-mp">MP</span>
+              <span class="pt-t">100</span><span class="pt-g">U type</span>
+              <span class="pt-p">Dk 2.31 · Df 0.0013</span>
+              <span class="pt-yr">2015 – 2023</span>
+            </div>
+            <div class="pt-rm-cell pt-bw pt-used" role="cell">
+              <span class="pt-status pt-pvt">PVT</span>
+              <span class="pt-t">150</span><span class="pt-g">H type</span>
+              <span class="pt-p">Dk 2.35 · Df 0.0009</span>
+              <span class="pt-yr">2025</span>
+              <span class="pt-used-tag">Used in the PT150 stripline</span>
+            </div>
+            <div class="pt-rm-cell pt-bw" role="cell">
+              <span class="pt-status pt-evt">EVT</span>
+              <span class="pt-t">150</span><span class="pt-g">U type</span>
+              <span class="pt-p">Dk 2.2 · Df 0.0006</span>
+              <span class="pt-yr">2027</span>
+            </div>
+          </div>
+
+          <div class="pt-rm-row" role="row">
+            <div class="pt-rm-label pt-film" role="rowheader">Bonding film</div>
+            <div class="pt-rm-cell pt-film pt-span-4" role="cell">
+              <span class="pt-status pt-mp">MP</span>
+              <span class="pt-t">PTNC16R-15/25/50</span>
+              <span class="pt-p">Dk 2.3 · Df 0.0015</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="pt-legend" aria-label="Status legend" style="list-style:none;padding:0">
+          <li><strong>Status:</strong></li>
+          <li><span class="pt-status pt-mp">MP</span>Mass production</li>
+          <li><span class="pt-status pt-pvt">PVT</span>Production validation</li>
+          <li><span class="pt-status pt-evt">EVT</span>Engineering validation</li>
+        </ul>
+      </figure>
+      <p class="pt-note">The number above each grade is the nominal dielectric thickness in µm. Bonding film thickness options: 15 / 25 / 50 µm.
+        <a href="{{ site.baseurl }}/static/assets/img/products/pherotetra/pheroteta_roadmap_reference.png">Download roadmap image (PNG)</a></p>
+    </div>
+  </section>
+
+  <!-- NAMING -->
+  <section class="pt-section" id="pt-naming" aria-labelledby="pt-naming-h">
+    <div class="pt-wrap">
+      <p class="pt-label">Ordering guide</p>
+      <h3 id="pt-naming-h">FCCL naming convention</h3>
+      <p class="pt-lede">PheroTetra<sup>®</sup> FCCL grades are classified as in this example.</p>
+
+      <figure class="pt-figure">
+        <ol class="pt-naming" aria-label="Example part number PT 18 150 18 H E">
+          <li class="pt-nm pt-c-prod"><span class="pt-idx pt-blank" aria-hidden="true">0</span><span class="pt-code">PT</span><span class="pt-stem" aria-hidden="true"></span><span class="pt-desc">FCCL product code</span></li>
+          <li class="pt-nm pt-c-cu"><span class="pt-idx" aria-hidden="true">1</span><span class="pt-code">18</span><span class="pt-stem" aria-hidden="true"></span><span class="pt-desc">Nominal thickness of copper foil<span class="pt-opts">12 / 18 µm</span></span></li>
+          <li class="pt-nm pt-c-di"><span class="pt-idx" aria-hidden="true">2</span><span class="pt-code">150</span><span class="pt-stem" aria-hidden="true"></span><span class="pt-desc">Nominal thickness of dielectric layer<span class="pt-opts">35 / 50 / 75 / 100 / 150 µm</span></span></li>
+          <li class="pt-nm pt-c-cu"><span class="pt-idx" aria-hidden="true">3</span><span class="pt-code">18</span><span class="pt-stem" aria-hidden="true"></span><span class="pt-desc">Nominal thickness of copper foil<span class="pt-opts">12 / 18 µm</span></span></li>
+          <li class="pt-nm pt-c-di pt-grade"><span class="pt-idx" aria-hidden="true">4</span><span class="pt-code">H</span><span class="pt-stem" aria-hidden="true"></span><span class="pt-desc">Dielectric layer grade<span class="pt-opts">S / H / U</span></span></li>
+          <li class="pt-nm pt-c-cu"><span class="pt-idx" aria-hidden="true">5</span><span class="pt-code">E</span><span class="pt-stem" aria-hidden="true"></span><span class="pt-desc">Copper foil grade<span class="pt-opts">E / K</span></span></li>
+        </ol>
+        <ul class="pt-nm-legend" aria-label="Colour legend">
+          <li style="--c:#1F3A5F">Product code</li>
+          <li style="--c:#F28C28">Copper foil: thickness, grade</li>
+          <li style="--c:#7A5BA6">Dielectric layer: thickness, grade</li>
+        </ul>
+      </figure>
+
+      <p class="pt-decode"><strong>How to read <code>PT-18-150-18-H-E</code>:</strong>
+        PheroTetra<sup>®</sup> FCCL with 18 µm copper on both sides of a 150 µm H-type mPTFE dielectric, using E-grade copper foil.</p>
+      <p class="pt-ref"><a href="{{ site.baseurl }}/static/assets/img/products/pherotetra/pheroteta_naming_reference.png">Download naming-convention image (PNG)</a></p>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS & INTEGRATION -->
+  <section class="pt-section pt-alt" id="pt-apps" aria-labelledby="pt-apps-h">
+    <div class="pt-wrap">
+      <p class="pt-label">Applications &amp; integration</p>
+      <h3 id="pt-apps-h">From laminate to a complete high-speed link</h3>
+      <p class="pt-lede">PheroTetra<sup>®</sup> FCCL is in mass production across multiple high-bandwidth transmission applications.
+        We pair it with the right connector for each interface specification, so you can source a complete flex interconnect, not only the laminate.</p>
+
+      <div class="pt-split">
+        <div class="pt-card">
+          <h4>Where it is used</h4>
+          <ul class="pt-apps">
+            <li class="pt-app"><b>112G / 224G SerDes</b><span>High-speed links inside and between systems</span></li>
+            <li class="pt-app"><b>PCIe Gen6</b><span>Low-loss flex for server and accelerator I/O</span></li>
+            <li class="pt-app"><b>5G / mmWave</b><span>Low-Dk, low-Df RF and antenna feed lines</span></li>
+            <li class="pt-app"><b>Thin flexible jumpers &amp; cables</b><span>Space-constrained routing where coax or twinax is too bulky</span></li>
+          </ul>
+        </div>
+        <div class="pt-card">
+          <h4>What we integrate</h4>
+          <ul class="pt-checks">
+            <li><b>Connectors matched to the spec.</b> A range of connector options to meet different interface and transmission requirements.</li>
+            <li><b>Active components on flex.</b> Redrivers or ICs can be mounted directly on the flexible transmission line.</li>
+            <li><b>Stack-up design.</b> Combine FCCL grades and PTNC16R bonding film, such as the PT100UE + PT75HE hybrid, to balance loss, thickness and cost.</li>
+            <li><b>Backed by measurement.</b> VNA-measured insertion loss, return loss and TDR, with eye diagrams derived from the measured S-parameters.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEASURED PROOF -->
+  <section class="pt-section" id="pt-proof" aria-labelledby="pt-proof-h">
+    <div class="pt-wrap">
+      <p class="pt-label">Measured results</p>
+      <h3 id="pt-proof-h">Proven in stripline</h3>
+      <p class="pt-lede">Two 3-layer stripline constructions built on PheroTetra<sup>®</sup> FCCL and measured on a VNA.</p>
+
+      <div class="pt-proof">
+        <article class="pt-proof-card">
+          <a href="{{ site.baseurl }}/static/assets/img/products/pherotetra/pt150_stackup_042mm.png" aria-label="Open PT150 stack-up image full size"><img src="{{ site.baseurl }}/static/assets/img/products/pherotetra/pt150_stackup_042mm.png" width="1400" height="745" loading="lazy"
+               alt="PT150 3-layer stripline stack-up: 35 µm top ground copper, 150 µm PT150 dielectric, 25 µm PTNC16R bonding layer, 18 µm signal layer, 150 µm PT150 dielectric, 35 µm bottom ground copper; total thickness 0.42 mm" /></a>
+          <div class="pt-proof-body">
+            <span class="pt-tag">PT150 · M9-class loss level</span>
+            <h4>PT150 stripline</h4>
+            <div class="pt-kpis">
+              <div class="pt-kpi"><span class="pt-val">−0.56</span><span class="pt-lbl">dB/inch @ 26.5 GHz</span></div>
+              <div class="pt-kpi"><span class="pt-val">M9 class</span><span class="pt-lbl">on par in loss</span></div>
+              <div class="pt-kpi"><span class="pt-val">0.42 mm</span><span class="pt-lbl">3-layer stripline</span></div>
+            </div>
+            <p>150 µm H-type PheroTetra<sup>®</sup> FCCL on both sides of the signal layer, bonded with PTNC16R.</p>
+            <a class="pt-more" href="javascript:activeProductTab('pt-fccl-m9');">View PT150 measured data →</a>
+          </div>
+        </article>
+
+        <article class="pt-proof-card">
+          <a href="{{ site.baseurl }}/static/assets/img/products/pherotetra/hybrid_stackup_section_290um.png" aria-label="Open hybrid stack-up image full size"><img src="{{ site.baseurl }}/static/assets/img/products/pherotetra/hybrid_stackup_section_290um.png" width="1400" height="787" loading="lazy"
+               alt="PT100UE + PT75HE hybrid 3-layer stripline cross-section: 35 µm top ground copper, 75 µm PT75HE, 25 µm PTNC16R bonding film, 18 µm signal copper on PT100, 100 µm PT100UE, 35 µm bottom ground copper; total 290 µm" /></a>
+          <div class="pt-proof-body">
+            <span class="pt-tag">Hybrid · M8-class loss level</span>
+            <h4>PT100UE + PT75HE hybrid stripline</h4>
+            <div class="pt-kpis">
+              <div class="pt-kpi"><span class="pt-val">−0.74</span><span class="pt-lbl">dB/inch @ 26.5 GHz</span></div>
+              <div class="pt-kpi"><span class="pt-val">290 µm</span><span class="pt-lbl">3-layer stripline</span></div>
+              <div class="pt-kpi"><span class="pt-val">92 Ω ±5%</span><span class="pt-lbl">TDR <span class="pt-pass">PASS</span></span></div>
+            </div>
+            <p>U-type and H-type grades combined in one thinner stack-up, measured on an R&amp;S ZNA67 VNA.</p>
+            <a class="pt-more" href="javascript:activeProductTab('pt-fccl-m8');">View Hybrid measured data →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pt-section pt-alt" id="pt-cta" aria-labelledby="pt-cta-h">
+    <div class="pt-wrap">
+      <div class="pt-cta">
+        <div>
+          <h3 id="pt-cta-h">Request samples or a datasheet</h3>
+          <p>Tell us your interface, data rate and target thickness. We will recommend a PheroTetra<sup>®</sup> grade, stack-up and connector option.</p>
+        </div>
+        <div class="pt-actions">
+          <a class="pt-btn pt-btn-primary" href="mailto:Charles@shirre.com?subject=PheroTetra%C2%AE%20FCCL%20%E2%80%94%20sample%20%2F%20datasheet%20request">Request samples</a>
+          <a class="pt-btn pt-btn-ghost" href="#contact">Contact sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

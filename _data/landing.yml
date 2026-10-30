@@ -12,6 +12,12 @@
 #  tpl: designs.html
 #  css:
 
+- id: products
+  name: PRODUCTS
+  footer_name: Products
+  tpl: products.html
+  css:
+
 - id: appnotes
   name: APPLICATION NOTE
   footer_name: Application Note
@@ -22,12 +28,6 @@
   name: ABOUT
   footer_name: About
   tpl: about.html
-  css:
-
-- id: products
-  name: PRODUCTS
-  footer_name: Products
-  tpl: products.html
   css:
 
 - id: news
