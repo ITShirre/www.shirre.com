@@ -517,3 +517,23 @@ body {
 .row {
   margin-right:0px !important;
 }
+// Products tabs: highlight the selected tab with the brand pink
+#products .nav-tabs {
+  border-bottom-color: $logo-color;
+  > li > a {
+    color: #5f6a72;
+    &:hover, &:focus {
+      color: $logo-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+  > li.active > a,
+  > li.active > a:hover,
+  > li.active > a:focus {
+    color: #fff;
+    background-color: $logo-color;
+    border-color: $logo-color;
+    outline: none;
+  }
+}
