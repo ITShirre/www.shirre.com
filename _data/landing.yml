@@ -36,11 +36,11 @@
   tpl: news.html
   css:
 
-- id: careers
-  name: CAREERS
-  footer_name: Careers
-  tpl: careers.html
-  css:
+#- id: careers
+#  name: CAREERS
+#  footer_name: Careers
+#  tpl: careers.html
+#  css:
 
 - id: contact
   name: CONTACT
