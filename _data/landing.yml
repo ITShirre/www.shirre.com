@@ -24,11 +24,11 @@
   tpl: appnotes.html
   css:
 
-- id: about
-  name: ABOUT
-  footer_name: About
-  tpl: about.html
-  css:
+#- id: about
+#  name: ABOUT
+#  footer_name: About
+#  tpl: about.html
+#  css:
 
 - id: news
   name: NEWS
