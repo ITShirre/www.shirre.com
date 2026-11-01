@@ -1,0 +1,15 @@
+# Shared UI strings for the standalone product pages (EN / zh-tw).
+en:
+  home: "Home"
+  section: "Solution &amp; Platform"
+  lang_switch_aria: "Language"
+  breadcrumb_aria: "Breadcrumb"
+  view_full: "View full page →"
+  coming_soon: "Coming Soon..."
+zh-tw:
+  home: "首頁"
+  section: "Solution &amp; Platform"
+  lang_switch_aria: "語言"
+  breadcrumb_aria: "導覽路徑"
+  view_full: "查看完整頁面 →"
+  coming_soon: "即將推出..."

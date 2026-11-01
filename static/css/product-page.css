@@ -1,0 +1,20 @@
+/* Standalone product pages (_layouts/product.html): /products/... and /zh-tw/products/...
+   Product content keeps its own scoped styles (pherotetra.css .pt-page, m9.css .m9-page). */
+.pd-main { padding-top: 50px; }             /* clear the fixed top navbar */
+@media (min-width: 768px) { .pd-main { padding-top: 70px; } }
+
+/* Breadcrumb + EN / 中文 switch on one row */
+.pd-topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 17.6px; }
+.pd-topbar .pt-crumb, .pd-topbar .m9-crumb { margin-bottom: 0 !important; }
+.pd-lang { margin: 0 !important; display: inline-flex; align-items: center; gap: 6px; font-size: 13.12px; line-height: 1;
+  border: 1px solid #E2E6EA; border-radius: 999px; padding: 6px 12px; background: #fff; }
+.pd-lang a { color: #ec047c; text-decoration: none; font-weight: 600; }
+.pd-lang a:hover, .pd-lang a:focus { text-decoration: underline; }
+.pd-lang .pd-lang-on { color: #2E3A44; font-weight: 700; }
+.pd-lang .pd-lang-sep { color: #B5BDC4; }
+
+/* Traditional Chinese: system CJK fonts read better than the Latin display font */
+.pd-main:lang(zh-Hant-TW) { font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
+
+/* Coming Soon page */
+.pd-soon { min-height: 50vh; }

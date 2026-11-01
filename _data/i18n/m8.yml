@@ -1,0 +1,245 @@
+# PT-FCCL for M8-Class page strings. Used by _includes/products/pt-fccl-m8.html.
+# Each value replaces an exact fragment of the English source (/workspace/shirre-m8-page-tabs/), so some keys hold
+# surrounding markup (>…<, aria-label="…"). Numbers must be identical in en and zh-tw (i18n-check.py).
+en:
+  crumb_current: PT-FCCL for M8-Class</nav>
+  eyebrow: PheroTetra<sup>®</sup> PT100UE + PT75HE hybrid · M8-class performance
+  h_accent: a 290 µm hybrid mPTFE stripline.
+  hero_lead: PT100UE + PT75HE PheroTetra<sup>®</sup> mPTFE with a 25 µm PTNC16R bond film, measured on an R&amp;S ZNA67 to 63 GHz.
+  btn_samples_data: '>Request samples &amp; data<'
+  chips_aria: aria-label="Key measured results"
+  chip_il_k: </b>@ 26.5 GHz</li>
+  chip_tdr_k: </b>TDR PASS</li>
+  chip_dk_k: </b>&lt;1% over 5–63 GHz</li>
+  chip_th_k: </b>total thickness</li>
+  tabs_aria: aria-label="Measured data topics"
+  tab_fixture: '>Test fixture<'
+  tab_stackup: '>Stack-up &amp; setup<'
+  tab_loss: '>Insertion loss<'
+  tab_rl: '>Return loss &amp; TDR<'
+  tab_dk: '>Dk stability<'
+  tab_eye: '>Eye diagrams<'
+  tab_eye_k: '>53 GBd open<'
+  fx_label: '>Test vehicle<'
+  fx_h: '>Test-fixture board<'
+  fx_lede: 'A two-part board that reflects a real link: a CPC 112G MB side and a CPC 112G plug side.'
+  fx_alt: 'Test-fixture board render: CPC 112G MB side on the left and CPC 112G plug side on the right, each with 1X THRU 38 mm and 2X THRU 76 mm structures, TX and RX lanes and a connector site'
+  fx_cap: 'Board render: CPC 112G MB side (left) and CPC 112G plug side (right).'
+  fx_li1: '<b>1X THRU 38 mm</b> on both sides: the L38 coupon.'
+  fx_li2: '<b>2X THRU 76 mm</b> on both sides: the L76a / L76b coupons.'
+  fx_li3: <b>TX1 / TX2 and RX1 / RX2 lanes</b> routed to the connector site on each side.
+  fx_li4: <b>Fixture crosstalk</b> structures on the MB side.
+  su_label: '>Construction &amp; method<'
+  su_h: '>Stack-up and measurement setup<'
+  su_lede: PT100UE + PT75HE hybrid 3-layer stripline with 25 µm PTNC16R bonding film, measured on an R&amp;S ZNA67 VNA.
+  su_img_aria: aria-label="Open hybrid stack-up image full size"
+  su_alt: 'PT100UE plus PT75HE hybrid 3-layer stripline, 3D cutaway: 35 µm top ground copper, 75 µm PT75HE, 25 µm PTNC16R bonding film, 18 µm signal copper on PT100UE, 100 µm PT100UE, 35 µm bottom ground copper; total 290 µm'
+  su_cap: PT100UE + PT75HE hybrid 3-layer stripline (3D cutaway, schematic), total 290 µm.
+  su_key: '>Key facts<'
+  su_li1: <b>290 µm</b> total, differential pair etched on PT100UE, covered by PT75HE.
+  su_li2: <b>R&amp;S ZNA67 VNA</b>, 10 MHz – 63 GHz, 2.4 mm / SMA differential ports.
+  su_li3: '<b>Coupons L38, L76a, L76b</b>: all file checks PASS.'
+  su_li4: Two 76 mm samples verified alongside the 38 mm coupon.
+  su_more: 'More data: layer build, setup and coupon tables'
+  layers_aria: aria-label="Layer list"
+  ly_topcu: <span>Top ground copper</span>
+  ly_75: <span>PT75HE mPTFE dielectric</span>
+  ly_bf: <span>PTNC16R bonding film</span>
+  ly_sig: <span>Signal copper on PT100UE (differential pair)</span>
+  ly_100: <span>PT100UE mPTFE dielectric</span>
+  ly_botcu: <span>Bottom ground copper</span>
+  ly_total: <span>Total thickness</span>
+  th_item: <th scope="col">Item</th>
+  th_setting: <th scope="col">Setting</th>
+  r_inst: <th scope="row">Instrument</th>
+  r_freq: <th scope="row">Frequency range</th>
+  r_ports: <th scope="row">Ports</th>
+  r_ports_v: <td>2.4 mm / SMA for differential</td>
+  th_coupon: <th scope="col">Coupon</th>
+  th_length: <th scope="col">Length</th>
+  th_check: <th scope="col">File check</th>
+  il_lede: Both lengths already de-embedded; line loss from the 76 − 38 mm length difference (eigen). Span shown to 40 GHz.
+  il_h: '>Differential insertion loss<'
+  il_aria: aria-label="Open insertion loss chart full size"
+  il_alt: Differential insertion loss SDD21 versus frequency to 40 GHz for L38, L76a and L76b. Line loss 0.74 dB/inch at 26.5 GHz and 0.97 dB/inch at 40 GHz.
+  cap_lengths: 'Lengths: 38 mm, 76 mm ×2'
+  cap_hybrid: hybrid 3-layer stripline
+  cap_band: Band 1–63 GHz.
+  il_sub: line loss @ 26.5 GHz
+  il_li1: Coupons L38 (38 mm), L76a and L76b (76 mm).
+  il_li2: L76a and L76b track closely across the band.
+  il_li3: Measured on R&amp;S ZNA67.
+  il_more: 'More data: measured SDD21 per coupon'
+  rl_label: Measured · SDD11 / SDD22 · TDR
+  il_label: Measured · SDD21
+  rl_h: '>Return loss and differential impedance<'
+  rl_lede: TDR from SDD11 against a 92 Ω ±5% (87.4–96.6 Ω) design target; return loss over the full 0–63 GHz span.
+  rl_aria: aria-label="Open TDR chart full size"
+  rl_alt: TDR differential impedance versus time, 0 to 900 ps, for L38, L76a and L76b. All traces stay inside the 92 Ω ±5% band over the mid-line window; L76a peak 94.6 Ω.
+  rl_eq: All samples 100% in band · mid-line window
+  rl_li1: Worst-case return loss −10.8 to −12.2 dB (0–63 GHz, mostly SDD22).
+  rl_li2: <b>Launch and connector reflections dominate</b>, not the line itself.
+  rl_li3: A 92 Ω line measured in a 100 Ω system also contributes to the return-loss floor.
+  rl_more: 'More data: return-loss chart, worst case and TDR ranges'
+  rl2_aria: aria-label="Open return loss chart full size"
+  rl2_alt: Differential return loss SDD11 and SDD22 envelope in 0.5 GHz bins, 0 to 63 GHz, for L38, L76a and L76b, mostly between −12 and −20 dB.
+  rl2_cap: 'Envelope, 0.5 GHz bins. Worst 0–63 GHz:'
+  rl2_cap2: launch-dominated.
+  rl_worst: 'RL worst · '
+  in_band: '% in band</span>'
+  dk_label: Measured · length-difference phase
+  dk_h: '>Full-stack equivalent Dk vs frequency<'
+  dk_lede: Hybrid length-difference method (76 − 38 mm); full-stack Dk<sub>eff</sub> includes the PTNC16R bonding film, not the base material alone.
+  dk_aria: aria-label="Open Dk chart full size"
+  dk_alt: Stack-up effective Dk versus frequency, 1 to 63 GHz. Measured mean 2.321; copper-corrected mean 2.303; 2.318 at 26.5 GHz and 2.313 at 53 GHz.
+  dk_sub: raw mean Dk<sub>eff</sub>
+  dk_li1: Copper-corrected Dk flat within <b>&lt;1%</b> over 5–63 GHz.
+  dk_li2: '<b>Length-insensitive timing</b>: near-constant delay per inch.'
+  dk_li3: <b>Stable impedance</b> over frequency.
+  dk_more: 'More data: Dk values'
+  dk_raw: Raw mean (1–63 GHz)
+  dk_cc: Copper-corrected mean
+  dk_hl: The rise below ~3 GHz is mostly copper skin-effect inductance; after correction, Dk stays flat.
+  eye_label: Simulated from measured S-parameters
+  eye_h: '>Eye diagrams at 53 GBd<'
+  eye_lede: 76 mm from measured S-parameters; 250 mm is a line-only <strong>projection</strong>, not a measurement.
+  eye_tag_m: Measured · 76 mm<
+  eye_aria1: aria-label="Open 76 mm eye diagrams full size"
+  eye_alt1: 'Simulated eye diagrams from measured 76 mm S-parameters, no equalization: NRZ 53 Gb/s, PAM3 about 84 Gb/s and PAM4 106 Gb/s, all open.'
+  eye_cap1: '76 mm measured, connectors and fixture included. SDD21 @ 26.5 GHz: −2.8 dB. No EQ.'
+  eye_tag_p: Projection · 250 mm line only<
+  eye_aria2: aria-label="Open 250 mm projected eye diagrams full size"
+  eye_alt2: 'Projected eye diagrams for a 250 mm line only, with 3-tap transmit FFE: NRZ, PAM3 and PAM4 eyes open.'
+  eye_cap2: 'PROJECTED, not measured: 250 mm line only, de-embedded loss model. SDD21 @ 26.5 GHz: −7.3 dB. 3-tap Tx FFE [−0.04, 0.79, −0.17].'
+  eye_li1: '<b>76 mm measured, no EQ: all eyes open</b>: NRZ 53 Gb/s EH ≈ 698 mV / EW 0.91 UI.'
+  eye_li2: '<b>250 mm projection, 3-tap Tx FFE: open</b>: NRZ ≈ 375 mV / 0.88 UI.'
+  eye_li3: 250 mm IL @ Nyquist (26.5 GHz) ≈ −7.3 dB. This is a projection, not measured.
+  eye_more: 'More data: eye heights and simulation settings'
+  eye_proj: '250 mm proj. FFE · '
+  eye_noeq: <span>250 mm proj. no EQ</span><span>NRZ 267 mV / 0.69 UI open; PAM3 / PAM4 closed</span>
+  eye_hl: 'Simulation: ±500 mV, 6 ps 20–80%, PRBS15, 53 GBd; NRZ 53 Gb/s, PAM3 ~84 Gb/s (3B2T), PAM4 106 Gb/s Gray; optional 3-tap Tx FFE [−0.04, 0.79, −0.17]. 250 mm is a projection, not measured.'
+  cta_h: Evaluate the PT100UE + PT75HE hybrid for your M8-class link
+  cta_p: Tell us your interface, data rate, channel length and target thickness. We will recommend a stack-up and connector option and arrange samples.
+  btn_samples: '>Request samples<'
+  btn_about: About PheroTetra<sup>®</sup> FCCL
+zh-tw:
+  crumb_current: PT-FCCL for M8-Class</nav>
+  eyebrow: PheroTetra<sup>®</sup> PT100UE + PT75HE 混壓 · M8 class 性能
+  h_accent: 290 µm 混壓 mPTFE stripline。
+  hero_lead: PT100UE + PT75HE PheroTetra<sup>®</sup> mPTFE，搭配 25 µm PTNC16R 接著膜，以 R&amp;S ZNA67 量測至 63 GHz。
+  btn_samples_data: '>索取樣品與數據<'
+  chips_aria: aria-label="主要量測結果"
+  chip_il_k: </b>@ 26.5 GHz</li>
+  chip_tdr_k: </b>TDR PASS</li>
+  chip_dk_k: </b>5–63 GHz 內 &lt;1%</li>
+  chip_th_k: </b>總厚度</li>
+  tabs_aria: aria-label="量測數據主題"
+  tab_fixture: '>測試治具<'
+  tab_stackup: '>疊構與量測設定<'
+  tab_loss: '>插入損耗<'
+  tab_rl: '>回波損耗與 TDR<'
+  tab_dk: '>Dk 穩定性<'
+  tab_eye: '>眼圖<'
+  tab_eye_k: '>53 GBd 張開<'
+  fx_label: '>測試載具<'
+  fx_h: '>測試治具板<'
+  fx_lede: 由兩部分組成、貼近實際鏈路的板子：CPC 112G MB 端與 CPC 112G plug 端。
+  fx_alt: 測試治具板示意圖：左為 CPC 112G MB 端，右為 CPC 112G plug 端，兩端皆有 1X THRU 38 mm 與 2X THRU 76 mm 結構、TX 與 RX 通道及連接器位置
+  fx_cap: 板子示意圖：CPC 112G MB 端（左）與 CPC 112G plug 端（右）。
+  fx_li1: 兩端皆有 <b>1X THRU 38 mm</b>：即 L38 coupon。
+  fx_li2: 兩端皆有 <b>2X THRU 76 mm</b>：即 L76a / L76b coupon。
+  fx_li3: <b>TX1 / TX2 與 RX1 / RX2 通道</b>在兩端各自繞線至連接器位置。
+  fx_li4: MB 端設有<b>治具串音</b>量測結構。
+  su_label: '>結構與方法<'
+  su_h: '>疊構與量測設定<'
+  su_lede: PT100UE + PT75HE 混壓 3 層 stripline，使用 25 µm PTNC16R 接著膜，以 R&amp;S ZNA67 VNA 量測。
+  su_img_aria: aria-label="開啟混壓疊構原尺寸圖"
+  su_alt: PT100UE + PT75HE 混壓 3 層 stripline 3D 剖面：35 µm 上層接地銅、75 µm PT75HE、25 µm PTNC16R 接著膜、PT100UE 上的 18 µm 訊號銅、100 µm PT100UE、35 µm 下層接地銅；總厚 290 µm
+  su_cap: PT100UE + PT75HE 混壓 3 層 stripline（3D 剖面示意圖），總厚 290 µm。
+  su_key: '>重點<'
+  su_li1: 總厚 <b>290 µm</b>，差動對蝕刻於 PT100UE 上，上方覆蓋 PT75HE。
+  su_li2: <b>R&amp;S ZNA67 VNA</b>，10 MHz – 63 GHz，2.4 mm / SMA 差動埠。
+  su_li3: <b>Coupon L38、L76a、L76b</b>：檔案檢查全部 PASS。
+  su_li4: 兩片 76 mm 樣品與 38 mm coupon 一同驗證。
+  su_more: 更多數據：層構、量測設定與 coupon 表
+  layers_aria: aria-label="層別清單"
+  ly_topcu: <span>上層接地銅</span>
+  ly_75: <span>PT75HE mPTFE 介電層</span>
+  ly_bf: <span>PTNC16R 接著膜</span>
+  ly_sig: <span>PT100UE 上的訊號銅（差動對）</span>
+  ly_100: <span>PT100UE mPTFE 介電層</span>
+  ly_botcu: <span>下層接地銅</span>
+  ly_total: <span>總厚度</span>
+  th_item: <th scope="col">項目</th>
+  th_setting: <th scope="col">設定</th>
+  r_inst: <th scope="row">儀器</th>
+  r_freq: <th scope="row">頻率範圍</th>
+  r_ports: <th scope="row">埠</th>
+  r_ports_v: <td>2.4 mm / SMA（差動）</td>
+  th_coupon: <th scope="col">Coupon</th>
+  th_length: <th scope="col">長度</th>
+  th_check: <th scope="col">檔案檢查</th>
+  il_lede: 兩種長度皆已 de-embedding；線路損耗由 76 − 38 mm 長度差（eigen）求得。圖示範圍至 40 GHz。
+  il_h: '>差動插入損耗<'
+  il_aria: aria-label="開啟插入損耗原尺寸圖"
+  il_alt: L38、L76a 與 L76b 的差動插入損耗 SDD21 對頻率圖，至 40 GHz。線路損耗在 26.5 GHz 為 0.74 dB/inch，在 40 GHz 為 0.97 dB/inch。
+  cap_lengths: 長度：38 mm、76 mm ×2
+  cap_hybrid: 混壓 3 層 stripline
+  cap_band: 頻段 1–63 GHz。
+  il_sub: 線路損耗 @ 26.5 GHz
+  il_li1: Coupon L38（38 mm）、L76a 與 L76b（76 mm）。
+  il_li2: L76a 與 L76b 在整個頻段內曲線高度一致。
+  il_li3: 以 R&amp;S ZNA67 量測。
+  il_more: 更多數據：各 coupon 實測 SDD21
+  rl_label: 實測 · SDD11 / SDD22 · TDR
+  il_label: 實測 · SDD21
+  rl_h: '>回波損耗與差動阻抗<'
+  rl_lede: 由 SDD11 求得 TDR，對照 92 Ω ±5%（87.4–96.6 Ω）設計目標；回波損耗涵蓋完整 0–63 GHz。
+  rl_aria: aria-label="開啟 TDR 原尺寸圖"
+  rl_alt: L38、L76a 與 L76b 的 TDR 差動阻抗對時間圖，0 至 900 ps。所有曲線在線路中段視窗內皆落在 92 Ω ±5% 範圍內；L76a 峰值 94.6 Ω。
+  rl_eq: 所有樣品 100% 落在範圍內 · 線路中段視窗
+  rl_li1: 最差回波損耗 −10.8 至 −12.2 dB（0–63 GHz，多為 SDD22）。
+  rl_li2: <b>主要來自 launch 與連接器反射</b>，而非線路本身。
+  rl_li3: 以 100 Ω 系統量測 92 Ω 線路，也會墊高回波損耗下限。
+  rl_more: 更多數據：回波損耗圖、最差值與 TDR 範圍
+  rl2_aria: aria-label="開啟回波損耗原尺寸圖"
+  rl2_alt: L38、L76a 與 L76b 的差動回波損耗 SDD11 與 SDD22 包絡線，0.5 GHz 分格，0 至 63 GHz，大多介於 −12 與 −20 dB 之間。
+  rl2_cap: 包絡線，0.5 GHz 分格。0–63 GHz 最差值：
+  rl2_cap2: 主要來自 launch。
+  rl_worst: 'RL 最差 · '
+  in_band: '% 落在範圍內</span>'
+  dk_label: 實測 · 長度差相位
+  dk_h: '>全疊構等效 Dk 對頻率<'
+  dk_lede: 混壓長度差法（76 − 38 mm）；全疊構 Dk<sub>eff</sub> 包含 PTNC16R 接著膜，並非單純基材數值。
+  dk_aria: aria-label="開啟 Dk 原尺寸圖"
+  dk_alt: 疊構有效 Dk 對頻率圖，1 至 63 GHz。實測平均 2.321；銅修正後平均 2.303；26.5 GHz 為 2.318，53 GHz 為 2.313。
+  dk_sub: 原始平均 Dk<sub>eff</sub>
+  dk_li1: 銅修正後 Dk 在 5–63 GHz 內變化 <b>&lt;1%</b>。
+  dk_li2: <b>時序不受長度影響</b>：每 inch 延遲幾乎固定。
+  dk_li3: 阻抗隨頻率<b>維持穩定</b>。
+  dk_more: 更多數據：Dk 數值
+  dk_raw: 原始平均（1–63 GHz）
+  dk_cc: 銅修正後平均
+  dk_hl: ~3 GHz 以下的上升主要來自銅的集膚效應電感；修正後 Dk 維持平坦。
+  eye_label: 以實測 S 參數模擬
+  eye_h: '>53 GBd 眼圖<'
+  eye_lede: 76 mm 依實測 S 參數；250 mm 為僅含線路的<strong>推估</strong>，並非實測。
+  eye_tag_m: 實測 · 76 mm<
+  eye_aria1: aria-label="開啟 76 mm 眼圖原尺寸圖"
+  eye_alt1: 依 76 mm 實測 S 參數模擬的眼圖，無等化：NRZ 53 Gb/s、PAM3 約 84 Gb/s 與 PAM4 106 Gb/s，皆張開。
+  eye_cap1: 76 mm 實測，含連接器與治具。SDD21 @ 26.5 GHz：−2.8 dB。無 EQ。
+  eye_tag_p: 推估 · 250 mm 僅含線路<
+  eye_aria2: aria-label="開啟 250 mm 推估眼圖原尺寸圖"
+  eye_alt2: 250 mm 僅含線路的推估眼圖，使用 3-tap 發送端 FFE：NRZ、PAM3 與 PAM4 眼圖皆張開。
+  eye_cap2: 推估值，非實測：250 mm 僅含線路，採 de-embedding 後的損耗模型。SDD21 @ 26.5 GHz：−7.3 dB。3-tap Tx FFE [−0.04, 0.79, −0.17]。
+  eye_li1: <b>76 mm 實測、無 EQ：眼圖全部張開</b>：NRZ 53 Gb/s EH ≈ 698 mV / EW 0.91 UI。
+  eye_li2: <b>250 mm 推估、3-tap Tx FFE：張開</b>：NRZ ≈ 375 mV / 0.88 UI。
+  eye_li3: 250 mm IL @ Nyquist（26.5 GHz）≈ −7.3 dB。此為推估值，非實測。
+  eye_more: 更多數據：眼高與模擬設定
+  eye_proj: '250 mm 推估 FFE · '
+  eye_noeq: <span>250 mm 推估 無 EQ</span><span>NRZ 267 mV / 0.69 UI 張開；PAM3 / PAM4 閉合</span>
+  eye_hl: 模擬條件：±500 mV、6 ps 20–80%、PRBS15、53 GBd；NRZ 53 Gb/s、PAM3 ~84 Gb/s（3B2T）、PAM4 106 Gb/s Gray；可選 3-tap Tx FFE [−0.04, 0.79, −0.17]。250 mm 為推估值，非實測。
+  cta_h: 為您的 M8 class 鏈路評估 PT100UE + PT75HE 混壓方案
+  cta_p: 請告訴我們您的介面、傳輸速率、通道長度與目標厚度，我們將建議疊構與連接器方案，並安排樣品。
+  btn_samples: '>索取樣品<'
+  btn_about: 關於 PheroTetra<sup>®</sup> FCCL

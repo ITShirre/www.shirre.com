@@ -1,67 +1,51 @@
 {% comment %}
-  PT-FCCL for M9/M10-Class product content (PheroTetra(R) PT150 stripline measured data).
-  Source: designer page /workspace/shirre-m9-page/index.html (BEGIN/END M9 PAGE CONTENT block only).
-  Headings demoted one level (h1->h2, h2->h3, h3->h4) because the section/tab already provide titles.
-  Wrapper id renamed pt-fccl-m9 -> pt-fccl-m9-page (the tab pane itself is #pt-fccl-m9).
-  Styles: static/css/m9.css (all rules scoped to .m9-page).
+  Generated from /workspace/shirre-m9-page-tabs/index.html (BEGIN/END block only, English only). Standalone page only;
+  the home tab shows _includes/products/summary.html. Styles: static/css/m9.css.
 {% endcomment %}
 <div class="m9-page" id="pt-fccl-m9-page">
 
-  <!-- HERO -->
   <section class="m9-hero" aria-labelledby="m9-title">
     <div class="m9-wrap">
-      <nav class="m9-crumb" aria-label="Breadcrumb"><a href="{{ site.baseurl }}/#home">Home</a> / <a href="#products">Solution &amp; Platform</a> / PT-FCCL for M9/M10-Class</nav>
+      <nav class="m9-crumb" aria-label="Breadcrumb"><a href="{{ site.baseurl }}/">Home</a> / <a href="{{ site.baseurl }}/#products">Solution &amp; Platform</a> / PT-FCCL for M9/M10-Class</nav>
       <p class="m9-eyebrow">PheroTetra<sup>®</sup> PT150 · benchmarked against M9 / M10-class CCL</p>
-      <h2 id="m9-title">PT150 stripline: <span class="m9-accent">M9-class loss in a 0.42 mm flexible build.</span></h2>
-      <p class="m9-hero-lead">
-        A 3-layer stripline built on 150 µm H-type PheroTetra<sup>®</sup> mPTFE FCCL. Measured on a 4-port VNA and
-        de-embedded by length subtraction, it delivers insertion loss on par with M9-class rigid CCL, about 20% lower
-        than M8 class, with a low, flat effective Dk across frequency.
-      </p>
-      <div class="m9-actions">
-        <a class="m9-btn m9-btn-primary" href="mailto:Charles@shirre.com?subject=PT150%20%2F%20PT-FCCL%20for%20M9%2FM10-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples &amp; data</a>
-        <a class="m9-btn m9-btn-ghost" href="#m9-loss">See measured loss</a>
-      </div>
-      <ul class="m9-hero-kpis" aria-label="Key measured results">
-        <li class="m9-hero-kpi"><b>−0.56 dB/inch</b><span>Insertion loss @ 26.5 GHz (differential SDD21)</span></li>
-        <li class="m9-hero-kpi"><b>Dk<sub>eff</sub> ≈ 2.36</b><span>Effective Dk, flat across 1–49 GHz</span></li>
-        <li class="m9-hero-kpi"><b>130 ps/inch</b><span>Propagation delay, v ≈ 0.65 c</span></li>
-        <li class="m9-hero-kpi"><b>0.42 mm</b><span>Total thickness, 3-layer stripline</span></li>
+      <h1 id="m9-title">PT-FCCL for M9/M10-Class: <span class="m9-accent">PT150 stripline, M9-class loss in a 0.42 mm flexible build.</span></h1>
+      <p class="m9-hero-lead">A 3-layer stripline on 150 µm H-type PheroTetra<sup>®</sup> mPTFE FCCL, VNA-measured and de-embedded by length subtraction: insertion loss on par with M9-class rigid CCL, about 20% lower than M8 class, with a low, flat effective Dk.</p>
+      <div class="m9-actions"><a class="m9-btn m9-btn-primary" href="mailto:Charles@shirre.com?subject=PT150%20%2F%20PT-FCCL%20for%20M9%2FM10-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples &amp; data</a><a class="m9-btn m9-btn-ghost" href="#m9-loss">See measured loss</a></div>
+      <ul class="m9-chips" aria-label="Key measured results">
+        <li><b>−0.56 dB/inch</b>@ 26.5 GHz (SDD21)</li>
+        <li><b>Dk<sub>eff</sub> ≈ 2.36</b>flat across 1–49 GHz</li>
+        <li><b>130 ps/inch</b>v ≈ 0.65 c</li>
+        <li><b>0.42 mm</b>total, 3-layer stripline</li>
       </ul>
     </div>
   </section>
 
-  <!-- IN-PAGE NAV -->
-  <nav class="m9-subnav" aria-label="On this page">
+  <div class="m9-tabbar">
     <div class="m9-wrap">
-      <ul>
-        <li><a href="#m9-stackup">Stack-up</a></li>
-        <li><a href="#m9-setup">Measurement setup</a></li>
-        <li><a href="#m9-il">Insertion loss</a></li>
-        <li><a href="#m9-loss">Loss per inch</a></li>
-        <li><a href="#m9-rl">Return loss</a></li>
-        <li><a href="#m9-speed">Signal speed &amp; Dk</a></li>
-        <li><a href="#m9-design">For your design</a></li>
-        <li><a href="#m9-cta">Samples</a></li>
-      </ul>
+      <div class="m9-tabs" role="tablist" aria-label="Measured data topics">
+        <button type="button" class="m9-tab" role="tab" id="m9-tab-stackup" aria-controls="m9-stackup" aria-selected="true" tabindex="0"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 3 10l13 6 13-6z"/><path d="M3 16l13 6 13-6"/><path d="M3 22l13 6 13-6"/></svg><span class="m9-tab-t">Stack-up</span><span class="m9-tab-k">0.42 mm · 3-layer</span></button>
+        <button type="button" class="m9-tab" role="tab" id="m9-tab-setup" aria-controls="m9-setup" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="15" rx="2"/><circle cx="23" cy="14.5" r="3"/><path d="M7 11h9M7 15h9M7 18h5M9 22v4M23 22v4"/></svg><span class="m9-tab-t">Measurement setup</span><span class="m9-tab-k">4-port PNA · 50 GHz</span></button>
+        <button type="button" class="m9-tab" role="tab" id="m9-tab-loss" aria-controls="m9-loss" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 4v24h24"/><path d="M7 9c5 1 9 4 13 9s5 6 7 7"/></svg><span class="m9-tab-t">Insertion loss</span><span class="m9-tab-k">−0.56 dB/in @26.5</span></button>
+        <button type="button" class="m9-tab" role="tab" id="m9-tab-rl" aria-controls="m9-rl" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16h5l2-7 3 14 3-10 2 3h11"/><path d="M3 26h26" stroke-dasharray="2 3"/></svg><span class="m9-tab-t">Return loss</span><span class="m9-tab-k">≤ −17.8 dB @26.5</span></button>
+        <button type="button" class="m9-tab" role="tab" id="m9-tab-speed" aria-controls="m9-speed" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="18" r="10"/><path d="M16 18l5-5M13 4h6M16 4v4"/></svg><span class="m9-tab-t">Signal speed &amp; Dk</span><span class="m9-tab-k">130 ps/in · 2.36</span></button>
+        <button type="button" class="m9-tab" role="tab" id="m9-tab-design" aria-controls="m9-design" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 21c-2.5-2-4-4.5-4-7.5a9 9 0 0 1 18 0c0 3-1.5 5.5-4 7.5v3H11z"/><path d="M12 28h8"/></svg><span class="m9-tab-t">Design impact</span><span class="m9-tab-k">v ≈ 0.65 c</span></button>
+      </div>
     </div>
-  </nav>
+  </div>
 
-  <!-- STACK-UP -->
-  <section class="m9-section" id="m9-stackup" aria-labelledby="m9-stackup-h">
+  <section class="m9-panel" id="m9-stackup" role="tabpanel" aria-labelledby="m9-tab-stackup" tabindex="-1">
     <div class="m9-wrap">
       <p class="m9-label">Construction</p>
-      <h3 id="m9-stackup-h">PT150 3-layer stripline stack-up</h3>
+      <h2>PT150 3-layer stripline stack-up</h2>
       <p class="m9-lede">The signal layer sits between two 150 µm PT150 (150 µm H-type PheroTetra<sup>®</sup>) dielectrics, bonded with PTNC16R film and shielded by top and bottom ground copper.</p>
-
       <div class="m9-split">
         <figure class="m9-chart">
-          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_stackup_042mm.png" aria-label="Open PT150 stack-up image full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_stackup_042mm.png" width="1400" height="745" loading="lazy"
+          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_stackup_042mm-tabs-20261101.png" aria-label="Open PT150 stack-up image full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_stackup_042mm-tabs-20261101.png" width="1400" height="745" loading="lazy"
                alt="PT150 3-layer stripline 3D stack-up: 35 µm top ground copper, 150 µm PT150, 25 µm PTNC16R bonding film, 18 µm signal copper, 150 µm PT150, 35 µm bottom ground copper; total thickness 0.42 mm" /></a>
           <figcaption>PT150 3-layer stripline, total thickness 0.42 mm.</figcaption>
         </figure>
         <div class="m9-card">
-          <h4>Layer build (top to bottom)</h4>
+          <h3>Layer build (top to bottom)</h3>
           <ol class="m9-layers" aria-label="Layer list">
             <li class="m9-cu"><span class="m9-th">35 µm</span><span>Top ground copper</span></li>
             <li class="m9-di"><span class="m9-th">150 µm</span><span>PT150 mPTFE dielectric</span></li>
@@ -75,16 +59,20 @@
       </div>
     </div>
   </section>
-
-  <!-- MEASUREMENT SETUP -->
-  <section class="m9-section m9-alt" id="m9-setup" aria-labelledby="m9-setup-h">
+  <section class="m9-panel m9-alt" id="m9-setup" role="tabpanel" aria-labelledby="m9-tab-setup" tabindex="-1">
     <div class="m9-wrap">
       <p class="m9-label">Method</p>
-      <h3 id="m9-setup-h">Measurement setup and de-embedding</h3>
+      <h2>Measurement setup and de-embedding</h2>
       <p class="m9-lede">4-port PNA measurement of 6 stripline samples: three lengths, two samples each.</p>
-
-      <div class="m9-split">
-        <div class="m9-table-wrap">
+      <div class="m9-split m9-setup-split">
+        <figure class="m9-photo">
+          <img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_bench_setup-tabs-20261101.jpg" width="756" height="1008" loading="lazy"
+               alt="Measurement bench: a 4-port vector network analyzer connected by cables to a stripline test board" />
+          <figcaption>Test bench: 4-port VNA and stripline test board.</figcaption>
+        </figure>
+        <div class="m9-card"><h3>Key facts</h3><ul class="m9-checks"><li><b>Keysight N5225B PNA</b>, 4-port, 50 MHz – 50 GHz (.s4p).</li><li><b>6 samples:</b> L80, L180 and L330 mm, two of each.</li><li><b>Length subtraction</b> removes the L80 fixture: <code class="m9-formula">(L330 − L80) / 250 mm</code>.</li><li>Key frequency <b>26.5 GHz</b>; SDD21, SDD11 / SDD22 reported.</li></ul></div>
+      </div>
+      <details class="m9-more"><summary>More data: full setup and de-embedding table</summary><div><div class="m9-table-wrap">
           <table class="m9-table">
             <thead><tr><th scope="col">Item</th><th scope="col">Setting</th></tr></thead>
             <tbody>
@@ -100,52 +88,17 @@
               <tr class="m9-g-method"><th scope="row">Key frequency</th><td><strong>26.5 GHz</strong></td></tr>
             </tbody>
           </table>
-        </div>
-        <figure class="m9-photo">
-          <img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_bench_setup.jpg" width="756" height="1008" loading="lazy"
-               alt="Measurement bench: a 4-port vector network analyzer connected by cables to a stripline test board" />
-          <figcaption>Test bench: 4-port VNA and stripline test board.</figcaption>
-        </figure>
-      </div>
+        </div></div></details>
     </div>
   </section>
-
-  <!-- INSERTION LOSS -->
-  <section class="m9-section" id="m9-il" aria-labelledby="m9-il-h">
-    <div class="m9-wrap">
-      <p class="m9-label">Measured · SDD21</p>
-      <h3 id="m9-il-h">Insertion loss: 6 measurements</h3>
-      <p class="m9-lede">Differential insertion loss of all six samples. Closer to 0 dB means lower loss. L180 and L330 include the 80 mm fixture board; the de-embedded loss per inch follows below.</p>
-
-      <div class="m9-split">
-        <figure class="m9-chart">
-          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_sdd21_insertion_loss.png" aria-label="Open insertion loss chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_sdd21_insertion_loss.png" width="1600" height="857" loading="lazy"
-               alt="Differential insertion loss SDD21 versus frequency, 0 to 50 GHz, for six measurements. At 26.5 GHz: L80 fixture about −2.06 dB, L180 about −4.27 dB, L330 about −7.53 dB." /></a>
-          <figcaption>PT150 3-layer stripline, 0.42 mm total | Keysight N5225B 4-port PNA, 50 MHz – 50 GHz.</figcaption>
-        </figure>
-        <div class="m9-card">
-          <h4>Measured @ 26.5 GHz</h4>
-          <ul class="m9-meas">
-            <li style="--c:#8A9399"><b>L80<small>Fixture only</small></b><span class="m9-v">−2.02 / −2.11 dB</span></li>
-            <li style="--c:#2B7BBA"><b>L180<small>DUT 100 mm + fixture</small></b><span class="m9-v">−4.25 / −4.30 dB</span></li>
-            <li style="--c:#D62728"><b>L330<small>DUT 250 mm + fixture</small></b><span class="m9-v">−7.57 / −7.49 dB</span></li>
-          </ul>
-          <p class="m9-hl">Each pair of values is the _1 / _2 sample at that length. The two samples track closely across the full 50 GHz band.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOSS PER INCH -->
-  <section class="m9-section m9-alt" id="m9-loss" aria-labelledby="m9-loss-h">
+  <section class="m9-panel" id="m9-loss" role="tabpanel" aria-labelledby="m9-tab-loss" tabindex="-1">
     <div class="m9-wrap">
       <p class="m9-label">De-embedded · line only</p>
-      <h3 id="m9-loss-h">Transmission-line loss per inch</h3>
+      <h2>Transmission-line loss per inch</h2>
       <p class="m9-lede">Differential SDD21 with the 80 mm fixture removed by length subtraction, averaged over the _1 / _2 samples. This is the loss of the stripline itself.</p>
-
       <div class="m9-split">
         <figure class="m9-chart">
-          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_loss_per_inch.png" aria-label="Open loss per inch chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_loss_per_inch.png" width="1600" height="857" loading="lazy"
+          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_loss_per_inch-tabs-20261101.png" aria-label="Open loss per inch chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_loss_per_inch-tabs-20261101.png" width="1600" height="857" loading="lazy"
                alt="Transmission-line insertion loss per inch versus frequency, 0 to 50 GHz. At 26.5 GHz the 250 mm DUT shows 0.56 dB/inch, equal to 0.0219 dB/mm or 2.19 dB/100 mm; 100 mm and 150 mm cross-checks agree." /></a>
           <figcaption>PT150 3-layer stripline, 0.42 mm total | Keysight N5225B 4-port PNA, 50 MHz – 50 GHz.</figcaption>
         </figure>
@@ -158,48 +111,55 @@
             <li><span>@ 20 GHz</span><span>−0.46 dB/inch</span></li>
             <li><span>@ 40 GHz</span><span>−0.74 dB/inch</span></li>
           </ul>
-          <p class="m9-hl"><strong>Cross-check @ 26.5 GHz:</strong> 100 mm DUT 0.561, 150 mm DUT 0.551 dB/inch.</p>
           <span class="m9-pill">On par with M9 class · ~20% below M8 class</span>
         </div>
       </div>
-      <p class="m9-note">Fixture removed: (L330 − L80) / 250 mm, average of 2 + 2 measurements. Cross-checks: (L180 − L80) / 100 mm and (L330 − L180) / 150 mm.</p>
+      <details class="m9-more"><summary>More data: cross-checks and the 6 raw SDD21 measurements</summary><div><p class="m9-hl" style="margin-top:4px"><strong>Cross-check @ 26.5 GHz:</strong> 100 mm DUT 0.561, 150 mm DUT 0.551 dB/inch.</p>
+<p class="m9-note">Fixture removed: (L330 − L80) / 250 mm, average of 2 + 2 measurements. Cross-checks: (L180 − L80) / 100 mm and (L330 − L180) / 150 mm.</p><h3 style="margin-top:18px">Insertion loss: 6 measurements</h3><p class="m9-hl" style="margin-top:4px">Differential insertion loss of all six samples. Closer to 0 dB means lower loss. L180 and L330 include the 80 mm fixture board; the de-embedded loss per inch follows below.</p><div class="m9-split"><figure class="m9-chart">
+          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_sdd21_insertion_loss-tabs-20261101.png" aria-label="Open insertion loss chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_sdd21_insertion_loss-tabs-20261101.png" width="1600" height="857" loading="lazy"
+               alt="Differential insertion loss SDD21 versus frequency, 0 to 50 GHz, for six measurements. At 26.5 GHz: L80 fixture about −2.06 dB, L180 about −4.27 dB, L330 about −7.53 dB." /></a>
+          <figcaption>PT150 3-layer stripline, 0.42 mm total | Keysight N5225B 4-port PNA, 50 MHz – 50 GHz.</figcaption>
+        </figure><div class="m9-card">
+          <h3>Measured @ 26.5 GHz</h3>
+          <ul class="m9-meas">
+            <li style="--c:#8A9399"><b>L80<small>Fixture only</small></b><span class="m9-v">−2.02 / −2.11 dB</span></li>
+            <li style="--c:#2B7BBA"><b>L180<small>DUT 100 mm + fixture</small></b><span class="m9-v">−4.25 / −4.30 dB</span></li>
+            <li style="--c:#D62728"><b>L330<small>DUT 250 mm + fixture</small></b><span class="m9-v">−7.57 / −7.49 dB</span></li>
+          </ul>
+          <p class="m9-hl">Each pair of values is the _1 / _2 sample at that length. The two samples track closely across the full 50 GHz band.</p>
+        </div></div></div></details>
     </div>
   </section>
-
-  <!-- RETURN LOSS -->
-  <section class="m9-section" id="m9-rl" aria-labelledby="m9-rl-h">
+  <section class="m9-panel m9-alt" id="m9-rl" role="tabpanel" aria-labelledby="m9-tab-rl" tabindex="-1">
     <div class="m9-wrap">
       <p class="m9-label">Measured · SDD11 / SDD22</p>
-      <h3 id="m9-rl-h">Return loss, 0–30 GHz</h3>
+      <h2>Return loss, 0–30 GHz</h2>
       <p class="m9-lede">More negative means less reflection. Measured values include connector and fixture reflections, not the transmission line alone.</p>
-
-      <figure class="m9-chart m9-wide">
-        <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_return_loss.png" aria-label="Open return loss chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_return_loss.png" width="1600" height="857" loading="lazy"
+      <div class="m9-split">
+        <figure class="m9-chart">
+        <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_return_loss-tabs-20261101.png" aria-label="Open return loss chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_return_loss-tabs-20261101.png" width="1600" height="857" loading="lazy"
              alt="Differential return loss SDD11 and SDD22 versus frequency, 0 to 30 GHz, for six samples. At 26.5 GHz SDD11 ranges from −17.8 to −21.7 dB and SDD22 from −18.4 to −25.8 dB." /></a>
         <figcaption>PT150 3-layer stripline, 0.42 mm total | Keysight N5225B 4-port PNA, 50 MHz – 50 GHz.</figcaption>
       </figure>
-
-      <div class="m9-card m9-rl-card">
-        <h4>Measured @ 26.5 GHz</h4>
+        <div class="m9-card">
+        <h3>Measured @ 26.5 GHz</h3>
         <ul class="m9-kv" aria-label="Return loss range at 26.5 GHz">
           <li><span>SDD11</span><span>−17.8 to −21.7 dB</span></li>
           <li><span>SDD22</span><span>−18.4 to −25.8 dB</span></li>
         </ul>
         <p class="m9-hl">Range over all 6 samples, measured with the fixture and connectors included.</p>
       </div>
+      </div>
     </div>
   </section>
-
-  <!-- SIGNAL SPEED -->
-  <section class="m9-section m9-alt" id="m9-speed" aria-labelledby="m9-speed-h">
+  <section class="m9-panel" id="m9-speed" role="tabpanel" aria-labelledby="m9-tab-speed" tabindex="-1">
     <div class="m9-wrap">
       <p class="m9-label">Measured · phase / group delay</p>
-      <h3 id="m9-speed-h">Signal speed: low effective Dk, flat delay across frequency</h3>
+      <h2>Signal speed: low effective Dk, flat delay across frequency</h2>
       <p class="m9-lede">Group delay from the unwrapped SDD21 phase of the de-embedded line, (L330 − L80) / 9.843 in, averaged over the _1 / _2 samples with 21-point smoothing.</p>
-
       <div class="m9-split">
         <figure class="m9-chart">
-          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_signal_speed_dk.png" aria-label="Open signal speed chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_signal_speed_dk.png" width="1600" height="857" loading="lazy"
+          <a href="{{ site.baseurl }}/static/assets/img/products/m9/pt150_signal_speed_dk-tabs-20261101.png" aria-label="Open signal speed chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m9/pt150_signal_speed_dk-tabs-20261101.png" width="1600" height="857" loading="lazy"
                alt="Propagation delay per inch and effective Dk versus frequency, 1 to 49 GHz. Delay stays near 130 ps/inch and effective Dk near 2.36; at 26.5 GHz 129.9 ps/inch and Dk_eff about 2.35." /></a>
           <figcaption>PT150 3-layer stripline, 0.42 mm total | Keysight N5225B 4-port PNA, 50 MHz – 50 GHz.</figcaption>
         </figure>
@@ -212,32 +172,28 @@
             <li><span>Linear-phase fit 0.5–20 GHz</span><span>130.1 ps/inch</span></li>
             <li><span>@ 26.5 GHz</span><span>129.9 ps/inch · Dk<sub>eff</sub> ≈ 2.35</span></li>
           </ul>
-          <p class="m9-hl">For reference: Dk 3.08 for M8 class (public vendor datasheet, 14 GHz). A line Dk<sub>eff</sub> and a laminate Dk are not strictly like-for-like.</p>
         </div>
       </div>
-
-      <div class="m9-howto">
-        <h4>How it is measured</h4>
+      <details class="m9-more"><summary>More data: M8-class reference and how it is measured</summary><div><p class="m9-hl">For reference: Dk 3.08 for M8 class (public vendor datasheet, 14 GHz). A line Dk<sub>eff</sub> and a laminate Dk are not strictly like-for-like.</p><div class="m9-howto">
+        <h3>How it is measured</h3>
         <ul>
           <li><strong>Group delay:</strong> slope of the unwrapped SDD21 phase of the de-embedded differential line.</li>
           <li><strong>Length subtraction:</strong> delay(L330) − delay(L80) ÷ 250 mm (9.843 in); cross-checked with the 100 mm and 150 mm differences.</li>
           <li><strong>Speed and Dk:</strong> free space = 84.7 ps/inch, so v = 84.7 / 130 ≈ 0.65 c and Dk<sub>eff</sub> = (130 / 84.7)² ≈ 2.36.</li>
         </ul>
-      </div>
+      </div></div></details>
     </div>
   </section>
-
-  <!-- DESIGN MEANING -->
-  <section class="m9-section" id="m9-design" aria-labelledby="m9-design-h">
+  <section class="m9-panel m9-alt" id="m9-design" role="tabpanel" aria-labelledby="m9-tab-design" tabindex="-1">
     <div class="m9-wrap">
       <p class="m9-label">Design impact</p>
-      <h3 id="m9-design-h">What it means for your design</h3>
+      <h2>What it means for your design</h2>
       <p class="m9-lede">M9-class loss in a thin, flexible mPTFE build, with a low and stable Dk.</p>
       <div class="m9-benefits">
-        <article class="m9-benefit"><h4>Lower latency</h4><p>Signals travel at ≈ 0.65 c, so long channels have shorter flight time.</p></article>
-        <article class="m9-benefit"><h4>Low, stable Dk</h4><p>Wider traces hit the same impedance at the same thickness (lower conductor loss), or allow a thinner stack-up.</p></article>
-        <article class="m9-benefit"><h4>Tighter timing</h4><p>More timing margin and lower intra-pair skew sensitivity for high-speed SerDes and 26.5 GHz+ links.</p></article>
-        <article class="m9-benefit"><h4>Consistent delay</h4><p>Flat across frequency, so signals are predictable and low-dispersion.</p></article>
+        <article class="m9-benefit"><h3>Lower latency</h3><p>Signals travel at ≈ 0.65 c, so long channels have shorter flight time.</p></article>
+        <article class="m9-benefit"><h3>Low, stable Dk</h3><p>Wider traces hit the same impedance at the same thickness (lower conductor loss), or allow a thinner stack-up.</p></article>
+        <article class="m9-benefit"><h3>Tighter timing</h3><p>More timing margin and lower intra-pair skew sensitivity for high-speed SerDes and 26.5 GHz+ links.</p></article>
+        <article class="m9-benefit"><h3>Consistent delay</h3><p>Flat across frequency, so signals are predictable and low-dispersion.</p></article>
       </div>
       <p class="m9-note">Calculated, illustrative: a stripline with Dk<sub>eff</sub> 3.0 ≈ 147 ps/inch; 3.4 ≈ 156 ps/inch.</p>
     </div>
@@ -248,15 +204,54 @@
     <div class="m9-wrap">
       <div class="m9-cta">
         <div>
-          <h3 id="m9-cta-h">Evaluate PT150 for your M9-class link</h3>
+          <h2 id="m9-cta-h">Evaluate PT150 for your M9-class link</h2>
           <p>Tell us your interface, data rate, channel length and target thickness. We will recommend a stack-up and connector option and arrange samples.</p>
         </div>
         <div class="m9-actions">
           <a class="m9-btn m9-btn-primary" href="mailto:Charles@shirre.com?subject=PT150%20%2F%20PT-FCCL%20for%20M9%2FM10-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples</a>
-          <a class="m9-btn m9-btn-ghost" href="javascript:activeProductTab('pherotetra');"><span>About PheroTetra<sup>®</sup> FCCL</span></a>
+          <a class="m9-btn m9-btn-ghost" href="{{ site.baseurl }}/products/pherotetra-mptfe-fccl/"><span>About PheroTetra<sup>®</sup> FCCL</span></a>
         </div>
       </div>
     </div>
   </section>
 
 </div>
+  <script>
+  /* M9 tabs: vanilla JS, IIFE, no globals; safe alongside jQuery/Bootstrap 3 */
+  (function () {
+    var root = document.getElementById('pt-fccl-m9-page');
+    if (!root || !root.querySelector) return;
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('.m9-tab'));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    root.className += ' m9-js';
+    function show(i, focus, push) {
+      tabs.forEach(function (t, j) {
+        var on = j === i;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (panels[j]) { if (on) panels[j].removeAttribute('hidden'); else panels[j].setAttribute('hidden', ''); }
+      });
+      if (focus) tabs[i].focus();
+      if (push && window.history && history.replaceState) history.replaceState(null, '', '#' + panels[i].id);
+    }
+    function fromHash() {
+      var h = (location.hash || '').replace('#', '');
+      for (var i = 0; i < panels.length; i++) if (panels[i] && panels[i].id === h) return i;
+      return -1;
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(i, false, true); });
+      t.addEventListener('keydown', function (e) {
+        var k = e.key, n = tabs.length, j = null;
+        if (k === 'ArrowRight' || k === 'ArrowDown') j = (i + 1) % n;
+        else if (k === 'ArrowLeft' || k === 'ArrowUp') j = (i - 1 + n) % n;
+        else if (k === 'Home') j = 0; else if (k === 'End') j = n - 1;
+        if (j !== null) { e.preventDefault(); show(j, true, true); }
+      });
+    });
+    var start = fromHash();
+    show(start < 0 ? 0 : start, false, false);
+    if (start >= 0) { var bar = root.querySelector('.m9-tabbar'); if (bar && bar.scrollIntoView) bar.scrollIntoView(); }
+    window.addEventListener('hashchange', function () { var i = fromHash(); if (i >= 0) show(i, false, false); });
+  })();
+  </script>

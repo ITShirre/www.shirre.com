@@ -4,6 +4,8 @@
     tab_id      anchor id of the tab pane (used by activeProductTab('...') links)
     tab_label   tab text (defaults to title; HTML such as <sup>®</sup> allowed)
     tab_include optional _includes/ file rendered full-width instead of the default layout
+    page_url    optional standalone page (e.g. /products/pt-fccl-m8/); the tab then shows a short summary
+                (_includes/products/summary.html) plus a "View full page →" link instead of tab_include
     picture / picture1 / picture2  optional images for the default two-column layout
   To bring an old product back, add tab_order (and tab_id) to its front matter.
 {% endcomment %}
@@ -23,7 +25,9 @@
     <div class="tab-content clearfix">
       {% for article in product_tabs %}
       <div id="{{ article.tab_id | default: article.slug }}" class="col-xs-12 tab-pane fade{% if forloop.first %} in active{% endif %}">
-      {% if article.tab_include %}
+      {% if article.page_url %}
+        {% include products/summary.html id=article.tab_id url=article.page_url %}
+      {% elsif article.tab_include %}
         {% include {{ article.tab_include }} %}
       {% else %}
         {% if article.picture %}
@@ -51,3 +55,20 @@
       {% endfor %}
     </div>
 </div>
+<script>
+/* Old home deep links into the full product content now live on the standalone pages. */
+(function () {
+  var map = { fixture: 'pt-fccl-m8', stackup: 'pt-fccl-m8', loss: 'pt-fccl-m8', rl: 'pt-fccl-m8', dk: 'pt-fccl-m8', eye: 'pt-fccl-m8' };
+  var urls = { 'pt-fccl-m8': '{{ site.baseurl }}/products/pt-fccl-m8/' };
+  urls.pherotetra = '{{ site.baseurl }}/products/pherotetra-mptfe-fccl/';
+  urls['pt-fccl-m9'] = '{{ site.baseurl }}/products/pt-fccl-m9-m10/';
+  function target(h) {
+    if (map[h]) return map[h];
+    if (/^pt-(why|roadmap|naming|apps|proof)$/.test(h)) return 'pherotetra';
+    if (/^m9-(stackup|setup|loss|rl|speed|design)$/.test(h)) return 'pt-fccl-m9';
+    return null;
+  }
+  function go() { var h = (location.hash || '').slice(1), t = target(h); if (t) location.replace(urls[t] + '#' + h); }
+  go(); window.addEventListener('hashchange', go);
+})();
+</script>

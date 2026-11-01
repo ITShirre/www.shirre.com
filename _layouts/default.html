@@ -3,7 +3,7 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{% if page.lang == 'zh-tw' %}zh-Hant-TW{% else %}en{% endif %}">
 
 {% include index_head.html %}
 

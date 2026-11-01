@@ -1,0 +1,23 @@
+{% comment %}
+  Home-page summary for a Solution & Platform tab (EN only). include.id = tab_id, include.url = standalone page.
+  Every sentence is pulled from the product's own page strings (_data/i18n/*.yml), so nothing new is claimed here.
+{% endcomment %}
+{% assign c = site.data.i18n.common.en %}
+<div class="pd-summary">
+{% case include.id %}
+{% when "pherotetra" %}{% assign t = site.data.i18n.pherotetra.en %}
+  <p class="pd-sum-eyebrow">{{ t.eyebrow }}</p>
+  <h2 class="pd-sum-h">PheroTetra<sup>®</sup> FCCL <span>{{ t.h_accent }}</span></h2>
+  <p class="pd-sum-lead">{{ t.hero_lead }}</p>
+{% when "pt-fccl-m9" %}{% assign t = site.data.i18n.m9.en %}
+  <p class="pd-sum-eyebrow">{{ t.eyebrow }}</p>
+  <h2 class="pd-sum-h">{{ t.h_title }}<span>{{ t.h_accent }}</span></h2>
+  <p class="pd-sum-lead">{{ t.hero_lead }}</p>
+{% when "pt-fccl-m8" %}{% assign t = site.data.i18n.m8.en %}
+  <p class="pd-sum-eyebrow">{{ t.eyebrow }}</p>
+  <h2 class="pd-sum-h">PT-FCCL for M8-Class: <span>{{ t.h_accent }}</span></h2>
+  <p class="pd-sum-lead">{{ t.hero_lead }}</p>
+  <ul class="pd-sum-chips"><li><b>0.74 dB/inch</b>{{ t.chip_il_k }}<li><b>92 Ω ±5%</b>{{ t.chip_tdr_k }}<li><b>Dk<sub>eff</sub> ~2.32</b>{{ t.chip_dk_k }}<li><b>290 µm</b>{{ t.chip_th_k }}</ul>
+{% endcase %}
+  <p class="pd-sum-more"><a class="pd-sum-btn" href="{{ include.url | prepend: site.baseurl }}">{{ c.view_full }}</a></p>
+</div>
