@@ -1,0 +1,187 @@
+{% comment %}
+  PT-FCCL for M8-Class content (PheroTetra(R) PT100UE + PT75HE hybrid), tabbed variant.
+  Source: /workspace/shirre-m8-page-tabs/index.html (BEGIN/END M8 PAGE CONTENT only; English only).
+  Wrapper id pt-fccl-m8 -> pt-fccl-m8-page (the home tab pane is #pt-fccl-m8).
+  Inner tab hashes: #fixture #stackup #loss #rl #dk #eye. On home a matching hash also opens the M8 product tab.
+  Styles: static/css/m8.css.
+{% endcomment %}
+{% assign m8_h1 = "h2" %}{% assign m8_h2 = "h3" %}{% assign m8_h3 = "h4" %}
+{% assign m8_home = site.baseurl | append: "/#home" %}
+{% assign m8_section = "#products" %}
+{% assign m8_pt = "javascript:activeProductTab('pherotetra');" %}
+<div class="m8-page" id="pt-fccl-m8-page">
+
+  <section class="m8-hero" aria-labelledby="m8-title">
+    <div class="m8-wrap">
+      <nav class="m8-crumb" aria-label="Breadcrumb"><a href="{{ m8_home }}">Home</a> / <a href="{{ m8_section }}">Solution &amp; Platform</a> / PT-FCCL for M8-Class</nav>
+      <p class="m8-eyebrow">PheroTetra<sup>®</sup> PT100UE + PT75HE hybrid · M8-class performance</p>
+      <{{ m8_h1 }} class="m8-h1" id="m8-title">PT-FCCL for M8-Class: <span class="m8-accent">a 290 µm hybrid mPTFE stripline.</span></{{ m8_h1 }}>
+      <p class="m8-hero-lead">PT100UE + PT75HE PheroTetra<sup>®</sup> mPTFE with a 25 µm PTNC16R bond film, measured on an R&amp;S ZNA67 to 63 GHz.</p>
+      <div class="m8-actions"><a class="m8-btn m8-btn-primary" href="mailto:Charles@shirre.com?subject=PT100UE%20%2B%20PT75HE%20hybrid%20%2F%20PT-FCCL%20for%20M8-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples &amp; data</a></div>
+      <ul class="m8-chips" aria-label="Key measured results">
+        <li><b>0.74 dB/inch</b>@ 26.5 GHz</li>
+        <li><b>92 Ω ±5%</b>TDR PASS</li>
+        <li><b>Dk<sub>eff</sub> ~2.32</b>&lt;1% over 5–63 GHz</li>
+        <li><b>290 µm</b>total thickness</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="m8-tabbar">
+    <div class="m8-wrap">
+      <div class="m8-tabs" role="tablist" aria-label="Measured data topics">
+        <button type="button" class="m8-tab" role="tab" id="m8-tab-fixture" aria-controls="fixture" aria-selected="true" tabindex="0"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="12" height="16" rx="1.5"/><rect x="17" y="9" width="12" height="16" rx="1.5"/><path d="M15 15h2M7 11v3M10 11v3M21 13v3M24 13v3M8 19h4M20 21h5"/></svg><span class="m8-tab-t">Test fixture</span><span class="m8-tab-k">CPC 112G MB / plug</span></button>
+        <button type="button" class="m8-tab" role="tab" id="m8-tab-stackup" aria-controls="stackup" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 3 10l13 6 13-6z"/><path d="M3 16l13 6 13-6"/><path d="M3 22l13 6 13-6"/></svg><span class="m8-tab-t">Stack-up &amp; setup</span><span class="m8-tab-k">290 µm · ZNA67 63 GHz</span></button>
+        <button type="button" class="m8-tab" role="tab" id="m8-tab-loss" aria-controls="loss" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 4v24h24"/><path d="M7 9c5 1 9 4 13 9s5 6 7 7"/></svg><span class="m8-tab-t">Insertion loss</span><span class="m8-tab-k">0.74 dB/in @26.5</span></button>
+        <button type="button" class="m8-tab" role="tab" id="m8-tab-rl" aria-controls="rl" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16h5l2-7 3 14 3-10 2 3h11"/><path d="M3 26h26" stroke-dasharray="2 3"/></svg><span class="m8-tab-t">Return loss &amp; TDR</span><span class="m8-tab-k">92 Ω ±5% PASS</span></button>
+        <button type="button" class="m8-tab" role="tab" id="m8-tab-dk" aria-controls="dk" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 4v24h24"/><path d="M7 15h20"/><path d="M7 11h20M7 19h20" stroke-dasharray="2 3"/></svg><span class="m8-tab-t">Dk stability</span><span class="m8-tab-k">~2.32, &lt;1%</span></button>
+        <button type="button" class="m8-tab" role="tab" id="m8-tab-eye" aria-controls="eye" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 16c4-7 9-10 14-10s10 3 14 10c-4 7-9 10-14 10S6 23 2 16z"/><circle cx="16" cy="16" r="4"/></svg><span class="m8-tab-t">Eye diagrams</span><span class="m8-tab-k">53 GBd open</span></button>
+      </div>
+    </div>
+  </div>
+
+  <section class="m8-panel" id="fixture" role="tabpanel" aria-labelledby="m8-tab-fixture" tabindex="-1">
+    <div class="m8-wrap">
+      <p class="m8-label">Test vehicle</p>
+      <{{ m8_h2 }} class="m8-h2">Test-fixture board</{{ m8_h2 }}>
+      <p class="m8-lede">A two-part board that reflects a real link: a CPC 112G MB side and a CPC 112G plug side.</p>
+<div class="m8-fixture" style="margin-top:20px"><figure class="m8-photo">
+          <img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_test_fixture_board-20261101.jpg" width="1824" height="1088" loading="lazy"
+               alt="Test-fixture board render: CPC 112G MB side on the left and CPC 112G plug side on the right, each with 1X THRU 38 mm and 2X THRU 76 mm structures, TX and RX lanes and a connector site" />
+          <figcaption>Board render: CPC 112G MB side (left) and CPC 112G plug side (right).</figcaption>
+        </figure><div class="m8-card"><ul class="m8-checks"><li><b>1X THRU 38 mm</b> on both sides: the L38 coupon.</li><li><b>2X THRU 76 mm</b> on both sides: the L76a / L76b coupons.</li><li><b>TX1 / TX2 and RX1 / RX2 lanes</b> routed to the connector site on each side.</li><li><b>Fixture crosstalk</b> structures on the MB side.</li></ul></div></div>
+    </div>
+  </section>
+  <section class="m8-panel m8-alt" id="stackup" role="tabpanel" aria-labelledby="m8-tab-stackup" tabindex="-1">
+    <div class="m8-wrap">
+      <p class="m8-label">Construction &amp; method</p>
+      <{{ m8_h2 }} class="m8-h2">Stack-up and measurement setup</{{ m8_h2 }}>
+      <p class="m8-lede">PT100UE + PT75HE hybrid 3-layer stripline with 25 µm PTNC16R bonding film, measured on an R&amp;S ZNA67 VNA.</p>
+<div class="m8-split"><figure class="m8-chart">
+          <a href="{{ site.baseurl }}/static/assets/img/products/m8/m8_hybrid_stackup_290um-20261101.png" aria-label="Open hybrid stack-up image full size"><img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_hybrid_stackup_290um-20261101.png" width="1700" height="1025" loading="lazy"
+               alt="PT100UE plus PT75HE hybrid 3-layer stripline, 3D cutaway: 35 µm top ground copper, 75 µm PT75HE, 25 µm PTNC16R bonding film, 18 µm signal copper on PT100UE, 100 µm PT100UE, 35 µm bottom ground copper; total 290 µm" /></a>
+          <figcaption>PT100UE + PT75HE hybrid 3-layer stripline (3D cutaway, schematic), total 290 µm.</figcaption>
+        </figure><div class="m8-card"><{{ m8_h3 }} class="m8-h3">Key facts</{{ m8_h3 }}><ul class="m8-checks"><li><b>290 µm</b> total, differential pair etched on PT100UE, covered by PT75HE.</li><li><b>R&amp;S ZNA67 VNA</b>, 10 MHz – 63 GHz, 2.4 mm / SMA differential ports.</li><li><b>Coupons L38, L76a, L76b</b>: all file checks PASS.</li><li>Two 76 mm samples verified alongside the 38 mm coupon.</li></ul></div></div><details class="m8-more"><summary>More data: layer build, setup and coupon tables</summary><div><ol class="m8-layers" aria-label="Layer list"><li class="m8-cu"><span class="m8-th">35 µm</span><span>Top ground copper</span></li><li class="m8-di"><span class="m8-th">75 µm</span><span>PT75HE mPTFE dielectric</span></li><li class="m8-bf"><span class="m8-th">25 µm</span><span>PTNC16R bonding film</span></li><li class="m8-sig"><span class="m8-th">18 µm</span><span>Signal copper on PT100UE (differential pair)</span></li><li class="m8-di"><span class="m8-th">100 µm</span><span>PT100UE mPTFE dielectric</span></li><li class="m8-cu"><span class="m8-th">35 µm</span><span>Bottom ground copper</span></li><li class="m8-total"><span class="m8-th">290 µm</span><span>Total thickness</span></li></ol><div class="m8-two" style="margin-top:8px"><div class="m8-table-wrap"><table class="m8-table"><thead><tr><th scope="col">Item</th><th scope="col">Setting</th></tr></thead><tbody>
+<tr><th scope="row">Instrument</th><td>R&amp;S ZNA67 VNA</td></tr><tr><th scope="row">Frequency range</th><td><span class="m8-num">10 MHz – 63 GHz</span></td></tr><tr><th scope="row">Ports</th><td>2.4 mm / SMA for differential</td></tr></tbody></table></div>
+<div class="m8-table-wrap"><table class="m8-table"><thead><tr><th scope="col">Coupon</th><th scope="col">Length</th><th scope="col">File check</th></tr></thead><tbody>
+<tr class="m8-g-sample"><th scope="row">L38</th><td class="m8-num">38 mm</td><td><span class="m8-pass">PASS</span></td></tr>
+<tr class="m8-g-sample"><th scope="row">L76a</th><td class="m8-num">76 mm</td><td><span class="m8-pass">PASS</span></td></tr>
+<tr class="m8-g-sample"><th scope="row">L76b</th><td class="m8-num">76 mm</td><td><span class="m8-pass">PASS</span></td></tr></tbody></table></div></div></div></details>
+    </div>
+  </section>
+  <section class="m8-panel" id="loss" role="tabpanel" aria-labelledby="m8-tab-loss" tabindex="-1">
+    <div class="m8-wrap">
+      <p class="m8-label">Measured · SDD21</p>
+      <{{ m8_h2 }} class="m8-h2">Differential insertion loss</{{ m8_h2 }}>
+      <p class="m8-lede">Both lengths already de-embedded; line loss from the 76 − 38 mm length difference (eigen). Span shown to 40 GHz.</p>
+<div class="m8-split"><figure class="m8-chart">
+          <a href="{{ site.baseurl }}/static/assets/img/products/m8/m8_sdd21_insertion_loss-20261101.png" aria-label="Open insertion loss chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_sdd21_insertion_loss-20261101.png" width="1600" height="873" loading="lazy"
+               alt="Differential insertion loss SDD21 versus frequency to 40 GHz for L38, L76a and L76b. Line loss 0.74 dB/inch at 26.5 GHz and 0.97 dB/inch at 40 GHz." /></a>
+          <figcaption>PT100UE + PTNC16R 25 µm + PT75HE hybrid 3-layer stripline | R&amp;S ZNA67 | Lengths: 38 mm, 76 mm ×2 | Fmax 40 GHz.</figcaption>
+        </figure><div class="m8-card"><p class="m8-big">0.74 dB/inch</p><p class="m8-big-sub">line loss @ 26.5 GHz</p><p class="m8-eq">0.97 dB/inch @ 40 GHz</p><ul class="m8-checks"><li>Coupons L38 (38 mm), L76a and L76b (76 mm).</li><li>L76a and L76b track closely across the band.</li><li>Measured on R&amp;S ZNA67.</li></ul></div></div><details class="m8-more"><summary>More data: measured SDD21 per coupon</summary><div><ul class="m8-kv"><li><span>L38 (38 mm)</span><span>−1.50 dB @ 26.5 · −2.29 dB @ 40 GHz</span></li><li><span>L76a (76 mm)</span><span>−2.71 dB @ 26.5 · −4.02 dB @ 40 GHz</span></li><li><span>L76b (76 mm)</span><span>−2.76 dB @ 26.5 · −4.09 dB @ 40 GHz</span></li></ul></div></details>
+    </div>
+  </section>
+  <section class="m8-panel m8-alt" id="rl" role="tabpanel" aria-labelledby="m8-tab-rl" tabindex="-1">
+    <div class="m8-wrap">
+      <p class="m8-label">Measured · SDD11 / SDD22 · TDR</p>
+      <{{ m8_h2 }} class="m8-h2">Return loss and differential impedance</{{ m8_h2 }}>
+      <p class="m8-lede">TDR from SDD11 against a 92 Ω ±5% (87.4–96.6 Ω) design target; return loss over the full 0–63 GHz span.</p>
+<div class="m8-split"><figure class="m8-chart">
+          <a href="{{ site.baseurl }}/static/assets/img/products/m8/m8_tdr_impedance-20261101.png" aria-label="Open TDR chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_tdr_impedance-20261101.png" width="1600" height="867" loading="lazy"
+               alt="TDR differential impedance versus time, 0 to 900 ps, for L38, L76a and L76b. All traces stay inside the 92 Ω ±5% band over the mid-line window; L76a peak 94.6 Ω." /></a>
+          <figcaption>PT100UE + PTNC16R 25 µm + PT75HE hybrid 3-layer stripline | R&amp;S ZNA67, 10 MHz – 63 GHz | Lengths: 38 mm, 76 mm ×2.</figcaption>
+        </figure><div class="m8-card"><p class="m8-big" style="color:var(--m8-green)">PASS</p><p class="m8-big-sub">Z<sub>diff</sub> 92 Ω ±5%</p><p class="m8-eq">All samples 100% in band · mid-line window</p><ul class="m8-checks"><li>Worst-case return loss −10.8 to −12.2 dB (0–63 GHz, mostly SDD22).</li><li><b>Launch and connector reflections dominate</b>, not the line itself.</li><li>A 92 Ω line measured in a 100 Ω system also contributes to the return-loss floor.</li></ul></div></div><details class="m8-more"><summary>More data: return-loss chart, worst case and TDR ranges</summary><div><figure class="m8-chart m8-wide">
+        <a href="{{ site.baseurl }}/static/assets/img/products/m8/m8_return_loss-20261101.png" aria-label="Open return loss chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_return_loss-20261101.png" width="1600" height="838" loading="lazy"
+             alt="Differential return loss SDD11 and SDD22 envelope in 0.5 GHz bins, 0 to 63 GHz, for L38, L76a and L76b, mostly between −12 and −20 dB." /></a>
+        <figcaption>Envelope, 0.5 GHz bins. Worst 0–63 GHz: L38 −10.8 dB @ 43.9 GHz (SDD22); L76a −11.4 dB @ 45.3 GHz (SDD22); L76b −12.2 dB @ 51.8 GHz (SDD22), launch-dominated. PT100UE + PTNC16R 25 µm + PT75HE hybrid 3-layer stripline | R&amp;S ZNA67, 10 MHz – 63 GHz | Lengths: 38 mm, 76 mm ×2.</figcaption>
+      </figure><ul class="m8-kv"><li><span>RL worst · L38</span><span>−10.8 dB @ 43.9 GHz</span></li><li><span>RL worst · L76a</span><span>−11.4 dB @ 45.3 GHz</span></li><li><span>RL worst · L76b</span><span>−12.2 dB @ 51.8 GHz</span></li><li><span>TDR · L38</span><span>91.2–92.3 Ω · 100% in band</span></li><li><span>TDR · L76b</span><span>91.5–94.2 Ω · 100% in band</span></li><li><span>TDR · L76a</span><span>89.9–94.6 Ω · 100% in band</span></li></ul></div></details>
+    </div>
+  </section>
+  <section class="m8-panel" id="dk" role="tabpanel" aria-labelledby="m8-tab-dk" tabindex="-1">
+    <div class="m8-wrap">
+      <p class="m8-label">Measured · length-difference phase</p>
+      <{{ m8_h2 }} class="m8-h2">Full-stack equivalent Dk vs frequency</{{ m8_h2 }}>
+      <p class="m8-lede">Hybrid length-difference method (76 − 38 mm); full-stack Dk<sub>eff</sub> includes the PTNC16R bonding film, not the base material alone.</p>
+<div class="m8-split"><figure class="m8-chart">
+          <a href="{{ site.baseurl }}/static/assets/img/products/m8/m8_dk_eff_vs_frequency-20261101.png" aria-label="Open Dk chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_dk_eff_vs_frequency-20261101.png" width="1600" height="877" loading="lazy"
+               alt="Stack-up effective Dk versus frequency, 1 to 63 GHz. Measured mean 2.321; copper-corrected mean 2.303; 2.318 at 26.5 GHz and 2.313 at 53 GHz." /></a>
+          <figcaption>Band 1–63 GHz. PT100UE + PTNC16R 25 µm + PT75HE hybrid 3-layer stripline | R&amp;S ZNA67, 10 MHz – 63 GHz | Lengths: 38 mm, 76 mm ×2.</figcaption>
+        </figure><div class="m8-card"><p class="m8-big">~2.32</p><p class="m8-big-sub">raw mean Dk<sub>eff</sub></p><p class="m8-eq">~129 ps/inch</p><ul class="m8-checks"><li>Copper-corrected Dk flat within <b>&lt;1%</b> over 5–63 GHz.</li><li><b>Length-insensitive timing</b>: near-constant delay per inch.</li><li><b>Stable impedance</b> over frequency.</li></ul></div></div><details class="m8-more"><summary>More data: Dk values</summary><div><ul class="m8-kv"><li><span>@ 26.5 GHz</span><span>Dk<sub>eff</sub> 2.318 · ~129.0 ps/inch</span></li><li><span>@ 53 GHz</span><span>Dk<sub>eff</sub> 2.313 · ~128.8 ps/inch</span></li><li><span>Raw mean (1–63 GHz)</span><span>≈ 2.321</span></li><li><span>Copper-corrected mean</span><span>≈ 2.303</span></li></ul><p class="m8-hl">The rise below ~3 GHz is mostly copper skin-effect inductance; after correction, Dk stays flat.</p></div></details>
+    </div>
+  </section>
+  <section class="m8-panel m8-alt" id="eye" role="tabpanel" aria-labelledby="m8-tab-eye" tabindex="-1">
+    <div class="m8-wrap">
+      <p class="m8-label">Simulated from measured S-parameters</p>
+      <{{ m8_h2 }} class="m8-h2">Eye diagrams at 53 GBd</{{ m8_h2 }}>
+      <p class="m8-lede">76 mm from measured S-parameters; 250 mm is a line-only <strong>projection</strong>, not a measurement.</p>
+<div class="m8-two"><div><span class="m8-tag m8-tag-meas">Measured · 76 mm</span><figure class="m8-chart">
+            <a href="{{ site.baseurl }}/static/assets/img/products/m8/m8_eye_76mm_measured-20261101.png" aria-label="Open 76 mm eye diagrams full size"><img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_eye_76mm_measured-20261101.png" width="1600" height="862" loading="lazy"
+                 alt="Simulated eye diagrams from measured 76 mm S-parameters, no equalization: NRZ 53 Gb/s, PAM3 about 84 Gb/s and PAM4 106 Gb/s, all open." /></a>
+            <figcaption>76 mm measured, connectors and fixture included. SDD21 @ 26.5 GHz: −2.8 dB. No EQ.</figcaption>
+          </figure></div><div><span class="m8-tag m8-tag-proj">Projection · 250 mm line only</span><figure class="m8-chart">
+            <a href="{{ site.baseurl }}/static/assets/img/products/m8/m8_eye_250mm_projection-20261101.png" aria-label="Open 250 mm projected eye diagrams full size"><img src="{{ site.baseurl }}/static/assets/img/products/m8/m8_eye_250mm_projection-20261101.png" width="1600" height="862" loading="lazy"
+                 alt="Projected eye diagrams for a 250 mm line only, with 3-tap transmit FFE: NRZ, PAM3 and PAM4 eyes open." /></a>
+            <figcaption>PROJECTED, not measured: 250 mm line only, de-embedded loss model. SDD21 @ 26.5 GHz: −7.3 dB. 3-tap Tx FFE [−0.04, 0.79, −0.17].</figcaption>
+          </figure></div></div><div class="m8-card" style="margin-top:20px"><ul class="m8-checks"><li><b>76 mm measured, no EQ: all eyes open</b>: NRZ 53 Gb/s EH ≈ 698 mV / EW 0.91 UI.</li><li><b>250 mm projection, 3-tap Tx FFE: open</b>: NRZ ≈ 375 mV / 0.88 UI.</li><li>250 mm IL @ Nyquist (26.5 GHz) ≈ −7.3 dB. This is a projection, not measured.</li></ul></div><details class="m8-more"><summary>More data: eye heights and simulation settings</summary><div><ul class="m8-kv"><li><span>76 mm · PAM3 ~84 Gb/s</span><span>EH ≈ 283–286 mV</span></li><li><span>76 mm · PAM4 106 Gb/s</span><span>EH ≈ 157–162 mV</span></li><li><span>250 mm proj. FFE · PAM3</span><span>≈ 153–155 mV</span></li><li><span>250 mm proj. FFE · PAM4</span><span>≈ 86–89 mV</span></li><li><span>250 mm proj. no EQ</span><span>NRZ 267 mV / 0.69 UI open; PAM3 / PAM4 closed</span></li></ul><p class="m8-hl">Simulation: ±500 mV, 6 ps 20–80%, PRBS15, 53 GBd; NRZ 53 Gb/s, PAM3 ~84 Gb/s (3B2T), PAM4 106 Gb/s Gray; optional 3-tap Tx FFE [−0.04, 0.79, −0.17]. 250 mm is a projection, not measured.</p></div></details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="m8-section" id="m8-cta" aria-labelledby="m8-cta-h">
+    <div class="m8-wrap">
+      <div class="m8-cta">
+        <div>
+          <{{ m8_h2 }} class="m8-h2" id="m8-cta-h">Evaluate the PT100UE + PT75HE hybrid for your M8-class link</{{ m8_h2 }}>
+          <p>Tell us your interface, data rate, channel length and target thickness. We will recommend a stack-up and connector option and arrange samples.</p>
+        </div>
+        <div class="m8-actions">
+          <a class="m8-btn m8-btn-primary" href="mailto:Charles@shirre.com?subject=PT100UE%20%2B%20PT75HE%20hybrid%20%2F%20PT-FCCL%20for%20M8-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples</a>
+          <a class="m8-btn m8-btn-ghost" href="{{ m8_pt }}"><span>About PheroTetra<sup>®</sup> FCCL</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+  <script>
+  /* M8 tabs: vanilla JS, IIFE, no globals; safe alongside jQuery/Bootstrap 3 */
+  (function () {
+    var root = document.getElementById('pt-fccl-m8-page');
+    if (!root || !root.querySelector) return;
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('.m8-tab'));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    root.className += ' m8-js';
+    function show(i, focus, push) {
+      tabs.forEach(function (t, j) {
+        var on = j === i;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        if (panels[j]) { if (on) panels[j].removeAttribute('hidden'); else panels[j].setAttribute('hidden', ''); }
+      });
+      if (focus) tabs[i].focus();
+      if (push && window.history && history.replaceState) history.replaceState(null, '', '#' + panels[i].id);
+    }
+    function fromHash() {
+      var h = (location.hash || '').replace('#', '');
+      for (var i = 0; i < panels.length; i++) if (panels[i] && panels[i].id === h) return i;
+      return -1;
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(i, false, true); });
+      t.addEventListener('keydown', function (e) {
+        var k = e.key, n = tabs.length, j = null;
+        if (k === 'ArrowRight' || k === 'ArrowDown') j = (i + 1) % n;
+        else if (k === 'ArrowLeft' || k === 'ArrowUp') j = (i - 1 + n) % n;
+        else if (k === 'Home') j = 0; else if (k === 'End') j = n - 1;
+        if (j !== null) { e.preventDefault(); show(j, true, true); }
+      });
+    });
+    var pane = document.getElementById('pt-fccl-m8');
+    function openPane() { if (pane && window.jQuery && !/\bactive\b/.test(pane.className)) jQuery('.nav-tabs a[href="#pt-fccl-m8"]').tab('show'); }
+    var start = fromHash();
+    if (start >= 0) openPane();
+    show(start < 0 ? 0 : start, false, false);
+    if (start >= 0) { var bar = root.querySelector('.m8-tabbar'); if (bar && bar.scrollIntoView) bar.scrollIntoView(); }
+    window.addEventListener('hashchange', function () { var i = fromHash(); if (i >= 0) { openPane(); show(i, false, false); } });
+  })();
+  </script>
