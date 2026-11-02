@@ -555,6 +555,8 @@ body {
 #home.page { min-height: 0; }
 // Solution & Platform tabs are now short summaries; don't pad to a full screen
 #products.page { min-height: 0; }
+// News items hidden; keep only the heading, no full-screen height
+#news.page { min-height: 0; }
 @media (max-width: 767px) {
   .home-process { margin-left: -15px; margin-right: -15px; padding: 10px 0; }
 }

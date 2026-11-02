@@ -4,6 +4,7 @@
       <h1><span class="title-section">{{section.name}}</span></h1>
     </div>
   </div>
+{% comment %} News items hidden on request (2026-11-02); _news/ files kept. Remove this comment wrapper to restore.
   <div class="row">
     <div id="news_slick" data-slick='{"slidesToShow": 3, "slidesToScroll": 3}' class="row">
       {% assign varCount = 1 %}
@@ -59,3 +60,4 @@
 </div>
 {% assign varCount = varCount | plus:1 %}
 {% endfor %}
+{% endcomment %}
