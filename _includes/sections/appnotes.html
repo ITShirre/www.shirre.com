@@ -1,15 +1,56 @@
-<div class="container">
-  <div class="row" style="margin-bottom:20px;">
-    <div class="col-xs-12 text-left">
-      <h1><span class="title-section">{{section.name}}</span></h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6 col-xs-12">
-      <img src="{{ "/static/assets/img/ev_board_1.jpg" | prepend: site.baseurl }}" class="pull-left img-responsive">
-    </div>
-    <div class="col-lg-6 col-xs-12">
-      <img src="{{ "/static/assets/img/ev_board_3.jpg" | prepend: site.baseurl }}" class="pull-right img-responsive">
-    </div>    
-  </div>  
-</div>
+<!-- Application Note tabs (scoped .an-page) -->
+<style>.an-page{--an-mag:#E6007E;--an-slate:#3D4A52;--an-muted:#6B7780;--an-line:#E4E8EB;--an-bg:#F7F8FA;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#1A1F24;line-height:1.6;font-size:16px}
+.an-page *{box-sizing:border-box}.an-page img{max-width:100%;height:auto;display:block}
+.an-page h1,.an-page h2,.an-page p,.an-page ul,.an-page figure{margin:0}
+.an-page .an-wrap{width:min(100% - 40px,1120px);margin:0 auto;padding:18px 0 64px}
+.an-page h1{margin-bottom:20px}
+.an-page .an-tabbar{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:28px}
+.an-page .an-tab{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:14px;border:1px solid var(--an-line);border-radius:12px;background:#fff;cursor:pointer;font:inherit;color:inherit;transition:.15s}
+.an-page .an-tab svg{width:28px;height:28px;fill:none;stroke:var(--an-mag);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+.an-page .an-tab-name{font-weight:700;font-size:14px;color:var(--an-slate);line-height:1.3}
+.an-page .an-tab-fig{font-weight:800;font-size:17px;color:var(--an-mag);margin-top:4px}
+.an-page .an-tab-figl{font-size:12px;color:var(--an-muted)}
+.an-page .an-tab:hover{border-color:var(--an-mag)}
+.an-page .an-tab[aria-selected=true]{border-color:var(--an-mag);box-shadow:0 8px 28px rgba(26,31,36,.08);background:#FCE8F2}
+.an-page:not(.an-js) .an-tab{cursor:default}
+.an-page .an-panel{padding:8px 0}.an-page:not(.an-js) .an-panel{border-top:1px solid var(--an-line);padding:28px 0}
+.an-page .an-panel:focus{outline:none}.an-page .an-panel[hidden]{display:none}
+.an-page .an-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start}
+.an-page .an-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--an-mag);margin-bottom:8px}
+.an-page h2{font-size:28px;color:var(--an-slate);line-height:1.25;margin-bottom:12px}
+.an-page .an-lede{color:var(--an-muted);margin-bottom:16px}
+.an-page .an-pts{padding-left:20px}.an-page .an-pts li{margin-bottom:8px}
+.an-page .an-ph-t{color:#B26A00;background:#FFF4E0;border-radius:4px;padding:1px 6px;font-style:italic;font-size:14px}
+.an-page .an-imgph{aspect-ratio:4/3;border:2px dashed #C9D1D6;border-radius:12px;background:var(--an-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--an-muted);font-weight:700;text-align:center}
+.an-page .an-imgph small{font-weight:400}
+.an-page .an-fig img{border-radius:12px;border:1px solid var(--an-line)}
+.an-page figcaption,.an-page .an-cap{font-size:13px;color:var(--an-muted);margin:8px 0 20px}
+.an-page .an-soon{font-weight:600;color:var(--an-muted)}.an-page .an-draft{margin-top:16px;font-size:12px;color:#B26A00}
+.an-page .an-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px}
+@media (max-width:767px){.an-page .an-tabbar{grid-template-columns:1fr 1fr}.an-page .an-tab:last-child{grid-column:1/-1}.an-page .an-grid,.an-page .an-pair{grid-template-columns:1fr;gap:20px}.an-page h1{font-size:24px}.an-page h2{font-size:22px}}</style>
+<div class="an-page" id="appnotes-tabs"><div class="an-wrap">
+<h1><span class="title-section">{{section.name}}</span></h1>
+<div class="an-tabbar" aria-label="Application notes"><button class="an-tab" role="tab" id="an-cpc-tab" aria-controls="an-cpc" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="10" rx="1.5"/><path d="M8 7V4M12 7V4M16 7V4M8 20v-3M12 20v-3M16 20v-3"/></svg><span class="an-tab-name">CPC/CPX Module</span><span class="an-tab-fig">112G</span><span class="an-tab-figl">CPC 112G fixture</span></button><button class="an-tab" role="tab" id="an-usb4-tab" aria-controls="an-usb4" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M12 9V4l-2 2M12 4l2 2"/></svg><span class="an-tab-name">USB4 V2 / TBT5</span><span class="an-tab-fig">12.8 GHz</span><span class="an-tab-figl">TBT5</span></button><button class="an-tab" role="tab" id="an-optical-tab" aria-controls="an-optical" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3"/><path d="M10 12h11M17 9l3 3-3 3"/></svg><span class="an-tab-name">Optical Module</span><span class="an-tab-fig">400Gbps</span><span class="an-tab-figl">Optical module</span></button><button class="an-tab" role="tab" id="an-pcie-tab" aria-controls="an-pcie" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M6 18v2M9 18v2M12 18v2M15 18v2M18 18v2M7 10h10"/></svg><span class="an-tab-name">PCIe Gen5/Gen6 for Edge Computing</span><span class="an-tab-fig">16 / ~26.5 GHz</span><span class="an-tab-figl">PCIe 5 / PCIe 6</span></button><button class="an-tab" role="tab" id="an-antenna-tab" aria-controls="an-antenna" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12v9M8 21h8"/><path d="M8.5 8.5a5 5 0 0 1 7 0M5.5 5.5a9 9 0 0 1 13 0"/><circle cx="12" cy="12" r="1.5"/></svg><span class="an-tab-name">mmWave Antenna</span><span class="an-tab-fig">FCCL</span><span class="an-tab-figl">Antenna & EV board</span></button></div>
+<section class="an-panel" role="tabpanel" id="an-cpc" aria-labelledby="an-cpc-tab" tabindex="0">
+  <div class="an-grid"><div><figure class="an-fig"><img src="{{ site.baseurl }}/static/assets/img/appnotes/an_cpc_fixture-20261102.jpg" alt="Shirre CPC 112G test fixture board, MB side and plug side" loading="lazy"><figcaption>CPC 112G test fixture board (MB side and plug side).</figcaption></figure></div><div>
+  <p class="an-label">Application note</p><h2>CPC/CPX Module</h2><p class="an-lede">Shirre builds high-bandwidth transmission-line solutions on PheroTetra® FCCL that integrate connectors for CPC/CPX modules.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-usb4" aria-labelledby="an-usb4-tab" tabindex="0">
+  <div class="an-grid"><div><div class="an-imgph" role="img" aria-label="Image coming soon">Coming soon<br><small>USB4 V2 / TBT5 application image</small></div></div><div>
+  <p class="an-label">Application note</p><h2>USB4 V2 / Thunderbolt™ 5</h2><p class="an-lede">Flexible interconnects for USB4 Version 2.0 / Thunderbolt 5 I/O, with the option to embed redrivers/ICs on the flex.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-optical" aria-labelledby="an-optical-tab" tabindex="0">
+  <div class="an-grid"><div><figure class="an-fig"><img src="{{ site.baseurl }}/static/assets/img/appnotes/an_optical_module-20261102.jpg" alt="Rigid-flex 400Gbps optical module PCB, 52 mm" loading="lazy"><figcaption>Rigid-flex 400Gbps Optical Module PCB (52 mm).</figcaption></figure></div><div>
+  <p class="an-label">Application note</p><h2>400Gbps Optical Module</h2><p class="an-lede">A rigid-flex optical-module PCB built on PheroTetra® FCCL.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-pcie" aria-labelledby="an-pcie-tab" tabindex="0">
+  <div class="an-grid"><div><div class="an-imgph" role="img" aria-label="Image coming soon">Coming soon<br><small>PCIe Gen5/Gen6 edge-computing application image</small></div></div><div>
+  <p class="an-label">Application note</p><h2>PCIe Gen5/Gen6 for Edge Computing</h2><p class="an-lede">High-speed flexible interconnects for PCIe Gen5 (16 GHz) and Gen6 (~26.5 GHz) links in edge-computing systems.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-antenna" aria-labelledby="an-antenna-tab" tabindex="0">
+  <p class="an-label">Application note</p><h2>mmWave Antenna</h2>
+  <div class="an-pair"><img src="{{ site.baseurl }}/static/assets/img/antenna_a.jpg" alt="Shirre FCCL antenna design example A" loading="lazy"><img src="{{ site.baseurl }}/static/assets/img/antenna_b.jpg" alt="Shirre FCCL antenna design example B" loading="lazy"></div>
+  <p class="an-cap">The figures above demonstrate the application of Shirre's FCCL in antenna design.</p>
+  <div class="an-pair"><img src="{{ site.baseurl }}/static/assets/img/ev_board_1.jpg" alt="Shirre evaluation board 1" loading="lazy"><img src="{{ site.baseurl }}/static/assets/img/ev_board_3.jpg" alt="Shirre evaluation board 3" loading="lazy"></div>
+</section>
+</div></div>
+<script>(function(){var root=document.getElementById('appnotes-tabs');if(!root||!root.querySelector)return;
+var tabs=[].slice.call(root.querySelectorAll('.an-tab'));var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'))});
+root.className+=' an-js';root.querySelector('.an-tabbar').setAttribute('role','tablist');
+function show(i,f,p){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;if(panels[j]){if(on)panels[j].removeAttribute('hidden');else panels[j].setAttribute('hidden','')}});if(f)tabs[i].focus();if(p&&history.replaceState)history.replaceState(null,'','#'+panels[i].id)}
+function fh(){var h=(location.hash||'').slice(1);for(var i=0;i<panels.length;i++)if(panels[i]&&panels[i].id===h)return i;return -1}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i,false,true)});t.addEventListener('keydown',function(e){var n=tabs.length,j=null,k=e.key;if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%n;else if(k==='ArrowLeft'||k==='ArrowUp')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;if(j!==null){e.preventDefault();show(j,true,true)}})});
+var s=fh();show(s<0?0:s,false,false);function sc(){var n=document.querySelector('.navbar-fixed-top,.navbar'),o=n?n.offsetHeight:0;window.scrollTo(0,root.getBoundingClientRect().top+window.pageYOffset-o)}if(s>=0){sc();window.addEventListener('load',function(){setTimeout(sc,50)})}
+window.addEventListener('hashchange',function(){var i=fh();if(i>=0){show(i,false,false);sc()}})})();</script>
