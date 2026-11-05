@@ -1,0 +1,13 @@
+# PT-FCCL for M7-Class page strings. Numbers only from /workspace/m7-content/ (dual-length, stackup, loss-budget).
+en:
+  eyebrow: "PheroTetra<sup>®</sup> PT-Flex · M7-class performance"
+  h_accent: "a ~0.33 mm four-layer PT-Flex for Thunderbolt 5."
+  hero_lead: "PT50 / PT75 / PT50 four-layer flex with five TBT5 HS pairs on L3. Dual-length measured line-body α 0.226 dB/cm at 12.8 GHz and 0.265 dB/cm at 15 GHz. Power: 140W PD and up to 240W."
+  chip_il: "0.226 dB/cm"
+  chip_il_k: "@ 12.8 GHz"
+  chip_il15: "0.265 dB/cm"
+  chip_il15_k: "@ 15 GHz"
+  chip_z: "85 Ω"
+  chip_z_k: "TBT5 flex design"
+  chip_th: "~0.33 mm"
+  chip_th_k: "four-layer total"

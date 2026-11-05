@@ -18,6 +18,11 @@
   <h2 class="pd-sum-h">PT-FCCL for M8-Class: <span>{{ t.h_accent }}</span></h2>
   <p class="pd-sum-lead">{{ t.hero_lead }}</p>
   <ul class="pd-sum-chips"><li><b>0.74 dB/inch</b>{{ t.chip_il_k }}<li><b>92 Ω ±5%</b>{{ t.chip_tdr_k }}<li><b>Dk<sub>eff</sub> ~2.32</b>{{ t.chip_dk_k }}<li><b>290 µm</b>{{ t.chip_th_k }}</ul>
+{% when "pt-fccl-m7" %}{% assign t = site.data.i18n.m7.en %}
+  <p class="pd-sum-eyebrow">{{ t.eyebrow }}</p>
+  <h2 class="pd-sum-h">PT-FCCL for M7-Class: <span>{{ t.h_accent }}</span></h2>
+  <p class="pd-sum-lead">{{ t.hero_lead }}</p>
+  <ul class="pd-sum-chips"><li><b>{{ t.chip_il }}</b> {{ t.chip_il_k }}</li><li><b>{{ t.chip_il15 }}</b> {{ t.chip_il15_k }}</li><li><b>{{ t.chip_z }}</b> {{ t.chip_z_k }}</li><li><b>{{ t.chip_th }}</b> {{ t.chip_th_k }}</li></ul>
 {% endcase %}
   <p class="pd-sum-more"><a class="pd-sum-btn" href="{{ include.url | prepend: site.baseurl }}">{{ c.view_full }}</a></p>
 </div>

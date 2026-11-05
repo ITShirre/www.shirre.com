@@ -1,0 +1,230 @@
+{% comment %}
+  PT-FCCL for M7-Class content. Layout mirrors M8 (hero, icon tabs, panels, CTA).
+  Numbers only from /workspace/m7-content/ (dual-length, stackup, loss-budget), engineering-checked.
+  Home tab uses summary.html + page_url; this include is for the standalone page (ctx="page").
+  Inner tab hashes: #m7-method #m7-stackup #m7-loss (prefixed so home #fixture/#stackup/#loss stay on M8).
+  Styles: static/css/m7.css.
+{% endcomment %}
+{% assign m7t = site.data.i18n.m7.en %}{% assign m7_c = site.data.i18n.common.en %}
+{% if include.ctx == "page" %}
+  {% assign m7_h1 = "h1" %}{% assign m7_h2 = "h2" %}{% assign m7_h3 = "h3" %}
+  {% assign m7_home = site.baseurl | append: "/" %}
+  {% assign m7_section = site.baseurl | append: "/#products" %}
+  {% assign m7_pt = site.baseurl | append: "/products/pherotetra-mptfe-fccl/" %}
+{% else %}
+  {% assign m7_h1 = "h2" %}{% assign m7_h2 = "h3" %}{% assign m7_h3 = "h4" %}
+  {% assign m7_home = site.baseurl | append: "/#home" %}
+  {% assign m7_section = "#products" %}
+  {% assign m7_pt = "javascript:activeProductTab('pherotetra');" %}
+{% endif %}
+<div class="m7-page" id="pt-fccl-m7-page">
+
+  <section class="m7-hero" aria-labelledby="m7-title">
+    <div class="m7-wrap">
+      {% if include.ctx == "page" %}<div class="pd-topbar">{% endif %}
+      <nav class="m7-crumb" aria-label="{{ m7_c.breadcrumb_aria }}"><a href="{{ m7_home }}">{{ m7_c.home }}</a> / <a href="{{ m7_section }}">{{ m7_c.section }}</a> / PT-FCCL for M7-Class</nav>
+      {% if include.ctx == "page" %}</div>{% endif %}
+      <p class="m7-eyebrow">{{ m7t.eyebrow }}</p>
+      <{{ m7_h1 }} class="m7-h1" id="m7-title">PT-FCCL for M7-Class: <span class="m7-accent">{{ m7t.h_accent }}</span></{{ m7_h1 }}>
+      <p class="m7-hero-lead">{{ m7t.hero_lead }}</p>
+      <div class="m7-actions"><a class="m7-btn m7-btn-primary" href="mailto:Charles@shirre.com?subject=PT-FCCL%20for%20M7-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples &amp; data</a></div>
+      <ul class="m7-chips" aria-label="Key measured results">
+        <li><b>{{ m7t.chip_il }}</b>{{ m7t.chip_il_k }}</li>
+        <li><b>{{ m7t.chip_il15 }}</b>{{ m7t.chip_il15_k }}</li>
+        <li><b>{{ m7t.chip_z }}</b>{{ m7t.chip_z_k }}</li>
+        <li><b>{{ m7t.chip_th }}</b>{{ m7t.chip_th_k }}</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="m7-tabbar">
+    <div class="m7-wrap">
+      <div class="m7-tabs" role="tablist" aria-label="Measured data topics">
+        <button type="button" class="m7-tab" role="tab" id="m7-tab-method" aria-controls="m7-method" aria-selected="true" tabindex="0"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="12" height="16" rx="1.5"/><rect x="17" y="9" width="12" height="16" rx="1.5"/><path d="M15 15h2M7 11v3M10 11v3M21 13v3M24 13v3M8 19h4M20 21h5"/></svg><span class="m7-tab-t">Dual-length method</span><span class="m7-tab-k">200 / 300 mm ΔL</span></button>
+        <button type="button" class="m7-tab" role="tab" id="m7-tab-stackup" aria-controls="m7-stackup" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 3 10l13 6 13-6z"/><path d="M3 16l13 6 13-6"/><path d="M3 22l13 6 13-6"/></svg><span class="m7-tab-t">Stack-up</span><span class="m7-tab-k">~0.33 mm · 4-layer</span></button>
+        <button type="button" class="m7-tab" role="tab" id="m7-tab-loss" aria-controls="m7-loss" aria-selected="false" tabindex="-1"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 4v24h24"/><path d="M7 9c5 1 9 4 13 9s5 6 7 7"/></svg><span class="m7-tab-t">Loss budget</span><span class="m7-tab-k">0.226 dB/cm @12.8</span></button>
+      </div>
+    </div>
+  </div>
+
+  <section class="m7-panel" id="m7-method" role="tabpanel" aria-labelledby="m7-tab-method" tabindex="-1">
+    <div class="m7-wrap">
+      <p class="m7-label">Measurement</p>
+      <{{ m7_h2 }} class="m7-h2">Dual-length method</{{ m7_h2 }}>
+      <p class="m7-lede">Two assembly lengths; the fixed launch cancels in ΔIL / ΔL, isolating PT-Flex transmission-line loss α.</p>
+      <div class="m7-method">
+        <figure class="m7-photo">
+          <img src="{{ site.baseurl }}/static/assets/img/products/m7/m7_assemblies_ruler-20261105.png" width="1940" height="445" loading="lazy"
+               alt="PT-Flex Type-C assemblies of different lengths next to a metal ruler; USB4 Gen3-class Type-C males on both ends" />
+          <figcaption>PT-Flex assemblies with Type-C males both ends; ruler for scale. USB4 Gen3-class fixtures; TBT5 target band is 12.8 GHz.</figcaption>
+        </figure>
+        <div class="m7-card">
+          <{{ m7_h3 }} class="m7-h3">Key facts</{{ m7_h3 }}>
+          <ul class="m7-checks">
+            <li><b>Lengths:</b> 200 mm and 300 mm assemblies (same Type-C males both ends).</li>
+            <li><b>Goal:</b> Isolate PT-Flex line-body loss α via ΔIL / ΔL.</li>
+            <li><b>α @ 12.8 GHz:</b> 0.226 dB/cm (line body).</li>
+            <li><b>α @ 15 GHz:</b> 0.265 dB/cm (line body).</li>
+          </ul>
+        </div>
+      </div>
+      <details class="m7-more"><summary>More data: method table</summary><div>
+        <div class="m7-table-wrap"><table class="m7-table"><thead><tr><th scope="col">Item</th><th scope="col">Setting</th></tr></thead><tbody>
+          <tr><th scope="row">Lengths</th><td>200 mm and 300 mm assemblies (same Type-C males both ends)</td></tr>
+          <tr><th scope="row">Goal of two lengths</th><td>Isolate PT-Flex transmission-line loss α via ΔIL / ΔL</td></tr>
+          <tr class="m7-g-sample"><th scope="row">α @ 12.8 GHz</th><td class="m7-num">0.226 dB/cm (line body)</td></tr>
+          <tr class="m7-g-sample"><th scope="row">α @ 15 GHz</th><td class="m7-num">0.265 dB/cm (line body)</td></tr>
+          <tr class="m7-g-method"><th scope="row">Method</th><td>IL(L) = fixed_launch + α·L; the fixed launch cancels in the difference</td></tr>
+          <tr class="m7-g-method"><th scope="row">Fixture note</th><td>USB4 Gen3-class Type-C males; TBT5 target band is 12.8 GHz</td></tr>
+        </tbody></table></div>
+        <p class="m7-note-callout"><strong>Validity:</strong> Linear model from measured 200/300 mm ΔL; 2.5–15 GHz only. Figures shown at 12.8 GHz and 15 GHz; no extrapolated frequencies.</p>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="m7-panel m7-alt" id="m7-stackup" role="tabpanel" aria-labelledby="m7-tab-stackup" tabindex="-1">
+    <div class="m7-wrap">
+      <p class="m7-label">Construction</p>
+      <{{ m7_h2 }} class="m7-h2">Stack-up — four layers in ~0.33 mm</{{ m7_h2 }}>
+      <p class="m7-lede">Five Thunderbolt 5 HS pairs on L3, between L2 and L4 ground. Power: 140W PD and up to 240W. Build: PT50 + PT75 + PT50.</p>
+      <div class="m7-split">
+        <figure class="m7-chart">
+          <a href="{{ site.baseurl }}/static/assets/img/products/m7/m7_stackup_section-20261105.png" aria-label="Open M7 stack-up cross-section full size"><img src="{{ site.baseurl }}/static/assets/img/products/m7/m7_stackup_section-20261105.png" width="1131" height="859" loading="lazy"
+               alt="PT-Flex four-layer cross-section: L1 Power + Control, PT50 film, L2 Ground, PT75 core, L3 HS + side GND, PT50 film, L4 Ground; ~0.33 mm total" /></a>
+          <figcaption>PT-Flex four-layer cross-section (schematic, not to scale). 3 of 5 HS pairs shown. Blind GND vias stitch L3 side grounds to L2 and L4.</figcaption>
+        </figure>
+        <div class="m7-card">
+          <{{ m7_h3 }} class="m7-h3">Layer build (top to bottom)</{{ m7_h3 }}>
+          <ol class="m7-layers" aria-label="Layer list">
+            <li class="m7-cu"><span class="m7-th">L1</span><span>Power + Control</span></li>
+            <li class="m7-di"><span class="m7-th">PT50</span><span>Dielectric film</span></li>
+            <li class="m7-cu"><span class="m7-th">L2</span><span>Ground plane</span></li>
+            <li class="m7-di"><span class="m7-th">PT75</span><span>Mid dielectric core</span></li>
+            <li class="m7-sig"><span class="m7-th">L3</span><span>HS pairs + side GND (TBT5 85 Ω design)</span></li>
+            <li class="m7-di"><span class="m7-th">PT50</span><span>Dielectric film</span></li>
+            <li class="m7-cu"><span class="m7-th">L4</span><span>Ground plane (bottom)</span></li>
+            <li class="m7-total"><span class="m7-th">~0.33 mm</span><span>Total · 4-layer · blind vias</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="m7-card" style="margin-top:20px">
+        <{{ m7_h3 }} class="m7-h3">Key facts</{{ m7_h3 }}>
+        <ul class="m7-checks">
+          <li><b>L1:</b> Power + Control (wide power and control traces).</li>
+          <li><b>L3:</b> Five TBT5 HS differential pairs + side GND copper. <b>85 Ω</b> is the TBT5 flex differential-pair design value, not a material impedance.</li>
+          <li><b>Power:</b> 140W PD and up to 240W.</li>
+          <li>Side GND vias flank the L3 pairs; blind vias where space allows. Cross-section is illustrative, not to scale.</li>
+        </ul>
+      </div>
+      <details class="m7-more"><summary>More data: layer table</summary><div>
+        <div class="m7-table-wrap"><table class="m7-table"><thead><tr><th scope="col">Layer</th><th scope="col">Function</th><th scope="col">Material</th></tr></thead><tbody>
+          <tr><th scope="row">L1 Cu</th><td>Power + Control (top)</td><td>PT50, single-sided</td></tr>
+          <tr><th scope="row">PT50</th><td>Dielectric</td><td>PT50 film</td></tr>
+          <tr><th scope="row">L2 Cu</th><td>Ground plane</td><td>PT75, dual-sided</td></tr>
+          <tr><th scope="row">PT75</th><td>Mid dielectric core</td><td>PT75 film</td></tr>
+          <tr class="m7-g-sample"><th scope="row">L3 Cu</th><td>TBT5 flex 85 Ω differential-pair design value + side GND copper</td><td>PT75, dual-sided</td></tr>
+          <tr><th scope="row">PT50</th><td>Dielectric</td><td>PT50 film</td></tr>
+          <tr><th scope="row">L4 Cu</th><td>Ground plane (bottom)</td><td>PT50, single-sided</td></tr>
+          <tr class="m7-g-method"><th scope="row">Total</th><td>4-layer, blind vias</td><td>PT50 / PT75 / PT50 · ~0.33 mm</td></tr>
+        </tbody></table></div>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="m7-panel" id="m7-loss" role="tabpanel" aria-labelledby="m7-tab-loss" tabindex="-1">
+    <div class="m7-wrap">
+      <p class="m7-label">Loss budget · softboard only</p>
+      <{{ m7_h2 }} class="m7-h2">Loss budget: 80 – 140 mm transmission line</{{ m7_h2 }}>
+      <p class="m7-lede">Notebook lengths: softboard-only loss (fixture removed by ΔL). Headline band 1.8–3.2 dB at 12.8 GHz for 80–140 mm.</p>
+      <div class="m7-split">
+        <figure class="m7-chart">
+          <a href="{{ site.baseurl }}/static/assets/img/products/m7/m7_loss_budget-20261105.png" aria-label="Open M7 loss-budget chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m7/m7_loss_budget-20261105.png" width="2068" height="1042" loading="lazy"
+               alt="Softboard-only predicted line-body insertion loss versus length at 12.8 GHz and 15 GHz, highlighting −1.81 dB at 80 mm and −3.17 dB at 140 mm at 12.8 GHz" /></a>
+          <figcaption>Softboard-only ILfit vs length at 12.8 GHz and 15 GHz. Linear model from measured 200/300 mm ΔL; 2.5–15 GHz only.</figcaption>
+        </figure>
+        <div class="m7-card">
+          <p class="m7-big">−1.81 dB</p>
+          <p class="m7-big-sub">80 mm PT-Flex line @ 12.8 GHz</p>
+          <p class="m7-eq">−2.12 dB @ 15 GHz</p>
+          <p class="m7-big" style="margin-top:18px;font-size:clamp(28px,3.2vw,36px)">−3.17 dB</p>
+          <p class="m7-big-sub">140 mm PT-Flex line @ 12.8 GHz</p>
+          <p class="m7-eq">−3.71 dB @ 15 GHz</p>
+          <ul class="m7-checks">
+            <li><b>C2C jumper:</b> an 8 cm run uses under 2 dB of the channel at 12.8 GHz.</li>
+            <li><b>I/O jumper:</b> a 14 cm run stays near 3.2 dB at 12.8 GHz.</li>
+            <li><b>Linear budget:</b> line-body IL = 0.226 dB/cm × L at 12.8 GHz.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="m7-note-callout"><strong>How it is computed:</strong> Softboard-only IL = α × L, with α from the 200 / 300 mm ΔL slope — 0.226 dB/cm @ 12.8 GHz, 0.265 dB/cm @ 15 GHz. USB4-class Type-C test males cancel in ΔL and are not part of this reach. Softboard line body only; board launch and connectors add to this. <strong>Linear model from measured 200/300 mm ΔL; 2.5–15 GHz only. Values shown at 12.8 GHz and 15 GHz only — no extrapolated frequencies.</strong></p>
+      <details class="m7-more"><summary>More data: reach table</summary><div>
+        <ul class="m7-kv">
+          <li><span>80 mm · 12.8 GHz</span><span>−1.81 dB</span></li>
+          <li><span>80 mm · 15 GHz</span><span>−2.12 dB</span></li>
+          <li><span>140 mm · 12.8 GHz</span><span>−3.17 dB</span></li>
+          <li><span>140 mm · 15 GHz</span><span>−3.71 dB</span></li>
+          <li><span>α @ 12.8 GHz</span><span>0.226 dB/cm</span></li>
+          <li><span>α @ 15 GHz</span><span>0.265 dB/cm</span></li>
+        </ul>
+      </div></details>
+    </div>
+  </section>
+
+  <section class="m7-section" id="m7-cta" aria-labelledby="m7-cta-h">
+    <div class="m7-wrap">
+      <div class="m7-cta">
+        <div>
+          <{{ m7_h2 }} class="m7-h2" id="m7-cta-h">Evaluate PT-FCCL for M7-Class for your link</{{ m7_h2 }}>
+          <p>Tell us your interface, data rate, channel length and target thickness. We will recommend a stack-up and connector option and arrange samples.</p>
+        </div>
+        <div class="m7-actions">
+          <a class="m7-btn m7-btn-primary" href="mailto:Charles@shirre.com?subject=PT-FCCL%20for%20M7-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples</a>
+          <a class="m7-btn m7-btn-ghost" href="{{ m7_pt }}"><span>About PheroTetra<sup>®</sup> FCCL</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+/* M7 tabs: vanilla JS, IIFE, no globals; safe alongside jQuery/Bootstrap 3 — same pattern as M8 */
+(function () {
+  var root = document.getElementById('pt-fccl-m7-page');
+  if (!root || !root.querySelector) return;
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('.m7-tab'));
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+  root.className += ' m7-js';
+  function show(i, focus, push) {
+    tabs.forEach(function (t, j) {
+      var on = j === i;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if (panels[j]) { if (on) panels[j].removeAttribute('hidden'); else panels[j].setAttribute('hidden', ''); }
+    });
+    if (focus) tabs[i].focus();
+    if (push && window.history && history.replaceState) history.replaceState(null, '', '#' + panels[i].id);
+  }
+  function fromHash() {
+    var h = (location.hash || '').replace('#', '');
+    for (var i = 0; i < panels.length; i++) if (panels[i] && panels[i].id === h) return i;
+    return -1;
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(i, false, true); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key, n = tabs.length, j = null;
+      if (k === 'ArrowRight' || k === 'ArrowDown') j = (i + 1) % n;
+      else if (k === 'ArrowLeft' || k === 'ArrowUp') j = (i - 1 + n) % n;
+      else if (k === 'Home') j = 0; else if (k === 'End') j = n - 1;
+      if (j !== null) { e.preventDefault(); show(j, true, true); }
+    });
+  });
+  var pane = document.getElementById('pt-fccl-m7');
+  function openPane() { if (pane && window.jQuery && !/\bactive\b/.test(pane.className)) jQuery('.nav-tabs a[href="#pt-fccl-m7"]').tab('show'); }
+  var start = fromHash();
+  if (start >= 0) openPane();
+  show(start < 0 ? 0 : start, false, false);
+  if (start >= 0) { var bar = root.querySelector('.m7-tabbar'); if (bar && bar.scrollIntoView) bar.scrollIntoView(); }
+  window.addEventListener('hashchange', function () { var i = fromHash(); if (i >= 0) { openPane(); show(i, false, false); } });
+})();
+</script>

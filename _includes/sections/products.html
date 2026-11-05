@@ -62,10 +62,12 @@
   var urls = { 'pt-fccl-m8': '{{ site.baseurl }}/products/pt-fccl-m8/' };
   urls.pherotetra = '{{ site.baseurl }}/products/pherotetra-mptfe-fccl/';
   urls['pt-fccl-m9'] = '{{ site.baseurl }}/products/pt-fccl-m9-m10/';
+  urls['pt-fccl-m7'] = '{{ site.baseurl }}/products/pt-fccl-m7/';
   function target(h) {
     if (map[h]) return map[h];
     if (/^pt-(why|roadmap|naming|apps|proof)$/.test(h)) return 'pherotetra';
     if (/^m9-(stackup|setup|loss|rl|speed|design)$/.test(h)) return 'pt-fccl-m9';
+    if (/^m7-(method|stackup|loss)$/.test(h)) return 'pt-fccl-m7';
     return null;
   }
   function go() { var h = (location.hash || '').slice(1), t = target(h); if (t) location.replace(urls[t] + '#' + h); }

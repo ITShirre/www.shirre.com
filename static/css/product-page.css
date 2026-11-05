@@ -5,7 +5,7 @@
 
 /* Breadcrumb + EN / 中文 switch on one row */
 .pd-topbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 17.6px; }
-.pd-topbar .pt-crumb, .pd-topbar .m9-crumb { margin-bottom: 0 !important; }
+.pd-topbar .pt-crumb, .pd-topbar .m9-crumb, .pd-topbar .m7-crumb, .pd-topbar .m8-crumb { margin-bottom: 0 !important; }
 .pd-lang { margin: 0 !important; display: inline-flex; align-items: center; gap: 6px; font-size: 13.12px; line-height: 1;
   border: 1px solid #E2E6EA; border-radius: 999px; padding: 6px 12px; background: #fff; }
 .pd-lang a { color: #ec047c; text-decoration: none; font-weight: 600; }
