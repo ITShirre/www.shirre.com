@@ -3,7 +3,7 @@
    Do not redeclare @font-face here; reuse the site's already-bundled Open Sans faces. */
 
 .hdr2- {
-  --hdr2-magenta: #d5115c;
+  --hdr2-magenta: #EC047C;
   --hdr2-ink: #1A1F24;
   --hdr2-tagline: #7A858B;
   --hdr2-line: #E4E8EB;
