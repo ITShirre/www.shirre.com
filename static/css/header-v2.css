@@ -1,0 +1,138 @@
+/* Header / headline lockup v2 — home only, scoped under .hdr2- and #home .logo-container.
+   Typeface: existing site face "Open Sans" Light 300 (custom.css / _open_sans.scss Google Fonts CSS).
+   Do not redeclare @font-face here; reuse the site's already-bundled Open Sans faces. */
+
+.hdr2- {
+  --hdr2-magenta: #d5115c;
+  --hdr2-ink: #1A1F24;
+  --hdr2-tagline: #7A858B;
+  --hdr2-line: #E4E8EB;
+  --hdr2-opensans: "Open Sans", sans-serif;
+  box-sizing: border-box;
+}
+.hdr2- *,
+.hdr2- *::before,
+.hdr2- *::after {
+  box-sizing: border-box;
+}
+
+/* Neutralize old CSS-background lockup on home only (keep original JPG assets). */
+#home .logo-container {
+  background-image: none !important;
+  background: none;
+  height: auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  /* Clear fixed navbar (~51–57px): section pad + this margin + lockup margin */
+  margin-top: 56px;
+  margin-bottom: 1vh;
+  margin-left: 0;
+}
+
+@media screen and (max-width: 630px) {
+  #home .logo-container {
+    background-image: none !important;
+    background: none;
+    height: auto;
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 48px;
+  }
+}
+
+.hdr2-lockup {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 12px 0 12px;
+  text-decoration: none;
+  color: inherit;
+  max-width: 100%;
+}
+.hdr2-lockup:hover,
+.hdr2-lockup:focus {
+  text-decoration: none;
+  color: inherit;
+}
+.hdr2-lockup:focus-visible {
+  outline: 3px solid rgba(230, 0, 126, 0.35);
+  outline-offset: 6px;
+  border-radius: 6px;
+}
+
+/* Enlarged wordmark ~2× prior ~36px (matches reference preview PNG box). */
+.hdr2-logo {
+  display: block;
+  flex: 0 0 auto;
+  height: 72px;
+  width: auto;
+  max-width: 42vw;
+  margin: 0; /* override body img { margin: auto } */
+}
+
+.hdr2-rule {
+  flex: 0 0 auto;
+  width: 1px;
+  align-self: stretch;
+  min-height: 52px;
+  background: var(--hdr2-line);
+  margin: 4px 0;
+}
+
+.hdr2-tagline {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  font-family: var(--hdr2-opensans);
+  font-weight: 300;
+  font-style: normal;
+  color: var(--hdr2-tagline);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+}
+.hdr2-tagline > span {
+  display: block;
+  color: var(--hdr2-tagline);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+.hdr2-tagline-l1 {
+  font-size: 18px;
+}
+.hdr2-tagline-l2 {
+  font-size: 18px;
+}
+
+@media (max-width: 991px) {
+  .hdr2-logo { height: 60px; }
+  .hdr2-tagline-l1,
+  .hdr2-tagline-l2 { font-size: 15px; }
+  .hdr2-lockup { gap: 16px; }
+}
+
+@media (max-width: 629px) {
+  .hdr2-lockup {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 12px 14px;
+    margin: 8px 0 8px;
+  }
+  .hdr2-logo { height: 48px; max-width: 70vw; }
+  .hdr2-rule { display: none; }
+  .hdr2-tagline {
+    flex: 1 1 100%;
+    padding-left: 2px;
+    gap: 2px;
+  }
+  .hdr2-tagline-l1,
+  .hdr2-tagline-l2 { font-size: 14px; }
+}
