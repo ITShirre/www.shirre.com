@@ -1,0 +1,6 @@
+/* Application Note band — pale yellow background only.
+   Distinguishes from Solution & Platform (#F4F7FA) and Contact (white).
+   Brand accent remains #EC047C. Append after products-band.css. */
+#appnotes.page {
+  background: #FFF8E8;
+}
