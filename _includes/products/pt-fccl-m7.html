@@ -25,14 +25,15 @@
       <nav class="m7-crumb" aria-label="{{ m7_c.breadcrumb_aria }}"><a href="{{ m7_home }}">{{ m7_c.home }}</a> / <a href="{{ m7_section }}">{{ m7_c.section }}</a> / PT-FCCL for M7-Class</nav>
       {% if include.ctx == "page" %}</div>{% endif %}
       <p class="m7-eyebrow">{{ m7t.eyebrow }}</p>
-      <{{ m7_h1 }} class="m7-h1" id="m7-title">PT-FCCL for M7-Class: <span class="m7-accent">{{ m7t.h_accent }}</span></{{ m7_h1 }}>
-      <p class="m7-hero-lead">{{ m7t.hero_lead }}</p>
-      <div class="m7-actions"><a class="m7-btn m7-btn-primary" href="mailto:Charles@shirre.com?subject=PT-FCCL%20for%20M7-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples &amp; data</a></div>
+      {% comment %}Page hero copy is local so the home summary keeps the shared m7.yml strings.{% endcomment %}
+      <{{ m7_h1 }} class="m7-h1" id="m7-title">PT-FCCL for M7-Class: <span class="m7-accent">a ~0.33 mm 4-layer PT-Flex for TBT5.</span></{{ m7_h1 }}>
+      <p class="m7-hero-lead">PT50 / PT75 / PT50 4-layer flex with five TBT5 HS pairs on L3. Dual-length measured line-body α 0.226 dB/cm at 12.8 GHz and 0.265 dB/cm at 15 GHz. Power: 140W PD and up to 240W.</p>
+      <div class="m7-actions"><a class="m7-btn m7-btn-primary" href="mailto:Charles@shirre.com?subject=PT-FCCL%20for%20M7-Class%20%E2%80%94%20sample%20%2F%20data%20request">Request samples &amp; data</a><p class="m7-hero-tm">Thunderbolt™ and TBT-related trademarks are the property of Intel Corporation. Shirre references the specification only to describe design alignment with its transmission requirements and the technical criteria that may apply, and provides measured data for reference only. No certification or endorsement by Intel is implied.</p></div>
       <ul class="m7-chips" aria-label="Key measured results">
         <li><b>{{ m7t.chip_il }}</b>{{ m7t.chip_il_k }}</li>
         <li><b>{{ m7t.chip_il15 }}</b>{{ m7t.chip_il15_k }}</li>
         <li><b>{{ m7t.chip_z }}</b>{{ m7t.chip_z_k }}</li>
-        <li><b>{{ m7t.chip_th }}</b>{{ m7t.chip_th_k }}</li>
+        <li><b>{{ m7t.chip_th }}</b>4-layer total</li>
       </ul>
     </div>
   </section>

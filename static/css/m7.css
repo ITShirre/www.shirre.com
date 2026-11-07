@@ -175,7 +175,24 @@
     .m7-page .m7-hero { padding: 40px 0 28px; }
     .m7-page .m7-hero h1 { font-size: clamp(28px, 3.6vw, 40px); margin-bottom: 10px; }
     .m7-page .m7-hero-lead { margin-bottom: 18px; font-size: 17px; }
-    .m7-page .m7-hero .m7-actions { margin-bottom: 20px; }
+    .m7-page .m7-hero .m7-actions { margin-bottom: 20px; align-items: center; flex-wrap: nowrap; }
+    .m7-page .m7-hero .m7-actions > .m7-btn { flex: 0 0 auto; }
+    .m7-page .m7-hero .m7-hero-tm {
+      flex: 1 1 auto;
+      min-width: 0;
+      margin: 0;
+      font-size: 12.5px;
+      line-height: 1.45;
+      font-weight: 500;
+      color: #1A1F24;
+      border-left: 3px solid #EC047C;
+      padding-left: 12px;
+      overflow-wrap: break-word;
+    }
+    @media (max-width: 760px) {
+      .m7-page .m7-hero .m7-actions { flex-direction: column; align-items: stretch; }
+      .m7-page .m7-hero .m7-actions > .m7-btn { align-self: flex-start; }
+    }
     .m7-page .m7-chips { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:10px; }
     .m7-page .m7-chips li { background:#fff; border:1px solid var(--m7-line); border-radius:999px; padding:6px 14px; font-size:14px; color:var(--m7-muted); }
     .m7-page .m7-chips b { color:var(--m7-magenta); margin-right:6px; }
