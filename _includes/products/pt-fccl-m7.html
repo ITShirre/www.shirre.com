@@ -91,7 +91,7 @@
       <p class="m7-lede">Five TBT5 HS pairs on L3, between L2 and L4 ground. Power: 140W PD and up to 240W. Build: PT50 + PT75 + PT50.</p>
       <div class="m7-split">
         <figure class="m7-chart">
-          <a href="{{ site.baseurl }}/static/assets/img/products/m7/m7_stackup_section-20261105b.png" aria-label="Open M7 stack-up cross-section full size"><img src="{{ site.baseurl }}/static/assets/img/products/m7/m7_stackup_section-20261105b.png" width="1131" height="600" loading="lazy"
+          <a href="{{ site.baseurl }}/static/assets/img/products/m7/m7_stackup_section-20261107.png" aria-label="Open M7 stack-up cross-section full size"><img src="{{ site.baseurl }}/static/assets/img/products/m7/m7_stackup_section-20261107.png" width="1131" height="564" loading="lazy"
                alt="PT-Flex four-layer cross-section: L1 Power + Control, PT50 film, L2 Ground, PT75 core, L3 HS + side GND, PT50 film, L4 Ground; ~0.33 mm total" /></a>
           <figcaption>PT-Flex four-layer cross-section (schematic, not to scale). 3 of 5 HS pairs shown. Blind GND vias stitch L3 side grounds to L2 and L4.</figcaption>
         </figure>
@@ -135,14 +135,14 @@
 
   <section class="m7-panel" id="m7-loss" role="tabpanel" aria-labelledby="m7-tab-loss" tabindex="-1">
     <div class="m7-wrap">
-      <p class="m7-label">Loss budget · softboard only</p>
+      <p class="m7-label">Loss budget · flex only</p>
       <{{ m7_h2 }} class="m7-h2">Loss budget: 80 – 140 mm transmission line</{{ m7_h2 }}>
-      <p class="m7-lede">Notebook lengths: softboard-only loss (fixture removed by ΔL). Headline band 1.8–3.2 dB at 12.8 GHz for 80–140 mm.</p>
+      <p class="m7-lede">Notebook lengths: flex-only loss (fixture removed by ΔL). Headline band 1.8–3.2 dB at 12.8 GHz for 80–140 mm.</p>
       <div class="m7-split">
         <figure class="m7-chart">
-          <a href="{{ site.baseurl }}/static/assets/img/products/m7/m7_loss_budget-20261105.png" aria-label="Open M7 loss-budget chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m7/m7_loss_budget-20261105.png" width="2068" height="1042" loading="lazy"
-               alt="Softboard-only predicted line-body insertion loss versus length at 12.8 GHz and 15 GHz, highlighting −1.81 dB at 80 mm and −3.17 dB at 140 mm at 12.8 GHz" /></a>
-          <figcaption>Softboard-only ILfit vs length at 12.8 GHz and 15 GHz. Linear model from measured 200/300 mm ΔL; 2.5–15 GHz only.</figcaption>
+          <a href="{{ site.baseurl }}/static/assets/img/products/m7/m7_loss_budget-20261107.png" aria-label="Open M7 loss-budget chart full size"><img src="{{ site.baseurl }}/static/assets/img/products/m7/m7_loss_budget-20261107.png" width="2068" height="1042" loading="lazy"
+               alt="Flex-only predicted line-body insertion loss versus length at 12.8 GHz and 15 GHz, highlighting −1.81 dB at 80 mm and −3.17 dB at 140 mm at 12.8 GHz" /></a>
+          <figcaption>Flex-only ILfit vs length at 12.8 GHz and 15 GHz. Linear model from measured 200/300 mm ΔL; 2.5–15 GHz only.</figcaption>
         </figure>
         <div class="m7-card">
           <p class="m7-big">−1.81 dB</p>
@@ -158,7 +158,7 @@
           </ul>
         </div>
       </div>
-      <p class="m7-note-callout"><strong>How it is computed:</strong> Softboard-only IL = α × L, with α from the 200 / 300 mm ΔL slope — 0.226 dB/cm @ 12.8 GHz, 0.265 dB/cm @ 15 GHz. USB4-class Type-C test males cancel in ΔL and are not part of this reach. Softboard line body only; board launch and connectors add to this. <strong>Linear model from measured 200/300 mm ΔL; 2.5–15 GHz only. Values shown at 12.8 GHz and 15 GHz only — no extrapolated frequencies.</strong></p>
+      <p class="m7-note-callout"><strong>How it is computed:</strong> Flex-only IL = α × L, with α from the 200 / 300 mm ΔL slope — 0.226 dB/cm @ 12.8 GHz, 0.265 dB/cm @ 15 GHz. USB4-class Type-C test males cancel in ΔL and are not part of this reach. Flex line body only; board launch and connectors add to this. <strong>Linear model from measured 200/300 mm ΔL; 2.5–15 GHz only. Values shown at 12.8 GHz and 15 GHz only — no extrapolated frequencies.</strong></p>
       <details class="m7-more"><summary>More data: reach table</summary><div>
         <ul class="m7-kv">
           <li><span>80 mm · 12.8 GHz</span><span>−1.81 dB</span></li>
