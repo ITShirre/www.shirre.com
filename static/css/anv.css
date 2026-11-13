@@ -1,53 +1,103 @@
 /* mmWave Integrated Antenna panel (.anv-).
-   Local design reference only — do not publish from this folder.
+   Video-first layout: large 16:9 demo on the left, photos and band card on the right.
    Scoped under .anv- so it will not restyle other Application Note tabs.
    Sizes in px to match the site's Bootstrap 3 / 10px root convention. */
 
 #an-antenna > .an-label{margin:0 0 4px}
-#an-antenna > h2{margin:0 0 4px}
+#an-antenna > h2{margin:0 0 8px}
 
 /* Tab cards: the grey subtitle (.an-tab-figl) duplicated the title.
-   Preview markup has those spans removed. This rule also hides any leftover
+   Markup has those spans removed. This rule also hides any leftover
    on the live tab bar and tightens bottom padding so the cards stay even. */
 #appnotes-tabs .an-tab-figl{display:none}
 #appnotes-tabs .an-tab{padding:14px 14px 12px}
 
-/* Compact single row: overview, close-up, frequency, video — equal height. */
-.anv-grid{
+.anv-intro{margin:0 0 14px}
+.anv-intro .anv-eyebrow{margin:0 0 4px}
+.anv-intro .anv-title{
+  margin:0 0 6px;
+  font-size:20px;
+  font-weight:700;
+  color:#3D4A52;
+  line-height:1.3;
+}
+.anv-intro .anv-caption--lede{
+  margin:0;
+  padding:0;
+  max-width:52em;
+  font-size:14px;
+  line-height:1.45;
+  color:#7A858B;
+}
+
+/* Desktop: video ~2/3, side column ~1/3, top and bottom edges aligned. */
+.anv-layout{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.22fr);
-  grid-template-areas:"ov dt spec vid";
+  grid-template-columns:minmax(0,2fr) minmax(0,1fr);
   gap:16px 18px;
   align-items:stretch;
-  margin-top:8px;
+  margin-top:0;
 }
-.anv-photo--overview{grid-area:ov}
-.anv-photo--detail{grid-area:dt}
-.anv-spec{grid-area:spec}
-.anv-videocard{grid-area:vid}
-.anv-grid > *{min-height:0;height:100%}
+.anv-videocard,
 .anv-photo,
-.anv-spec,
-.anv-videocard{
+.anv-spec{
   background:#fff;
   border:1px solid #E4E8EB;
   border-radius:12px;
   box-shadow:0 6px 18px rgba(26,31,36,.07);
   min-width:0;
   overflow:hidden;
+}
+.anv-videocard{
+  padding:0;
+  line-height:0;
   align-self:stretch;
+}
+.anv-video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  object-fit:contain;
+  object-position:center;
+  background:#1A1F24;
+  border-radius:12px;
+  vertical-align:top;
+}
+
+.anv-side{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  min-width:0;
+  min-height:0;
+  height:100%;
+}
+.anv-thumbs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  flex:0 0 auto;
+  min-width:0;
+  min-height:0;
+  /* Cap the photo row so leftover side-column height goes to the band card. */
+  max-height:180px;
 }
 .anv-photo{
   margin:0;
   display:flex;
   flex-direction:column;
+  min-width:0;
+  max-height:100%;
 }
 .anv-zoom{
-  flex:1 1 auto;
+  flex:0 1 auto;
   display:flex;
   align-items:center;
   justify-content:center;
-  min-height:140px;
+  aspect-ratio:3/2;
+  min-height:0;
+  max-height:118px;
   margin:0;
   padding:0;
   border:0;
@@ -63,7 +113,7 @@
   width:100%;
   height:100%;
 }
-/* Beat .an-page img { height:auto } so both photo frames share one stage. */
+/* Beat .an-page img { height:auto } so both thumb frames share one stage. */
 #an-antenna .anv-photo img{
   display:block;
   width:100% !important;
@@ -84,10 +134,12 @@
   color:#7A858B;
 }
 .anv-spec{
-  padding:12px 16px 12px;
+  flex:1 1 auto;
+  padding:14px 16px 14px;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
+  min-height:0;
 }
 .anv-eyebrow{
   margin:0 0 4px;
@@ -141,28 +193,6 @@
   background:#EC047C;
 }
 .anv-pts li:first-child:before{top:6px}
-.anv-videocard{
-  padding:12px 12px 10px;
-  display:flex;
-  flex-direction:column;
-}
-.anv-videocard .anv-title{
-  margin:0 0 8px;
-  font-size:15px;
-  font-weight:700;
-  color:#3D4A52;
-  line-height:1.25;
-}
-.anv-video{
-  display:block;
-  width:100%;
-  height:auto;
-  aspect-ratio:16/9;
-  background:#1A1F24;
-  border-radius:8px;
-  margin-top:auto;
-}
-.anv-videocard .anv-caption{padding:8px 2px 0}
 
 /* Simple lightbox for the product photos */
 .anv-lb{
@@ -214,24 +244,19 @@
 .anv-lb-close:focus-visible{outline:3px solid #EC047C}
 
 @media (max-width:991px){
-  .anv-grid{
-    grid-template-columns:1fr 1fr;
-    grid-template-areas:
-      "ov dt"
-      "spec spec"
-      "vid vid";
+  .anv-layout{
+    grid-template-columns:1fr;
     gap:12px;
   }
-  #an-antenna .anv-zoom{flex:none;height:150px;min-height:0}
-  .anv-spec{padding:18px 16px 16px}
+  .anv-intro .anv-title{font-size:18px}
+  .anv-side{height:auto}
+  .anv-spec{flex:0 0 auto;padding:16px}
   .anv-band{font-size:32px}
-  .anv-videocard{padding:14px 12px 12px}
-  .anv-videocard .anv-title{font-size:16px}
 }
 @media (max-width:767px){
-  #an-antenna .anv-zoom{height:132px}
   #an-antenna .anv-caption,
   #an-antenna figcaption.anv-caption{font-size:11px;padding:6px 8px 8px}
+  .anv-intro .anv-caption--lede{font-size:13px;padding:0}
   .anv-pts li{font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){
