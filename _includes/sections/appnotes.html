@@ -30,8 +30,53 @@
 @media (max-width:767px){.an-page .an-tabbar{grid-template-columns:1fr 1fr}.an-page .an-tab:last-child{grid-column:1/-1}.an-page .an-grid,.an-page .an-pair{grid-template-columns:1fr;gap:20px}.an-page h1{font-size:24px}.an-page h2{font-size:22px}}</style>
 <div class="an-page" id="appnotes-tabs"><div class="an-wrap">
 <h1><span class="title-section">{{section.name}}</span></h1>
-<div class="an-tabbar" aria-label="Application notes"><button class="an-tab" role="tab" id="an-cpc-tab" aria-controls="an-cpc" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="10" rx="1.5"/><path d="M8 7V4M12 7V4M16 7V4M8 20v-3M12 20v-3M16 20v-3"/></svg><span class="an-tab-name">CPC/CPX Module</span><span class="an-tab-fig">112G</span><span class="an-tab-figl">CPC 112G fixture</span></button><button class="an-tab" role="tab" id="an-usb4-tab" aria-controls="an-usb4" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M12 9V4l-2 2M12 4l2 2"/></svg><span class="an-tab-name">USB4 V2 / TBT5</span><span class="an-tab-fig">12.8 GHz</span><span class="an-tab-figl">TBT5</span></button><button class="an-tab" role="tab" id="an-optical-tab" aria-controls="an-optical" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3"/><path d="M10 12h11M17 9l3 3-3 3"/></svg><span class="an-tab-name">Optical Module</span><span class="an-tab-fig">400Gbps</span><span class="an-tab-figl">Optical module</span></button><button class="an-tab" role="tab" id="an-pcie-tab" aria-controls="an-pcie" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M6 18v2M9 18v2M12 18v2M15 18v2M18 18v2M7 10h10"/></svg><span class="an-tab-name">PCIe Gen5/Gen6 for Edge Computing</span><span class="an-tab-fig">16 / ~26.5 GHz</span><span class="an-tab-figl">PCIe 5 / PCIe 6</span></button><button class="an-tab" role="tab" id="an-antenna-tab" aria-controls="an-antenna" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12v9M8 21h8"/><path d="M8.5 8.5a5 5 0 0 1 7 0M5.5 5.5a9 9 0 0 1 13 0"/><circle cx="12" cy="12" r="1.5"/></svg><span class="an-tab-name">mmWave Antenna</span><span class="an-tab-fig">FCCL</span><span class="an-tab-figl">Antenna & EV board</span></button></div>
-<section class="an-panel" role="tabpanel" id="an-cpc" aria-labelledby="an-cpc-tab" tabindex="0">
+<div class="an-tabbar" aria-label="Application notes"><button class="an-tab" role="tab" id="an-antenna-tab" aria-controls="an-antenna" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12v9M8 21h8"/><path d="M8.5 8.5a5 5 0 0 1 7 0M5.5 5.5a9 9 0 0 1 13 0"/><circle cx="12" cy="12" r="1.5"/></svg><span class="an-tab-name">mmWave Integrated Antenna</span><span class="an-tab-fig">28–49 GHz</span></button><button class="an-tab" role="tab" id="an-cpc-tab" aria-controls="an-cpc" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="10" rx="1.5"/><path d="M8 7V4M12 7V4M16 7V4M8 20v-3M12 20v-3M16 20v-3"/></svg><span class="an-tab-name">CPC/CPX Module</span><span class="an-tab-fig">112G</span></button><button class="an-tab" role="tab" id="an-usb4-tab" aria-controls="an-usb4" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M12 9V4l-2 2M12 4l2 2"/></svg><span class="an-tab-name">USB4 V2 / TBT5</span><span class="an-tab-fig">12.8 GHz</span></button><button class="an-tab" role="tab" id="an-optical-tab" aria-controls="an-optical" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3"/><path d="M10 12h11M17 9l3 3-3 3"/></svg><span class="an-tab-name">Optical Module</span><span class="an-tab-fig">400Gbps</span></button><button class="an-tab" role="tab" id="an-pcie-tab" aria-controls="an-pcie" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M6 18v2M9 18v2M12 18v2M15 18v2M18 18v2M7 10h10"/></svg><span class="an-tab-name">PCIe Gen5/Gen6 for Edge Computing</span><span class="an-tab-fig">16 / ~26.5 GHz</span></button></div>
+<section class="an-panel" role="tabpanel" id="an-antenna" aria-labelledby="an-antenna-tab" tabindex="0">
+<p class="an-label">Application note</p>
+<h2>mmWave Integrated Antenna</h2>
+<div class="anv-grid">
+  <figure class="anv-photo anv-photo--overview">
+    <a class="anv-zoom" href="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg" data-anv-caption="A patch-array antenna module on a pre-bent PheroTetra® mPTFE FCCL line, routed to the RF board.">
+      <picture>
+        <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.webp 1600w" sizes="(max-width:991px) 46vw, 280px">
+        <img src="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg 1600w" sizes="(max-width:991px) 46vw, 280px" width="1600" height="900" alt="A Shirre mmWave antenna module on a PheroTetra flexible line: a gold patch array, bent 90 degrees, and routed to a square board-connection stiffener." loading="lazy" decoding="async">
+      </picture>
+    </a>
+    <figcaption class="anv-caption">Overview: pre-bent flex routing to the RF board.</figcaption>
+  </figure>
+  <figure class="anv-photo anv-photo--detail">
+    <a class="anv-zoom" href="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg" data-anv-caption="The gold patch array, with the formed flex and board connection behind.">
+      <picture>
+        <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.webp 1600w" sizes="(max-width:991px) 46vw, 280px">
+        <img src="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg 1600w" sizes="(max-width:991px) 46vw, 280px" width="1600" height="1066" alt="Close-up of the gold patch array on a Shirre mmWave antenna module, with the bent flexible line and board-connection pads behind." loading="lazy" decoding="async">
+      </picture>
+    </a>
+    <figcaption class="anv-caption">Detail: gold patch array and formed flex.</figcaption>
+  </figure>
+  <aside class="anv-spec">
+    <p class="anv-eyebrow">Frequency band</p>
+    <p class="anv-band">28–49 GHz</p>
+    <ul class="anv-pts">
+      <li>Mixed-Laminated mmWave antenna on PheroTetra® FCCL</li>
+      <li>Pre-bent flex routing to the RF board</li>
+      <li>Compact 3D integration</li>
+    </ul>
+  </aside>
+  <aside class="anv-videocard">
+    <p class="anv-eyebrow">Formability demo</p>
+    <h3 class="anv-title">Pre-bend and form to fit the mechanism</h3>
+    <video class="anv-video" muted autoplay loop playsinline controls preload="metadata" width="1280" height="720" poster="{{ site.baseurl }}/static/assets/img/appnotes/tline-formability-poster.jpg" aria-label="Formability demo: a PheroTetra mPTFE FCCL transmission line is pre-bent and press-formed to fit a compact mechanism.">
+      <source src="{{ site.baseurl }}/static/assets/img/appnotes/tline-formability-720p.mp4" type="video/mp4">
+    </video>
+    <p class="anv-caption">A PheroTetra® mPTFE FCCL transmission line, bent and press-formed for 3D routing.</p>
+  </aside>
+</div>
+<div class="anv-lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged photograph">
+  <button type="button" class="anv-lb-close" aria-label="Close">&times;</button>
+  <img alt="">
+  <p class="anv-lb-cap"></p>
+</div>
+</section><section class="an-panel" role="tabpanel" id="an-cpc" aria-labelledby="an-cpc-tab" tabindex="0">
   <div class="an-grid"><div><figure class="an-fig"><img src="{{ site.baseurl }}/static/assets/img/appnotes/an_cpc_fixture-20261102.jpg" alt="Shirre CPC 112G test fixture board, MB side and plug side" loading="lazy"><figcaption>CPC 112G test fixture board (MB side and plug side).</figcaption></figure></div><div>
   <p class="an-label">Application note</p><h2>CPC/CPX Module</h2><p class="an-lede">Shirre builds high-bandwidth transmission-line solutions on PheroTetra® FCCL that integrate connectors for CPC/CPX modules.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-usb4" aria-labelledby="an-usb4-tab" tabindex="0">
   <div class="an-grid"><div><div class="an-imgph" role="img" aria-label="Image coming soon">Coming soon<br><small>USB4 V2 / TBT5 application image</small></div></div><div>
@@ -39,12 +84,7 @@
   <div class="an-grid"><div><figure class="an-fig"><img src="{{ site.baseurl }}/static/assets/img/appnotes/an_optical_module-20261102.jpg" alt="Rigid-flex 400Gbps optical module PCB, 52 mm" loading="lazy"><figcaption>Rigid-flex 400Gbps Optical Module PCB (52 mm).</figcaption></figure></div><div>
   <p class="an-label">Application note</p><h2>400Gbps Optical Module</h2><p class="an-lede">A rigid-flex optical-module PCB built on PheroTetra® FCCL.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-pcie" aria-labelledby="an-pcie-tab" tabindex="0">
   <div class="an-grid"><div><div class="an-imgph" role="img" aria-label="Image coming soon">Coming soon<br><small>PCIe Gen5/Gen6 edge-computing application image</small></div></div><div>
-  <p class="an-label">Application note</p><h2>PCIe Gen5/Gen6 for Edge Computing</h2><p class="an-lede">High-speed flexible interconnects for PCIe Gen5 (16 GHz) and Gen6 (~26.5 GHz) links in edge-computing systems.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-antenna" aria-labelledby="an-antenna-tab" tabindex="0">
-  <p class="an-label">Application note</p><h2>mmWave Antenna</h2>
-  <div class="an-pair"><img src="{{ site.baseurl }}/static/assets/img/antenna_a.jpg" alt="Shirre FCCL antenna design example A" loading="lazy"><img src="{{ site.baseurl }}/static/assets/img/antenna_b.jpg" alt="Shirre FCCL antenna design example B" loading="lazy"></div>
-  <p class="an-cap">The figures above demonstrate the application of Shirre's FCCL in antenna design.</p>
-  <div class="an-pair"><img src="{{ site.baseurl }}/static/assets/img/ev_board_1.jpg" alt="Shirre evaluation board 1" loading="lazy"><img src="{{ site.baseurl }}/static/assets/img/ev_board_3.jpg" alt="Shirre evaluation board 3" loading="lazy"></div>
-</section>
+  <p class="an-label">Application note</p><h2>PCIe Gen5/Gen6 for Edge Computing</h2><p class="an-lede">High-speed flexible interconnects for PCIe Gen5 (16 GHz) and Gen6 (~26.5 GHz) links in edge-computing systems.</p><p class="an-soon">Coming soon.</p></div></div></section>
 </div></div>
 <script>(function(){var root=document.getElementById('appnotes-tabs');if(!root||!root.querySelector)return;
 var tabs=[].slice.call(root.querySelectorAll('.an-tab'));var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'))});
@@ -54,3 +94,4 @@ function fh(){var h=(location.hash||'').slice(1);for(var i=0;i<panels.length;i++
 tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i,false,true)});t.addEventListener('keydown',function(e){var n=tabs.length,j=null,k=e.key;if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%n;else if(k==='ArrowLeft'||k==='ArrowUp')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;if(j!==null){e.preventDefault();show(j,true,true)}})});
 var s=fh();show(s<0?0:s,false,false);function sc(){var n=document.querySelector('.navbar-fixed-top,.navbar'),o=n?n.offsetHeight:0;window.scrollTo(0,root.getBoundingClientRect().top+window.pageYOffset-o)}if(s>=0){sc();window.addEventListener('load',function(){setTimeout(sc,50)})}
 window.addEventListener('hashchange',function(){var i=fh();if(i>=0){show(i,false,false);sc()}})})();</script>
+<script src="{{ "/static/js/anv.js" | prepend: site.baseurl }}?v={{ site.time | date: "%s" }}"></script>

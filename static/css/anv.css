@@ -1,0 +1,239 @@
+/* mmWave Integrated Antenna panel (.anv-).
+   Local design reference only — do not publish from this folder.
+   Scoped under .anv- so it will not restyle other Application Note tabs.
+   Sizes in px to match the site's Bootstrap 3 / 10px root convention. */
+
+#an-antenna > .an-label{margin:0 0 4px}
+#an-antenna > h2{margin:0 0 4px}
+
+/* Tab cards: the grey subtitle (.an-tab-figl) duplicated the title.
+   Preview markup has those spans removed. This rule also hides any leftover
+   on the live tab bar and tightens bottom padding so the cards stay even. */
+#appnotes-tabs .an-tab-figl{display:none}
+#appnotes-tabs .an-tab{padding:14px 14px 12px}
+
+/* Compact single row: overview, close-up, frequency, video — equal height. */
+.anv-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.22fr);
+  grid-template-areas:"ov dt spec vid";
+  gap:16px 18px;
+  align-items:stretch;
+  margin-top:8px;
+}
+.anv-photo--overview{grid-area:ov}
+.anv-photo--detail{grid-area:dt}
+.anv-spec{grid-area:spec}
+.anv-videocard{grid-area:vid}
+.anv-grid > *{min-height:0;height:100%}
+.anv-photo,
+.anv-spec,
+.anv-videocard{
+  background:#fff;
+  border:1px solid #E4E8EB;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(26,31,36,.07);
+  min-width:0;
+  overflow:hidden;
+  align-self:stretch;
+}
+.anv-photo{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+}
+.anv-zoom{
+  flex:1 1 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:140px;
+  margin:0;
+  padding:0;
+  border:0;
+  background:#F4F3F0;
+  cursor:zoom-in;
+  line-height:0;
+  overflow:hidden;
+}
+.anv-zoom:focus{outline:none}
+.anv-zoom:focus-visible{outline:3px solid #EC047C;outline-offset:-3px}
+#an-antenna .anv-zoom picture{
+  display:block;
+  width:100%;
+  height:100%;
+}
+/* Beat .an-page img { height:auto } so both photo frames share one stage. */
+#an-antenna .anv-photo img{
+  display:block;
+  width:100% !important;
+  height:100% !important;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  object-position:center;
+  background:#F4F3F0;
+}
+#an-antenna .anv-caption,
+#an-antenna figcaption.anv-caption{
+  flex:0 0 auto;
+  margin:0;
+  padding:8px 10px 10px;
+  font-size:12px;
+  line-height:1.4;
+  color:#7A858B;
+}
+.anv-spec{
+  padding:12px 16px 12px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.anv-eyebrow{
+  margin:0 0 4px;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#EC047C;
+  line-height:1.3;
+}
+.anv-spec .anv-eyebrow{color:#7A858B}
+.anv-band{
+  margin:0 0 10px;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:-0.03em;
+  line-height:1.05;
+  color:#EC047C;
+}
+.anv-band:after{
+  content:"";
+  display:block;
+  width:28px;
+  height:3px;
+  margin:8px 0 0;
+  background:#EC047C;
+  border-radius:2px;
+}
+.anv-pts{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.anv-pts li{
+  position:relative;
+  margin:0;
+  padding:5px 0 5px 14px;
+  font-size:13px;
+  line-height:1.4;
+  color:#3D4A52;
+}
+.anv-pts li:first-child{padding-top:0}
+.anv-pts li:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:11px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#EC047C;
+}
+.anv-pts li:first-child:before{top:6px}
+.anv-videocard{
+  padding:12px 12px 10px;
+  display:flex;
+  flex-direction:column;
+}
+.anv-videocard .anv-title{
+  margin:0 0 8px;
+  font-size:15px;
+  font-weight:700;
+  color:#3D4A52;
+  line-height:1.25;
+}
+.anv-video{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16/9;
+  background:#1A1F24;
+  border-radius:8px;
+  margin-top:auto;
+}
+.anv-videocard .anv-caption{padding:8px 2px 0}
+
+/* Simple lightbox for the product photos */
+.anv-lb{
+  position:fixed;
+  inset:0;
+  z-index:10050;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:28px 24px;
+  background:rgba(26,31,36,.8);
+}
+.anv-lb[hidden]{display:none}
+.anv-lb img{
+  display:block;
+  max-width:min(1200px,92vw);
+  max-height:78vh;
+  width:auto;
+  height:auto;
+  border-radius:8px;
+  box-shadow:0 16px 40px rgba(0,0,0,.35);
+  background:#F4F3F0;
+}
+.anv-lb-cap{
+  margin:12px 0 0;
+  max-width:min(800px,92vw);
+  font-size:14px;
+  line-height:1.45;
+  color:#fff;
+  text-align:center;
+}
+.anv-lb-close{
+  position:absolute;
+  top:16px;
+  right:18px;
+  width:36px;
+  height:36px;
+  border:0;
+  border-radius:18px;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+}
+.anv-lb-close:hover,
+.anv-lb-close:focus{background:rgba(255,255,255,.28);outline:none}
+.anv-lb-close:focus-visible{outline:3px solid #EC047C}
+
+@media (max-width:991px){
+  .anv-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:
+      "ov dt"
+      "spec spec"
+      "vid vid";
+    gap:12px;
+  }
+  #an-antenna .anv-zoom{flex:none;height:150px;min-height:0}
+  .anv-spec{padding:18px 16px 16px}
+  .anv-band{font-size:32px}
+  .anv-videocard{padding:14px 12px 12px}
+  .anv-videocard .anv-title{font-size:16px}
+}
+@media (max-width:767px){
+  #an-antenna .anv-zoom{height:132px}
+  #an-antenna .anv-caption,
+  #an-antenna figcaption.anv-caption{font-size:11px;padding:6px 8px 8px}
+  .anv-pts li{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  .anv-lb{transition:none}
+}
