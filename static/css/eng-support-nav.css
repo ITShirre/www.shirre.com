@@ -1,0 +1,5 @@
+/* 5 nav items: keep the header on one line on tablets (768–991px); desktop ≥992px unchanged */
+@media (min-width:768px) and (max-width:991px){
+  #navbar .navbar-nav>li>a{padding-left:9px;padding-right:9px}
+  #navbar .navbar-nav .title-nav{font-size:13.5px}
+}

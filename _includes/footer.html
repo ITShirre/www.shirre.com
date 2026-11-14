@@ -15,6 +15,7 @@
         <div class="footer">
           <div><span class="bold">LINKS</span></div>
           {% for section in site.data.landing %}
+          {% if section.footer_name %}
           {% if section.page %}
           <a class="page-scroll" href="{{ section.page}} ">
             {% elsif include.prefix %}
@@ -24,6 +25,7 @@
               {% endif %}
               <div>{{ section.footer_name }}</div>
             </a>
+          {% endif %}
             {% endfor %}
         </div>
       </div>

@@ -1,0 +1,208 @@
+<!-- BEGIN eng-support -->
+<!-- Engineering Support (scoped .esp-; band styling mirrors products-band.css) -->
+<style>
+#engineering-support.page{position:relative;background:#f4f7fa;padding:56px 1vw 64px;margin:0 !important;min-height:0;border-top:1px solid #e3e9ef;border-bottom:1px solid #e3e9ef}
+#engineering-support.page:before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;background:linear-gradient(90deg,#ec047c 0%,#8a4fb0 50%,#1aa6b7 100%)}
+/* Title uses the site-wide .title-section styles (same as Contact / Application Note). Do not add letter-spacing or a different font. */
+.esp, .esp h1, .esp h2, .esp h3, .esp h4, .esp h5, .esp h6{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.esp{--esp-mag:#EC047C;--esp-grey:#7A858B;--esp-line:#e3e9ef;font-size:16px;line-height:1.6}
+.esp *{box-sizing:border-box}
+.esp .esp-lead{margin:4px 0 24px;font-size:16px;color:#333;max-width:940px}
+.esp .esp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;row-gap:20px;align-items:stretch}
+/* two-card grids (Differential): subgrid so thumb, eyebrow, title, text and list line up */
+.esp .esp-grid:not(.esp-grid-rf){grid-template-rows:auto auto auto auto auto}
+.esp .esp-grid:not(.esp-grid-rf) .esp-card{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0}
+.esp .esp-grid:not(.esp-grid-rf) .esp-body{display:contents}
+.esp .esp-grid:not(.esp-grid-rf) .esp-body>*{margin-left:26px !important;margin-right:26px !important}
+.esp .esp-grid:not(.esp-grid-rf) .esp-body>.esp-eyebrow{padding-top:22px}
+.esp .esp-grid:not(.esp-grid-rf) .esp-body>.esp-list{margin-bottom:24px !important}
+/* RF left card is self-contained (right side is the photo block, not a matching card) */
+.esp .esp-grid-rf>.esp-card{display:flex;flex-direction:column}
+.esp .esp-grid-rf .esp-body{display:block;padding:0 26px 24px}
+.esp .esp-grid-rf .esp-body>.esp-eyebrow{padding-top:22px}
+.esp .esp-card{background:#fff;border:1px solid var(--esp-line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(16,40,60,.35)}
+.esp .esp-thumb{display:block;aspect-ratio:16/9;height:auto;overflow:hidden;background:#fff;border-bottom:1px solid var(--esp-line);padding:12px;position:relative}
+.esp .esp-thumb picture{display:block;width:100%;height:100%}
+.esp .esp-thumb img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.esp .esp-thumb:after,.esp .esp-shot a:after{content:"Enlarge";position:absolute;right:12px;bottom:10px;font-size:11px;font-weight:600;letter-spacing:.4px;color:var(--esp-grey);background:rgba(255,255,255,.92);border:1px solid var(--esp-line);border-radius:999px;padding:2px 9px}
+.esp .esp-eyebrow{margin:0 0 6px;font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--esp-mag)}
+.esp .esp-h{margin:0 0 10px;font-size:24px;font-weight:600;line-height:1.25}
+.esp .esp-p{margin:0 0 14px;font-size:16px;color:#333}
+.esp .esp-list{list-style:none;margin:0 0 18px;padding:0}
+.esp .esp-list li{position:relative;padding:5px 0 5px 20px;font-size:15px;line-height:1.55;border-top:1px solid #eef2f5}
+.esp .esp-list li:first-child{border-top:0}
+.esp .esp-list li:before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--esp-mag)}
+.esp .esp-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;margin-top:28px;padding:18px 24px;background:#fff;border:1px solid var(--esp-line);border-left:4px solid var(--esp-mag);border-radius:12px}
+.esp .esp-cta p{margin:0;font-size:16px;color:#333}
+.esp .esp-btn{display:inline-block;font-size:15px;font-weight:600;color:#fff;background:var(--esp-mag);padding:11px 20px;border-radius:8px;text-decoration:none;white-space:nowrap}
+.esp .esp-btn:hover,.esp .esp-btn:focus{color:#fff;opacity:.9;text-decoration:none}
+.esp a:focus-visible{outline:3px solid #f7a8cf;outline-offset:2px}
+/* photo block (RF tab, right column): fills the left card's height; A on top, B+C below */
+.esp .esp-photos-wrap{position:relative;min-height:0;height:100%}
+.esp .esp-photos{position:absolute;inset:0;display:grid;grid-template-rows:minmax(0,1.2fr) minmax(0,1fr);grid-template-columns:1fr 1fr;gap:12px;padding:12px;background:#fff;border:1px solid var(--esp-line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(16,40,60,.35)}
+.esp .esp-shot{display:flex;flex-direction:column;min-width:0;min-height:0;margin:0}
+.esp .esp-shot-a{grid-column:1/-1}
+.esp .esp-shot a{display:block;flex:1 1 auto;min-height:0;overflow:hidden;border-radius:10px;background:#2b3135;position:relative}
+.esp .esp-shot picture{display:block;width:100%;height:100%}
+.esp .esp-shot img{display:block;width:100%;height:100%;object-fit:cover}
+.esp .esp-shot-a img{object-position:center 48%}
+.esp .esp-shot-b img{object-position:center 52%}
+.esp .esp-shot-c img{object-position:center 42%}
+.esp .esp-cap{margin:8px 2px 0;font-size:12px;line-height:1.4;color:var(--esp-grey);min-height:calc(12px * 1.4)}
+/* sub-tabs (styled after the Application Note tabs) */
+.esp .esp-tabbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;margin:0 0 24px}
+.esp .esp-tab{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:14px 16px;border:1px solid var(--esp-line);border-radius:12px;background:#fff;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s,background .15s,box-shadow .15s}
+.esp .esp-tab svg{flex:0 0 auto;width:30px;height:30px;fill:none;stroke:var(--esp-mag);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.esp .esp-tab-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.esp .esp-tab-name{font-weight:700;font-size:14px;color:#3D4A52;line-height:1.3}
+.esp .esp-tab-fig{font-weight:700;font-size:13px;color:var(--esp-mag);line-height:1.3}
+.esp .esp-tab:hover{border-color:var(--esp-mag)}
+.esp .esp-tab[aria-selected=true]{border-color:var(--esp-mag);background:#FCE8F2;box-shadow:0 8px 28px rgba(26,31,36,.08)}
+.esp .esp-tab:focus{outline:none}.esp .esp-tab:focus-visible{outline:3px solid #f7a8cf;outline-offset:2px}
+.esp:not(.esp-js) .esp-tabbar{display:none}
+.esp:not(.esp-js) .esp-panel+.esp-panel{margin-top:28px}
+.esp .esp-panel:focus{outline:none}
+/* with JS: both panels occupy one grid cell; the hidden panel stays in flow (visibility:hidden) so section height = max(RF, Diff) */
+.esp.esp-js .esp-panels{display:grid;grid-template-columns:minmax(0,1fr)}
+.esp.esp-js .esp-panel{grid-column:1;grid-row:1;display:block}
+.esp.esp-js .esp-panel[hidden]{display:block;visibility:hidden}
+@media (max-width:991px){
+  .esp .esp-grid,.esp .esp-grid-rf{grid-template-columns:1fr}
+  .esp .esp-grid:not(.esp-grid-rf){grid-template-rows:none}
+  .esp .esp-grid:not(.esp-grid-rf) .esp-card{display:flex;flex-direction:column;grid-row:auto;grid-template-rows:none}
+  .esp .esp-grid:not(.esp-grid-rf) .esp-body{display:block;padding:0 26px 24px}
+  .esp .esp-grid:not(.esp-grid-rf) .esp-body>*{margin-left:0 !important;margin-right:0 !important}
+  .esp .esp-photos-wrap{position:static;height:auto}
+  .esp .esp-photos{position:static;height:auto;grid-template-rows:auto auto;min-height:0}
+  .esp .esp-shot a{aspect-ratio:16/10;flex:0 0 auto}
+}
+@media (max-width:767px){
+  #engineering-support.page{padding:40px 1vw 48px}
+  .esp .esp-grid-rf .esp-body,.esp .esp-grid:not(.esp-grid-rf) .esp-body{padding-left:18px;padding-right:18px;padding-bottom:20px}
+  .esp .esp-h{font-size:21px}
+  .esp .esp-cta{padding:16px}
+  .esp .esp-btn{width:100%;text-align:center}
+  .esp .esp-thumb{padding:8px}
+  .esp .esp-tabbar{column-gap:10px;margin-bottom:20px}
+  .esp .esp-tab{flex-direction:column;align-items:flex-start;gap:6px;padding:12px}
+  .esp .esp-tab svg{width:26px;height:26px}
+  .esp .esp-tab-name{font-size:14px}
+  .esp .esp-tab-fig{font-size:12px}
+  .esp .esp-thumb:after,.esp .esp-shot a:after{right:6px;bottom:4px;font-size:10px;padding:1px 7px}
+  /* 390: A full width, then B and C stacked */
+  .esp .esp-photos{grid-template-columns:1fr;grid-template-rows:auto;gap:10px;padding:10px}
+  .esp .esp-shot-a{grid-column:auto}
+  .esp .esp-cap{font-size:12px}
+}
+</style>
+<div class="container">
+  <div class="row"> <div class="col-xs-12 text-left"> <h1><span class="title-section">{{section.name}}</span></h1> </div> </div>
+  <div class="esp" id="esp-root">
+    <p class="esp-lead">We help you measure Shirre flex interconnects correctly, from the test fixture to de-embedded S-parameters.</p>
+    <div class="esp-tabbar" aria-label="Measurement type">
+      <button type="button" class="esp-tab" role="tab" id="esp-tab-se" aria-controls="esp-panel-se" aria-selected="true"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16c2.5-7 5-7 6.5 0s4 7 6.5 0 4-7 6.5 0 4 7 6.5 0"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">RF / Single-ended</span><span class="esp-tab-fig">2-port VNA</span></span></button>
+      <button type="button" class="esp-tab" role="tab" id="esp-tab-diff" aria-controls="esp-panel-diff" aria-selected="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12h7l3-3h16M3 20h7l3 3h16"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">High Speed / Differential Pairs</span><span class="esp-tab-fig">4-port VNA</span></span></button>
+    </div>
+    <div class="esp-panels">
+      <div class="esp-panel" role="tabpanel" id="esp-panel-se" aria-labelledby="esp-tab-se" tabindex="0">
+      <div class="esp-grid esp-grid-rf">
+        <article class="esp-card" id="esp-se-fixture">
+          <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-se-2400.png" data-fancybox="esp-se" data-caption="Single-ended measurement chain: 2-port VNA, SMA connectors (40 GHz), PheroTetra® test boards and a mated Shirre flex RF DUT. Schematic, not to scale.">
+            <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-se-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-se-1200.png" width="1200" height="670" loading="lazy" alt="Single-ended measurement chain: a 2-port VNA connects through one coaxial cable per side to an SMA connector on each of two PheroTetra test boards; a grounded coplanar waveguide line runs to a receptacle, and a Shirre flex RF interconnect DUT is plugged into each board."></picture>
+          </a>
+          <div class="esp-body">
+            <p class="esp-eyebrow">Test Fixture</p>
+            <h2 class="esp-h">Single-ended RF fixtures and calibration boards on PheroTetra<sup>®</sup> FCCL</h2>
+            <p class="esp-p">Fixtures built on low-loss mPTFE FCCL, so the VNA sees the DUT, not the fixture.</p>
+            <ul class="esp-list">
+              <li>Low loss in the fixture itself</li>
+              <li>Low Dk for predictable 50 Ω lines and phase</li>
+              <li>Stable effective Dk, less drift after calibration</li>
+              <li>Rigid-flex test fixtures make measurement easier</li>
+            </ul>
+          </div>
+        </article>
+        <div class="esp-photos-wrap" id="esp-se-photos">
+          <div class="esp-photos">
+            <figure class="esp-shot esp-shot-a">
+              <a href="{{ site.baseurl }}/static/assets/img/eng-support/se-dut-fixtures-1600.jpg" data-fancybox="esp-se" data-caption="DUT with test fixtures">
+                <picture>
+                  <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/se-dut-fixtures-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/se-dut-fixtures-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 28vw">
+                  <img src="{{ site.baseurl }}/static/assets/img/eng-support/se-dut-fixtures-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/se-dut-fixtures-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/se-dut-fixtures-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 28vw" width="1600" height="1200" loading="lazy" alt="DUT with test fixtures">
+                </picture>
+              </a>
+              <figcaption class="esp-cap">DUT with test fixtures</figcaption>
+            </figure>
+            <figure class="esp-shot esp-shot-b">
+              <a href="{{ site.baseurl }}/static/assets/img/eng-support/se-fixtures-sma-1600.jpg" data-fancybox="esp-se" data-caption="Test fixtures, SMA (40 GHz)">
+                <picture>
+                  <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/se-fixtures-sma-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/se-fixtures-sma-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 14vw">
+                  <img src="{{ site.baseurl }}/static/assets/img/eng-support/se-fixtures-sma-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/se-fixtures-sma-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/se-fixtures-sma-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 14vw" width="1600" height="1200" loading="lazy" alt="Test fixtures, SMA (40 GHz)">
+                </picture>
+              </a>
+              <figcaption class="esp-cap">Test fixtures, SMA (40 GHz)</figcaption>
+            </figure>
+            <figure class="esp-shot esp-shot-c">
+              <a href="{{ site.baseurl }}/static/assets/img/eng-support/se-cal-board-1600.jpg" data-fancybox="esp-se" data-caption="Calibration board: direct thru and 2x-thru">
+                <picture>
+                  <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/se-cal-board-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/se-cal-board-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 14vw">
+                  <img src="{{ site.baseurl }}/static/assets/img/eng-support/se-cal-board-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/se-cal-board-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/se-cal-board-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 14vw" width="1600" height="1200" loading="lazy" alt="Calibration board: direct thru and 2x-thru">
+                </picture>
+              </a>
+              <figcaption class="esp-cap">Calibration board: direct thru and 2x-thru</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="esp-panel" role="tabpanel" id="esp-panel-diff" aria-labelledby="esp-tab-diff" tabindex="0">
+      <div class="esp-grid">
+        <article class="esp-card" id="esp-diff-fixture">
+          <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-2400.png" data-fancybox="esp-diff" data-caption="Measurement chain: 4-port VNA, SMA connectors (40 GHz), PheroTetra® test boards and a mated Shirre flex DUT. Schematic, not to scale.">
+            <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-1200.png" width="1200" height="670" loading="lazy" alt="Measurement chain: a 4-port VNA connects through two coaxial cables per side to SMA connectors on two PheroTetra test boards; a Shirre flex interconnect DUT is plugged into a receptacle on each board."></picture>
+          </a>
+          <div class="esp-body">
+            <p class="esp-eyebrow">Test Fixture</p>
+            <h2 class="esp-h">VNA test fixtures and calibration boards on PheroTetra<sup>®</sup> FCCL</h2>
+            <p class="esp-p">Fixtures built on low-loss mPTFE FCCL, so the VNA sees the DUT, not the fixture.</p>
+            <ul class="esp-list">
+              <li>Low loss in the fixture itself</li>
+              <li>Low Dk for predictable impedance and phase</li>
+              <li>Stable effective Dk, less drift after calibration</li>
+              <li>Rigid-flex test fixtures make measurement easier</li>
+            </ul>
+          </div>
+        </article>
+        <article class="esp-card" id="esp-diff-deembedding">
+          <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-2400.png" data-fancybox="esp-diff" data-caption="Calibration board on PheroTetra® FCCL: TRL standards (Thru, Reflect, Line) and an IEEE 370 2x-Thru. Schematic, not to scale.">
+            <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-1200.png" width="1200" height="700" loading="lazy" alt="Calibration board on PheroTetra FCCL with TRL standards (Thru, Reflect open and short, two Lines) and an IEEE 370 2x-Thru, with reference planes marked."></picture>
+          </a>
+          <div class="esp-body">
+            <p class="esp-eyebrow">De-embedding Methodology</p>
+            <h2 class="esp-h">From the coax calibration plane to the DUT connector</h2>
+            <p class="esp-p">A 4-port coax calibration at the SMA connectors (40 GHz), then TRL or IEEE 370 2x-Thru de-embedding moves the reference plane to the DUT connector interface.</p>
+            <ul class="esp-list">
+              <li>Calibration board with Thru, Reflect and Line standards</li>
+              <li>2x-Thru structure for IEEE 370 de-embedding</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      </div>
+    </div>
+    <div class="esp-cta">
+      <p>Planning a measurement? Tell us your DUT, frequency range and port count.</p>
+      <a class="esp-btn page-scroll" href="#contact">Discuss your measurement setup</a>
+    </div>
+  </div>
+</div>
+<script>
+/* Engineering Support sub-tabs: role=tablist, arrow/Home/End keys, aria-selected; default = first tab (RF / Single-ended) */
+(function(){var root=document.getElementById('esp-root');if(!root)return;var bar=root.querySelector('.esp-tabbar');var tabs=[].slice.call(root.querySelectorAll('.esp-tab'));var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'))});
+root.className+=' esp-js';bar.setAttribute('role','tablist');
+function show(i,f){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;if(on)panels[j].removeAttribute('hidden');else panels[j].setAttribute('hidden','')});if(f)tabs[i].focus()}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i,false)});t.addEventListener('keydown',function(e){var n=tabs.length,j=null,k=e.key;if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%n;else if(k==='ArrowLeft'||k==='ArrowUp')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;if(j!==null){e.preventDefault();show(j,true)}})});
+show(0,false);})();
+</script>
+<!-- END eng-support -->
+
