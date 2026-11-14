@@ -78,14 +78,6 @@
 .esp .esp-equip-setup img,.esp .esp-equip-ecal img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 .esp .esp-equip-setup a:after,.esp .esp-equip-ecal a:after{content:"Enlarge";position:absolute;right:12px;bottom:10px;font-size:11px;font-weight:600;letter-spacing:.4px;color:var(--esp-grey);background:rgba(255,255,255,.92);border:1px solid var(--esp-line);border-radius:999px;padding:2px 9px}
 .esp .esp-equip-setup .esp-cap,.esp .esp-equip-ecal .esp-cap{margin:8px 2px 0;font-size:12px;line-height:1.4;color:var(--esp-grey)}
-/* Universal test fixture photos under the equipment card (landscape + portrait, equal height). */
-.esp .esp-utf{display:grid;grid-template-columns:minmax(0,16fr) minmax(0,9fr);column-gap:12px;align-items:start;margin-top:20px;padding:12px;background:#fff;border:1px solid var(--esp-line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(16,40,60,.35)}
-.esp .esp-utf .esp-shot{margin:0}
-.esp .esp-utf .esp-shot a{flex:0 0 auto;width:100%;background:#f4f7fa}
-.esp .esp-utf-wide a{aspect-ratio:3264/2448}
-.esp .esp-utf-tall a{aspect-ratio:2448/3264}
-.esp .esp-utf .esp-shot img{object-fit:contain;object-position:center}
-.esp .esp-utf .esp-cap{min-height:calc(12px * 1.4 * 2)}
 /* sub-tabs (styled after the Application Note tabs) */
 .esp .esp-tabbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px;margin:0 0 24px}
 .esp .esp-tab{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:14px 16px;border:1px solid var(--esp-line);border-radius:12px;background:#fff;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s,background .15s,box-shadow .15s}
@@ -125,8 +117,6 @@
   .esp .esp-equip-setup a{aspect-ratio:1347/1794;flex:0 0 auto}
   .esp .esp-equip-ecal{padding:0 18px 20px}
   .esp .esp-equip-ecal a{max-width:none}
-  .esp .esp-utf-wide a{aspect-ratio:3264/2448}
-  .esp .esp-utf-tall a{aspect-ratio:2448/3264}
 }
 @media (max-width:767px){
   #engineering-support.page{padding:40px 1vw 48px}
@@ -147,8 +137,6 @@
   /* 390: A full width, then B and C stacked */
   .esp .esp-photos{grid-template-columns:1fr;grid-template-rows:auto;gap:10px;padding:10px}
   .esp .esp-shot-a{grid-column:auto}
-  .esp .esp-utf{grid-template-columns:1fr;row-gap:10px;padding:10px}
-  .esp .esp-utf .esp-cap{min-height:0}
   .esp .esp-cap{font-size:12px}
 }
 </style>
@@ -195,26 +183,6 @@
           <figcaption class="esp-cap">Electronic calibration module (E-Cal)</figcaption>
         </figure>
       </article>
-      <div class="esp-utf" id="esp-utf-photos">
-        <figure class="esp-shot esp-utf-wide">
-          <a href="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-1600.jpg" data-fancybox="esp-setup" data-caption="Universal test fixture with flex DUT">
-            <picture>
-              <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 45vw">
-              <img src="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 45vw" width="1600" height="1200" loading="lazy" alt="Universal test fixture with a flex DUT clamped at both ends.">
-            </picture>
-          </a>
-          <figcaption class="esp-cap">Universal test fixture with flex DUT</figcaption>
-        </figure>
-        <figure class="esp-shot esp-utf-tall">
-          <a href="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-1600.jpg" data-fancybox="esp-setup" data-caption="Close-up: flex DUT clamped in the fixture">
-            <picture>
-              <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 26vw">
-              <img src="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 26vw" width="1600" height="2133" loading="lazy" alt="Close-up of a flex DUT clamped in the universal test fixture.">
-            </picture>
-          </a>
-          <figcaption class="esp-cap">Close-up: flex DUT clamped in the fixture</figcaption>
-        </figure>
-      </div>
       </div>
 <div class="esp-panel" role="tabpanel" id="esp-panel-se" aria-labelledby="esp-tab-se" tabindex="0">
       <div class="esp-grid esp-grid-rf">
