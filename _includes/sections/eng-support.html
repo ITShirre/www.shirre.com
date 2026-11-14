@@ -49,8 +49,45 @@
 .esp .esp-shot-b img{object-position:center 52%}
 .esp .esp-shot-c img{object-position:center 42%}
 .esp .esp-cap{margin:8px 2px 0;font-size:12px;line-height:1.4;color:var(--esp-grey);min-height:calc(12px * 1.4)}
+/* Diff tab photos: two full-width shots (setup on top, boards below). contain so VNA + boards stay in frame. */
+.esp .esp-photos-diff{grid-template-columns:1fr;grid-template-rows:minmax(0,1.7fr) minmax(0,0.7fr)}
+.esp .esp-photos-diff .esp-shot{grid-column:1}
+.esp .esp-photos-diff .esp-shot a{background:#f4f7fa}
+.esp .esp-photos-diff .esp-shot img{object-fit:contain;object-position:center}
+/* De-embedding: full-width horizontal card under the fixture + photos row */
+.esp .esp-deembed{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:stretch;margin-top:20px}
+.esp .esp-deembed .esp-thumb{border-bottom:0;border-right:1px solid var(--esp-line);aspect-ratio:16/9;height:auto}
+.esp .esp-deembed .esp-body{display:block;padding:22px 26px 24px}
+.esp .esp-deembed .esp-body>.esp-eyebrow{padding-top:0}
+.esp .esp-deembed .esp-list{margin-bottom:0}
+
+/* Basic measurement equipment (Standard Setup tab): HTML list + annotated photos */
+.esp .esp-equip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);grid-template-rows:auto auto;grid-template-areas:"body setup" "ecal setup";align-items:stretch;margin-top:0}
+.esp .esp-equip .esp-body{grid-area:body;display:block;padding:22px 26px 8px}
+.esp .esp-equip .esp-body>.esp-eyebrow{padding-top:0}
+.esp .esp-equip-list{list-style:none;margin:0;padding:0}
+.esp .esp-equip-list li{display:flex;gap:12px;align-items:flex-start;padding:8px 0;font-size:15px;line-height:1.55;color:#333;border-top:1px solid #eef2f5}
+.esp .esp-equip-list li:first-child{border-top:0}
+.esp .esp-equip-n{flex:0 0 28px;width:28px;height:28px;margin-top:1px;border-radius:50%;background:var(--esp-mag);color:#fff;font-size:14px;font-weight:700;line-height:28px;text-align:center}
+.esp .esp-equip-setup{grid-area:setup;margin:0;display:flex;flex-direction:column;min-width:0;min-height:0;height:100%;border-left:1px solid var(--esp-line);padding:12px 12px 16px;background:#fff}
+.esp .esp-equip-ecal{grid-area:ecal;margin:0;padding:0 26px 24px;min-width:0}
+.esp .esp-equip-setup a,.esp .esp-equip-ecal a{display:block;position:relative;overflow:hidden;border-radius:10px;background:#f4f7fa;min-height:0}
+.esp .esp-equip-setup a{flex:1 1 auto}
+.esp .esp-equip-ecal a{aspect-ratio:687/615;width:100%;max-width:100%}
+.esp .esp-equip-setup picture,.esp .esp-equip-ecal picture{display:block;width:100%;height:100%}
+.esp .esp-equip-setup img,.esp .esp-equip-ecal img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.esp .esp-equip-setup a:after,.esp .esp-equip-ecal a:after{content:"Enlarge";position:absolute;right:12px;bottom:10px;font-size:11px;font-weight:600;letter-spacing:.4px;color:var(--esp-grey);background:rgba(255,255,255,.92);border:1px solid var(--esp-line);border-radius:999px;padding:2px 9px}
+.esp .esp-equip-setup .esp-cap,.esp .esp-equip-ecal .esp-cap{margin:8px 2px 0;font-size:12px;line-height:1.4;color:var(--esp-grey)}
+/* Universal test fixture photos under the equipment card (landscape + portrait, equal height). */
+.esp .esp-utf{display:grid;grid-template-columns:minmax(0,16fr) minmax(0,9fr);column-gap:12px;align-items:start;margin-top:20px;padding:12px;background:#fff;border:1px solid var(--esp-line);border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -20px rgba(16,40,60,.35)}
+.esp .esp-utf .esp-shot{margin:0}
+.esp .esp-utf .esp-shot a{flex:0 0 auto;width:100%;background:#f4f7fa}
+.esp .esp-utf-wide a{aspect-ratio:3264/2448}
+.esp .esp-utf-tall a{aspect-ratio:2448/3264}
+.esp .esp-utf .esp-shot img{object-fit:contain;object-position:center}
+.esp .esp-utf .esp-cap{min-height:calc(12px * 1.4 * 2)}
 /* sub-tabs (styled after the Application Note tabs) */
-.esp .esp-tabbar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;margin:0 0 24px}
+.esp .esp-tabbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px;margin:0 0 24px}
 .esp .esp-tab{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:14px 16px;border:1px solid var(--esp-line);border-radius:12px;background:#fff;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s,background .15s,box-shadow .15s}
 .esp .esp-tab svg{flex:0 0 auto;width:30px;height:30px;fill:none;stroke:var(--esp-mag);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .esp .esp-tab-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -62,10 +99,12 @@
 .esp:not(.esp-js) .esp-tabbar{display:none}
 .esp:not(.esp-js) .esp-panel+.esp-panel{margin-top:28px}
 .esp .esp-panel:focus{outline:none}
-/* with JS: both panels occupy one grid cell; the hidden panel stays in flow (visibility:hidden) so section height = max(RF, Diff) */
-.esp.esp-js .esp-panels{display:grid;grid-template-columns:minmax(0,1fr)}
-.esp.esp-js .esp-panel{grid-column:1;grid-row:1;display:block}
-.esp.esp-js .esp-panel[hidden]{display:block;visibility:hidden}
+/* with JS: only the selected panel is in flow, so section height follows that tab's content. Height change is below the tab bar (which stays put). */
+.esp.esp-js .esp-panels{display:block}
+.esp.esp-js .esp-panel{display:block}
+.esp.esp-js .esp-panel[hidden]{display:none}
+.esp .esp-tabbar{overflow-anchor:auto}
+.esp .esp-panels{overflow-anchor:none}
 @media (max-width:991px){
   .esp .esp-grid,.esp .esp-grid-rf{grid-template-columns:1fr}
   .esp .esp-grid:not(.esp-grid-rf){grid-template-rows:none}
@@ -75,6 +114,19 @@
   .esp .esp-photos-wrap{position:static;height:auto}
   .esp .esp-photos{position:static;height:auto;grid-template-rows:auto auto;min-height:0}
   .esp .esp-shot a{aspect-ratio:16/10;flex:0 0 auto}
+  .esp .esp-photos-diff .esp-shot-a a{aspect-ratio:1296/1108}
+  .esp .esp-photos-diff .esp-shot-b a{aspect-ratio:1600/780}
+  .esp .esp-deembed{grid-template-columns:1fr;margin-top:20px}
+  .esp .esp-deembed .esp-thumb{border-right:0;border-bottom:1px solid var(--esp-line)}
+  .esp .esp-tabbar{column-gap:16px}
+  .esp .esp-tab{padding:12px;gap:8px}
+  .esp .esp-equip{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"body" "setup" "ecal"}
+  .esp .esp-equip-setup{border-left:0;padding:4px 18px 8px;height:auto}
+  .esp .esp-equip-setup a{aspect-ratio:1347/1794;flex:0 0 auto}
+  .esp .esp-equip-ecal{padding:0 18px 20px}
+  .esp .esp-equip-ecal a{max-width:none}
+  .esp .esp-utf-wide a{aspect-ratio:3264/2448}
+  .esp .esp-utf-tall a{aspect-ratio:2448/3264}
 }
 @media (max-width:767px){
   #engineering-support.page{padding:40px 1vw 48px}
@@ -83,15 +135,20 @@
   .esp .esp-cta{padding:16px}
   .esp .esp-btn{width:100%;text-align:center}
   .esp .esp-thumb{padding:8px}
-  .esp .esp-tabbar{column-gap:10px;margin-bottom:20px}
-  .esp .esp-tab{flex-direction:column;align-items:flex-start;gap:6px;padding:12px}
+  .esp .esp-tabbar{grid-template-columns:1fr;row-gap:8px;column-gap:0;margin-bottom:20px}
+  .esp .esp-tab{flex-direction:row;align-items:center;gap:10px;padding:10px 14px}
   .esp .esp-tab svg{width:26px;height:26px}
   .esp .esp-tab-name{font-size:14px}
   .esp .esp-tab-fig{font-size:12px}
+  .esp .esp-equip .esp-body{padding:20px 18px 8px}
+  .esp .esp-equip-setup{padding-left:18px;padding-right:18px}
+  .esp .esp-equip-ecal{padding-left:18px;padding-right:18px}
   .esp .esp-thumb:after,.esp .esp-shot a:after{right:6px;bottom:4px;font-size:10px;padding:1px 7px}
   /* 390: A full width, then B and C stacked */
   .esp .esp-photos{grid-template-columns:1fr;grid-template-rows:auto;gap:10px;padding:10px}
   .esp .esp-shot-a{grid-column:auto}
+  .esp .esp-utf{grid-template-columns:1fr;row-gap:10px;padding:10px}
+  .esp .esp-utf .esp-cap{min-height:0}
   .esp .esp-cap{font-size:12px}
 }
 </style>
@@ -100,11 +157,66 @@
   <div class="esp" id="esp-root">
     <p class="esp-lead">We help you measure Shirre flex interconnects correctly, from the test fixture to de-embedded S-parameters.</p>
     <div class="esp-tabbar" aria-label="Measurement type">
-      <button type="button" class="esp-tab" role="tab" id="esp-tab-se" aria-controls="esp-panel-se" aria-selected="true"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16c2.5-7 5-7 6.5 0s4 7 6.5 0 4-7 6.5 0 4 7 6.5 0"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">RF / Single-ended</span><span class="esp-tab-fig">2-port VNA</span></span></button>
+      <button type="button" class="esp-tab" role="tab" id="esp-tab-setup" aria-controls="esp-panel-setup" aria-selected="true"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="7" cy="16" r="3"/><circle cx="7" cy="24" r="3"/><path d="M13 8h14M13 16h14M13 24h14"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">Standard Setup</span><span class="esp-tab-fig">Core instruments</span></span></button>
+      <button type="button" class="esp-tab" role="tab" id="esp-tab-se" aria-controls="esp-panel-se" aria-selected="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16c2.5-7 5-7 6.5 0s4 7 6.5 0 4-7 6.5 0 4 7 6.5 0"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">RF / Single-ended</span><span class="esp-tab-fig">2-port VNA</span></span></button>
       <button type="button" class="esp-tab" role="tab" id="esp-tab-diff" aria-controls="esp-panel-diff" aria-selected="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12h7l3-3h16M3 20h7l3 3h16"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">High Speed / Differential Pairs</span><span class="esp-tab-fig">4-port VNA</span></span></button>
     </div>
     <div class="esp-panels">
-      <div class="esp-panel" role="tabpanel" id="esp-panel-se" aria-labelledby="esp-tab-se" tabindex="0">
+      <div class="esp-panel" role="tabpanel" id="esp-panel-setup" aria-labelledby="esp-tab-setup" tabindex="0">
+      <article class="esp-card esp-equip" id="esp-equip">
+        <div class="esp-body">
+          <p class="esp-eyebrow">Overview</p>
+          <h2 class="esp-h">Basic measurement equipment</h2>
+          <p class="esp-p">RF / single-ended and differential measurements use the same core instruments. The port count and the test fixture change with the DUT.</p>
+          <ul class="esp-equip-list">
+            <li><span class="esp-equip-n" aria-hidden="true">1</span><span>Vector network analyzer (VNA)</span></li>
+            <li><span class="esp-equip-n" aria-hidden="true">2</span><span>Electronic calibration module (E-Cal)</span></li>
+            <li><span class="esp-equip-n" aria-hidden="true">3</span><span>Coaxial cables with 2.9 mm or 2.4 mm adapters (matching the SMA connectors on the test fixture)</span></li>
+            <li><span class="esp-equip-n" aria-hidden="true">4</span><span>Test fixture (measurement adapter board)</span></li>
+            <li><span class="esp-equip-n" aria-hidden="true">5</span><span>Device under test (DUT)</span></li>
+          </ul>
+        </div>
+        <figure class="esp-equip-setup">
+          <a href="{{ site.baseurl }}/static/assets/img/eng-support/equip-setup-1600.jpg" data-fancybox="esp-setup" data-caption="Measurement setup: VNA (1), coaxial cables (3) and test fixture (4).">
+            <picture>
+              <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/equip-setup-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/equip-setup-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 50vw">
+              <img src="{{ site.baseurl }}/static/assets/img/eng-support/equip-setup-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/equip-setup-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/equip-setup-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 50vw" width="1600" height="2131" loading="lazy" alt="Lab measurement setup with a 4-port VNA, purple coaxial cables and a vertical test fixture on a foam block, numbered 1, 3 and 4.">
+            </picture>
+          </a>
+          <figcaption class="esp-cap">Measurement setup (1, 3, 4)</figcaption>
+        </figure>
+        <figure class="esp-equip-ecal">
+          <a href="{{ site.baseurl }}/static/assets/img/eng-support/equip-ecal-1600.jpg" data-fancybox="esp-setup" data-caption="Electronic calibration module (E-Cal).">
+            <picture>
+              <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/equip-ecal-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/equip-ecal-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 22vw">
+              <img src="{{ site.baseurl }}/static/assets/img/eng-support/equip-ecal-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/equip-ecal-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/equip-ecal-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 22vw" width="1600" height="1432" loading="lazy" alt="Electronic calibration module (E-Cal) with PORT A and PORT B, numbered 2.">
+            </picture>
+          </a>
+          <figcaption class="esp-cap">Electronic calibration module (E-Cal)</figcaption>
+        </figure>
+      </article>
+      <div class="esp-utf" id="esp-utf-photos">
+        <figure class="esp-shot esp-utf-wide">
+          <a href="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-1600.jpg" data-fancybox="esp-setup" data-caption="Universal test fixture with flex DUT">
+            <picture>
+              <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 45vw">
+              <img src="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-fixture-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 45vw" width="1600" height="1200" loading="lazy" alt="Universal test fixture with a flex DUT clamped at both ends.">
+            </picture>
+          </a>
+          <figcaption class="esp-cap">Universal test fixture with flex DUT</figcaption>
+        </figure>
+        <figure class="esp-shot esp-utf-tall">
+          <a href="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-1600.jpg" data-fancybox="esp-setup" data-caption="Close-up: flex DUT clamped in the fixture">
+            <picture>
+              <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 26vw">
+              <img src="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/utf-closeup-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 26vw" width="1600" height="2133" loading="lazy" alt="Close-up of a flex DUT clamped in the universal test fixture.">
+            </picture>
+          </a>
+          <figcaption class="esp-cap">Close-up: flex DUT clamped in the fixture</figcaption>
+        </figure>
+      </div>
+      </div>
+<div class="esp-panel" role="tabpanel" id="esp-panel-se" aria-labelledby="esp-tab-se" tabindex="0">
       <div class="esp-grid esp-grid-rf">
         <article class="esp-card" id="esp-se-fixture">
           <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-se-2400.png" data-fancybox="esp-se" data-caption="Single-ended measurement chain: 2-port VNA, SMA connectors (40 GHz), PheroTetra® test boards and a mated Shirre flex RF DUT. Schematic, not to scale.">
@@ -156,7 +268,7 @@
       </div>
       </div>
       <div class="esp-panel" role="tabpanel" id="esp-panel-diff" aria-labelledby="esp-tab-diff" tabindex="0">
-      <div class="esp-grid">
+      <div class="esp-grid esp-grid-rf">
         <article class="esp-card" id="esp-diff-fixture">
           <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-2400.png" data-fancybox="esp-diff" data-caption="Measurement chain: 4-port VNA, SMA connectors (40 GHz), PheroTetra® test boards and a mated Shirre flex DUT. Schematic, not to scale.">
             <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/esp-measurement-chain-1200.png" width="1200" height="670" loading="lazy" alt="Measurement chain: a 4-port VNA connects through two coaxial cables per side to SMA connectors on two PheroTetra test boards; a Shirre flex interconnect DUT is plugged into a receptacle on each board."></picture>
@@ -173,23 +285,45 @@
             </ul>
           </div>
         </article>
-        <article class="esp-card" id="esp-diff-deembedding">
-          <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-2400.png" data-fancybox="esp-diff" data-caption="Calibration board on PheroTetra® FCCL: TRL standards (Thru, Reflect, Line) and an IEEE 370 2x-Thru. Schematic, not to scale.">
-            <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-1200.png" width="1200" height="700" loading="lazy" alt="Calibration board on PheroTetra FCCL with TRL standards (Thru, Reflect open and short, two Lines) and an IEEE 370 2x-Thru, with reference planes marked."></picture>
-          </a>
-          <div class="esp-body">
-            <p class="esp-eyebrow">De-embedding Methodology</p>
-            <h2 class="esp-h">From the coax calibration plane to the DUT connector</h2>
-            <p class="esp-p">A 4-port coax calibration at the SMA connectors (40 GHz), then TRL or IEEE 370 2x-Thru de-embedding moves the reference plane to the DUT connector interface.</p>
-            <ul class="esp-list">
-              <li>Calibration board with Thru, Reflect and Line standards</li>
-              <li>2x-Thru structure for IEEE 370 de-embedding</li>
-            </ul>
+        <div class="esp-photos-wrap" id="esp-diff-photos">
+          <div class="esp-photos esp-photos-diff">
+            <figure class="esp-shot esp-shot-a">
+              <a href="{{ site.baseurl }}/static/assets/img/eng-support/diff-setup-1600.jpg" data-fancybox="esp-diff" data-caption="4-port VNA measurement setup">
+                <picture>
+                  <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/diff-setup-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/diff-setup-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 28vw">
+                  <img src="{{ site.baseurl }}/static/assets/img/eng-support/diff-setup-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/diff-setup-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/diff-setup-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 28vw" width="1600" height="1368" loading="lazy" alt="4-port VNA measurement of a differential flex DUT on PheroTetra evaluation boards">
+                </picture>
+              </a>
+              <figcaption class="esp-cap">4-port VNA measurement setup</figcaption>
+            </figure>
+            <figure class="esp-shot esp-shot-b">
+              <a href="{{ site.baseurl }}/static/assets/img/eng-support/diff-boards-1600.jpg" data-fancybox="esp-diff" data-caption="Evaluation boards, flex DUT and calibration board">
+                <picture>
+                  <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/diff-boards-800.webp 800w, {{ site.baseurl }}/static/assets/img/eng-support/diff-boards-1600.webp 1600w" sizes="(max-width: 767px) 92vw, 28vw">
+                  <img src="{{ site.baseurl }}/static/assets/img/eng-support/diff-boards-800.jpg" srcset="{{ site.baseurl }}/static/assets/img/eng-support/diff-boards-800.jpg 800w, {{ site.baseurl }}/static/assets/img/eng-support/diff-boards-1600.jpg 1600w" sizes="(max-width: 767px) 92vw, 28vw" width="1600" height="780" loading="lazy" alt="Two 50 ohm 42-pin evaluation boards, three differential flex jumpers, and a calibration board">
+                </picture>
+              </a>
+              <figcaption class="esp-cap">Evaluation boards, flex DUT and calibration board</figcaption>
+            </figure>
           </div>
-        </article>
+        </div>
       </div>
+      <article class="esp-card esp-deembed" id="esp-diff-deembedding">
+        <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-2400.png" data-fancybox="esp-diff" data-caption="Calibration board on PheroTetra® FCCL: TRL standards (Thru, Reflect, Line) and an IEEE 370 2x-Thru. Schematic, not to scale.">
+          <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/esp-calibration-board-1200.png" width="1200" height="700" loading="lazy" alt="Calibration board on PheroTetra FCCL with TRL standards (Thru, Reflect open and short, two Lines) and an IEEE 370 2x-Thru, with reference planes marked."></picture>
+        </a>
+        <div class="esp-body">
+          <p class="esp-eyebrow">De-embedding Methodology</p>
+          <h2 class="esp-h">From the coax calibration plane to the DUT connector</h2>
+          <p class="esp-p">A 4-port coax calibration at the SMA connectors (40 GHz), then TRL or IEEE 370 2x-Thru de-embedding moves the reference plane to the DUT connector interface.</p>
+          <ul class="esp-list">
+            <li>Calibration board with Thru, Reflect and Line standards</li>
+            <li>2x-Thru structure for IEEE 370 de-embedding</li>
+          </ul>
+        </div>
+      </article>
       </div>
-    </div>
+          </div>
     <div class="esp-cta">
       <p>Planning a measurement? Tell us your DUT, frequency range and port count.</p>
       <a class="esp-btn page-scroll" href="#contact">Discuss your measurement setup</a>
@@ -205,4 +339,3 @@ tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i,false)})
 show(0,false);})();
 </script>
 <!-- END eng-support -->
-
