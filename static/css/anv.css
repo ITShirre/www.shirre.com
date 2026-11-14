@@ -1,7 +1,13 @@
 /* mmWave Integrated Antenna panel (.anv-).
-   Video-first layout: large 16:9 demo on the left, photos and band card on the right.
-   Scoped under .anv- so it will not restyle other Application Note tabs.
+   Vertical 9:16 PT Flex pre-bend demo on the left; larger photos and
+   the frequency card on the right, top and bottom edges aligned.
+   Scoped under #an-antenna so it will not restyle other Application Note tabs.
    Sizes in px to match the site's Bootstrap 3 / 10px root convention. */
+
+#an-antenna{
+  --anv-video-h: min(560px, 70vh);
+  --anv-mag: #EC047C;
+}
 
 #an-antenna > .an-label{margin:0 0 4px}
 #an-antenna > h2{margin:0 0 8px}
@@ -12,16 +18,16 @@
 #appnotes-tabs .an-tab-figl{display:none}
 #appnotes-tabs .an-tab{padding:14px 14px 12px}
 
-.anv-intro{margin:0 0 14px}
-.anv-intro .anv-eyebrow{margin:0 0 4px}
-.anv-intro .anv-title{
+#an-antenna .anv-intro{margin:0 0 14px}
+#an-antenna .anv-intro .anv-eyebrow{margin:0 0 4px}
+#an-antenna .anv-intro .anv-title{
   margin:0 0 6px;
   font-size:20px;
   font-weight:700;
   color:#3D4A52;
   line-height:1.3;
 }
-.anv-intro .anv-caption--lede{
+#an-antenna .anv-intro .anv-caption--lede{
   margin:0;
   padding:0;
   max-width:52em;
@@ -30,74 +36,142 @@
   color:#7A858B;
 }
 
-/* Desktop: video ~2/3, side column ~1/3, top and bottom edges aligned. */
-.anv-layout{
+/* Desktop: a tall 9:16 video column, side column fills the rest.
+   Top and bottom of the side column align with the video card. */
+#an-antenna .anv-layout{
   display:grid;
-  grid-template-columns:minmax(0,2fr) minmax(0,1fr);
+  grid-template-columns:auto minmax(280px, 1fr);
   gap:16px 18px;
   align-items:stretch;
   margin-top:0;
 }
-.anv-videocard,
-.anv-photo,
-.anv-spec{
+#an-antenna .anv-videocard,
+#an-antenna .anv-photo,
+#an-antenna .anv-spec{
   background:#fff;
   border:1px solid #E4E8EB;
   border-radius:12px;
   box-shadow:0 6px 18px rgba(26,31,36,.07);
   min-width:0;
-  overflow:hidden;
 }
-.anv-videocard{
+#an-antenna .anv-videocard{
+  position:relative;
   padding:0;
   line-height:0;
-  align-self:stretch;
+  align-self:start;
+  width:min(100%, calc(var(--anv-video-h) * 9 / 16));
+  height:var(--anv-video-h);
+  aspect-ratio:9/16;
+  max-height:var(--anv-video-h);
+  overflow:visible;
+  background:#1A1F24;
 }
-.anv-video{
+#an-antenna .anv-stage{
+  position:relative;
   display:block;
   width:100%;
-  height:auto;
-  aspect-ratio:16/9;
+  height:100%;
+  border-radius:12px;
+  overflow:hidden;
+  background:#1A1F24;
+}
+#an-antenna .anv-video{
+  display:block;
+  width:100%;
+  height:100%;
   object-fit:contain;
   object-position:center;
   background:#1A1F24;
-  border-radius:12px;
   vertical-align:top;
 }
 
-.anv-side{
+/* Sound on / Sound off — overlaid, keyboard-focusable, magenta accent. */
+#an-antenna .anv-sound{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin:0;
+  padding:7px 11px 7px 9px;
+  border:0;
+  border-radius:999px;
+  background:rgba(26,31,36,.82);
+  color:#fff;
+  font:600 12px/1.1 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  letter-spacing:.02em;
+  cursor:pointer;
+  -webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);
+}
+#an-antenna .anv-sound:hover{
+  background:rgba(26,31,36,.94);
+}
+#an-antenna .anv-sound:focus{outline:none}
+#an-antenna .anv-sound:focus-visible{
+  outline:3px solid var(--anv-mag);
+  outline-offset:2px;
+}
+#an-antenna .anv-sound svg,
+#an-antenna .anv-sound-icon{
+  display:block;
+  width:18px;
+  height:18px;
+  flex:0 0 18px;
+  fill:none;
+  stroke:var(--anv-mag);
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+#an-antenna .anv-sound .anv-sound-icon--on{display:none}
+#an-antenna .anv-sound[aria-pressed="true"]{
+  background:var(--anv-mag);
+  color:#fff;
+}
+#an-antenna .anv-sound[aria-pressed="true"]:hover{
+  background:#d00470;
+}
+#an-antenna .anv-sound[aria-pressed="true"] .anv-sound-icon{
+  stroke:#fff;
+}
+#an-antenna .anv-sound[aria-pressed="true"] .anv-sound-icon--on{display:block}
+#an-antenna .anv-sound[aria-pressed="true"] .anv-sound-icon--off{display:none}
+
+#an-antenna .anv-side{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:16px;
   min-width:0;
   min-height:0;
   height:100%;
+  align-self:stretch;
 }
-.anv-thumbs{
+#an-antenna .anv-thumbs{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:12px;
-  flex:0 0 auto;
+  gap:16px;
+  flex:1 1 auto;
   min-width:0;
   min-height:0;
-  /* Cap the photo row so leftover side-column height goes to the band card. */
-  max-height:180px;
 }
-.anv-photo{
+#an-antenna .anv-photo{
   margin:0;
   display:flex;
   flex-direction:column;
   min-width:0;
-  max-height:100%;
+  min-height:0;
+  height:100%;
+  overflow:hidden;
 }
-.anv-zoom{
-  flex:0 1 auto;
+#an-antenna .anv-zoom{
+  flex:1 1 auto;
   display:flex;
   align-items:center;
   justify-content:center;
-  aspect-ratio:3/2;
-  min-height:0;
-  max-height:118px;
+  min-height:160px;
   margin:0;
   padding:0;
   border:0;
@@ -106,8 +180,8 @@
   line-height:0;
   overflow:hidden;
 }
-.anv-zoom:focus{outline:none}
-.anv-zoom:focus-visible{outline:3px solid #EC047C;outline-offset:-3px}
+#an-antenna .anv-zoom:focus{outline:none}
+#an-antenna .anv-zoom:focus-visible{outline:3px solid var(--anv-mag);outline-offset:-3px}
 #an-antenna .anv-zoom picture{
   display:block;
   width:100%;
@@ -133,47 +207,48 @@
   line-height:1.4;
   color:#7A858B;
 }
-.anv-spec{
-  flex:1 1 auto;
-  padding:14px 16px 14px;
+#an-antenna .anv-spec{
+  flex:0 0 auto;
+  padding:16px 18px 16px;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   min-height:0;
+  overflow:hidden;
 }
-.anv-eyebrow{
+#an-antenna .anv-eyebrow{
   margin:0 0 4px;
   font-size:11px;
   font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:#EC047C;
+  color:var(--anv-mag);
   line-height:1.3;
 }
-.anv-spec .anv-eyebrow{color:#7A858B}
-.anv-band{
+#an-antenna .anv-spec .anv-eyebrow{color:#7A858B}
+#an-antenna .anv-band{
   margin:0 0 10px;
   font-size:28px;
   font-weight:800;
   letter-spacing:-0.03em;
   line-height:1.05;
-  color:#EC047C;
+  color:var(--anv-mag);
 }
-.anv-band:after{
+#an-antenna .anv-band:after{
   content:"";
   display:block;
   width:28px;
   height:3px;
   margin:8px 0 0;
-  background:#EC047C;
+  background:var(--anv-mag);
   border-radius:2px;
 }
-.anv-pts{
+#an-antenna .anv-pts{
   list-style:none;
   margin:0;
   padding:0;
 }
-.anv-pts li{
+#an-antenna .anv-pts li{
   position:relative;
   margin:0;
   padding:5px 0 5px 14px;
@@ -181,8 +256,8 @@
   line-height:1.4;
   color:#3D4A52;
 }
-.anv-pts li:first-child{padding-top:0}
-.anv-pts li:before{
+#an-antenna .anv-pts li:first-child{padding-top:0}
+#an-antenna .anv-pts li:before{
   content:"";
   position:absolute;
   left:0;
@@ -190,11 +265,12 @@
   width:5px;
   height:5px;
   border-radius:50%;
-  background:#EC047C;
+  background:var(--anv-mag);
 }
-.anv-pts li:first-child:before{top:6px}
+#an-antenna .anv-pts li:first-child:before{top:6px}
 
 /* Simple lightbox for the product photos */
+#an-antenna .anv-lb,
 .anv-lb{
   position:fixed;
   inset:0;
@@ -206,6 +282,7 @@
   padding:28px 24px;
   background:rgba(26,31,36,.8);
 }
+#an-antenna .anv-lb[hidden],
 .anv-lb[hidden]{display:none}
 .anv-lb img{
   display:block;
@@ -241,24 +318,48 @@
 }
 .anv-lb-close:hover,
 .anv-lb-close:focus{background:rgba(255,255,255,.28);outline:none}
-.anv-lb-close:focus-visible{outline:3px solid #EC047C}
+.anv-lb-close:focus-visible{outline:3px solid var(--anv-mag, #EC047C)}
 
 @media (max-width:991px){
-  .anv-layout{
-    grid-template-columns:1fr;
-    gap:12px;
+  #an-antenna{
+    --anv-video-h: min(80vh, calc(100vw * 16 / 9));
   }
-  .anv-intro .anv-title{font-size:18px}
-  .anv-side{height:auto}
-  .anv-spec{flex:0 0 auto;padding:16px}
-  .anv-band{font-size:32px}
+  #an-antenna .anv-layout{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "vid"
+      "spec"
+      "thumbs";
+    gap:12px;
+    justify-items:center;
+  }
+  #an-antenna .anv-videocard{grid-area:vid}
+  #an-antenna .anv-side{display:contents}
+  #an-antenna .anv-spec{grid-area:spec;width:100%;flex:0 0 auto;padding:16px;height:auto}
+  #an-antenna .anv-thumbs{grid-area:thumbs;width:100%;flex:0 0 auto;height:auto}
+  #an-antenna .anv-videocard{
+    width:min(100%, calc(80vh * 9 / 16));
+    height:auto;
+    max-height:80vh;
+    aspect-ratio:9/16;
+    justify-self:center;
+  }
+  #an-antenna .anv-intro .anv-title{font-size:18px}
+  #an-antenna .anv-band{font-size:32px}
+  #an-antenna .anv-photo{height:auto}
+  #an-antenna .anv-zoom{flex:none;height:180px;min-height:0}
 }
 @media (max-width:767px){
   #an-antenna .anv-caption,
   #an-antenna figcaption.anv-caption{font-size:11px;padding:6px 8px 8px}
-  .anv-intro .anv-caption--lede{font-size:13px;padding:0}
-  .anv-pts li{font-size:13px}
+  #an-antenna .anv-intro .anv-caption--lede{font-size:13px;padding:0}
+  #an-antenna .anv-pts li{font-size:13px}
+  #an-antenna .anv-zoom{height:150px}
+  #an-antenna .anv-sound{top:8px;right:8px;padding:6px 10px 6px 8px}
+  #an-antenna .anv-sound-text{font-size:11px}
 }
 @media (prefers-reduced-motion:reduce){
+  #an-antenna .anv-lb,
   .anv-lb{transition:none}
 }

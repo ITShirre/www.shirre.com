@@ -1,5 +1,5 @@
 (function(){
-  var videos=document.querySelectorAll("video.anv-video");
+  var videos=document.querySelectorAll("#an-antenna video.anv-video");
   var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function pauseAll(){
@@ -11,13 +11,54 @@
     var p=v.play();
     if(p&&p.catch)p.catch(function(){});
   }
+  function isAudible(v){
+    return !v.muted && v.volume>0;
+  }
+  function setSoundUI(btn,on){
+    if(!btn)return;
+    btn.setAttribute("aria-pressed",on?"true":"false");
+    btn.setAttribute("aria-label",on?"Sound on":"Sound off");
+    var t=btn.querySelector(".anv-sound-text");
+    if(t)t.textContent=on?"Sound on":"Sound off";
+  }
 
   for(var i=0;i<videos.length;i++){
     (function(v){
+      var card=v.closest(".anv-videocard")||v.parentElement;
+      var btn=card?card.querySelector(".anv-sound"):null;
+      /* True while muted autoplay (or in-view autoplay) is driving playback.
+         Used only to decide whether "Sound on" should restart from the start.
+         Not written to storage — nothing is remembered across pages. */
+      var autoplaying=false;
+
       v.muted=true;
       v.defaultMuted=true;
       v.setAttribute("playsinline","");
       v.playsInline=true;
+      setSoundUI(btn,false);
+
+      if(btn){
+        btn.addEventListener("click",function(){
+          var turnOn=!isAudible(v);
+          if(turnOn){
+            if(autoplaying&&!v.paused){
+              try{v.currentTime=0;}catch(e){}
+            }
+            v.muted=false;
+            if(v.volume===0)v.volume=1;
+            tryPlay(v);
+          }else{
+            v.muted=true;
+          }
+          setSoundUI(btn,turnOn);
+        });
+      }
+
+      /* Keep the overlay in sync if the visitor uses the native volume / mute control. */
+      v.addEventListener("volumechange",function(){
+        setSoundUI(btn,isAudible(v));
+      });
+
       if(reduce){
         v.removeAttribute("autoplay");
         try{v.pause();}catch(e){}
@@ -28,8 +69,12 @@
       var io=new IntersectionObserver(function(entries){
         for(var j=0;j<entries.length;j++){
           var en=entries[j];
-          if(en.isIntersecting&&en.intersectionRatio>=0.35)tryPlay(v);
-          else v.pause();
+          if(en.isIntersecting&&en.intersectionRatio>=0.35){
+            autoplaying=!isAudible(v);
+            tryPlay(v);
+          }else{
+            v.pause();
+          }
         }
       },{threshold:[0,0.35,1]});
       io.observe(v);
@@ -44,7 +89,7 @@
   }
 
   /* Click-to-enlarge for the product photos */
-  var lb=document.querySelector(".anv-lb");
+  var lb=document.querySelector("#an-antenna .anv-lb, .anv-lb");
   if(!lb)return;
   var lbImg=lb.querySelector("img");
   var lbCap=lb.querySelector(".anv-lb-cap");
@@ -70,7 +115,7 @@
     if(e.key==="Escape"){e.preventDefault();closeLb();}
   }
 
-  var zooms=document.querySelectorAll("a.anv-zoom");
+  var zooms=document.querySelectorAll("#an-antenna a.anv-zoom");
   for(var z=0;z<zooms.length;z++){
     zooms[z].addEventListener("click",function(e){
       e.preventDefault();

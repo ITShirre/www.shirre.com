@@ -41,17 +41,33 @@
 </div>
 <div class="anv-layout">
   <aside class="anv-videocard">
-    <video class="anv-video" muted autoplay loop playsinline controls preload="metadata" width="1920" height="1080" poster="{{ site.baseurl }}/static/assets/img/appnotes/tline-formability-poster.jpg" aria-label="Formability demo: a PheroTetra mPTFE FCCL transmission line is pre-bent and press-formed to fit a compact mechanism.">
-      <source src="{{ site.baseurl }}/static/assets/img/appnotes/tline-formability-1080p.mp4" type="video/mp4">
-    </video>
+    <div class="anv-stage">
+      <video class="anv-video" muted autoplay loop playsinline controls preload="metadata" width="1080" height="1920" poster="{{ site.baseurl }}/static/assets/img/appnotes/ptflex-prebend-poster.jpg" aria-label="Formability demo: a PheroTetra mPTFE FCCL transmission line is pre-bent and press-formed to fit a compact mechanism.">
+        <source src="{{ site.baseurl }}/static/assets/img/appnotes/ptflex-prebend-1080p.mp4" type="video/mp4" media="(min-width: 768px)">
+        <source src="{{ site.baseurl }}/static/assets/img/appnotes/ptflex-prebend-720p.mp4" type="video/mp4">
+      </video>
+      <button type="button" class="anv-sound" aria-pressed="false" aria-label="Sound off">
+        <svg class="anv-sound-icon anv-sound-icon--off" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 6 9H3v6h3l5 4V5z"></path>
+          <line x1="22" y1="9" x2="16" y2="15"></line>
+          <line x1="16" y1="9" x2="22" y2="15"></line>
+        </svg>
+        <svg class="anv-sound-icon anv-sound-icon--on" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 6 9H3v6h3l5 4V5z"></path>
+          <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+          <path d="M19 5a9 9 0 0 1 0 14"></path>
+        </svg>
+        <span class="anv-sound-text">Sound off</span>
+      </button>
+    </div>
   </aside>
   <div class="anv-side">
     <div class="anv-thumbs">
       <figure class="anv-photo anv-photo--overview">
         <a class="anv-zoom" href="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg" data-anv-caption="A patch-array antenna module on a pre-bent PheroTetra® mPTFE FCCL line, routed to the RF board.">
           <picture>
-            <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.webp 1600w" sizes="(max-width:991px) 46vw, 180px">
-            <img src="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg 1600w" sizes="(max-width:991px) 46vw, 180px" width="1600" height="900" alt="A Shirre mmWave antenna module on a PheroTetra flexible line: a gold patch array, bent 90 degrees, and routed to a square board-connection stiffener." loading="lazy" decoding="async">
+            <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.webp 1600w" sizes="(max-width:991px) 46vw, 400px">
+            <img src="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-overview-1600.jpg 1600w" sizes="(max-width:991px) 46vw, 400px" width="1600" height="900" alt="A Shirre mmWave antenna module on a PheroTetra flexible line: a gold patch array, bent 90 degrees, and routed to a square board-connection stiffener." loading="lazy" decoding="async">
           </picture>
         </a>
         <figcaption class="anv-caption">Overview: pre-bent flex routing to the RF board.</figcaption>
@@ -59,8 +75,8 @@
       <figure class="anv-photo anv-photo--detail">
         <a class="anv-zoom" href="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg" data-anv-caption="The gold patch array, with the formed flex and board connection behind.">
           <picture>
-            <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.webp 1600w" sizes="(max-width:991px) 46vw, 180px">
-            <img src="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg 1600w" sizes="(max-width:991px) 46vw, 180px" width="1600" height="1066" alt="Close-up of the gold patch array on a Shirre mmWave antenna module, with the bent flexible line and board-connection pads behind." loading="lazy" decoding="async">
+            <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.webp 1600w" sizes="(max-width:991px) 46vw, 400px">
+            <img src="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/antenna-detail-1600.jpg 1600w" sizes="(max-width:991px) 46vw, 400px" width="1600" height="1066" alt="Close-up of the gold patch array on a Shirre mmWave antenna module, with the bent flexible line and board-connection pads behind." loading="lazy" decoding="async">
           </picture>
         </a>
         <figcaption class="anv-caption">Detail: gold patch array and formed flex.</figcaption>
