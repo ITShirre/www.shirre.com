@@ -36,6 +36,7 @@
 .an-page .an-grid-pcie .an-fig img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center bottom;border:0;border-radius:0;display:block}
 .an-page .an-grid-pcie figcaption{margin-bottom:0}
 #an-pcie-tab .an-tab-fig{white-space:nowrap}
+.an-page .nowrap,.fancybox-caption .nowrap,.fancybox-caption__body .nowrap{white-space:nowrap}
 @media (max-width:900px) and (min-width:768px){#an-pcie-tab .an-tab-fig{font-size:15px}}
 @media (max-width:767px){.an-page .an-tabbar{grid-template-columns:1fr 1fr}.an-page .an-tab:last-child{grid-column:1/-1}.an-page .an-grid,.an-page .an-pair{grid-template-columns:1fr;gap:20px}.an-page h1{font-size:24px}.an-page h2{font-size:22px}.an-page .an-feat-h{font-size:21px}.an-page .an-grid-pcie{grid-template-columns:1fr}.an-page .an-grid-pcie .an-pair{gap:20px}}</style>
 <div class="an-page" id="appnotes-tabs"><div class="an-wrap">
@@ -119,11 +120,11 @@
     <div>
       <p class="an-label">Application note</p>
       <h2>PCIe Gen5/Gen6 for Edge Computing</h2>
-      <h3 class="an-feat-h">Integrated paddle card + PT Flex transmission line</h3>
-      <p class="an-lede">A one-piece board that integrates the paddle card with the PT Flex transmission line, so the gold fingers are formed directly on the flex. The design is integrated with a BTB (board-to-board) connector.</p>
+      <h3 class="an-feat-h">Integrated paddle card + <span class="nowrap">PT-Flex</span> transmission line</h3>
+      <p class="an-lede">A one-piece board that integrates the paddle card with the <span class="nowrap">PT-Flex</span> transmission line, so the gold fingers are formed directly on the flex. The design is integrated with a BTB (board-to-board) connector.</p>
       <ul class="an-pts">
         <li>Paddle card and transmission line formed as one integrated board</li>
-        <li>Gold fingers made directly on PT Flex</li>
+        <li>Gold fingers made directly on <span class="nowrap">PT-Flex</span></li>
         <li>Removes one solder joint at each end — two when both ends are integrated</li>
         <li>Integrated with a BTB (board-to-board) connector for 80+ pin high-speed lines</li>
         <li>Total thickness 0.29 mm</li>
@@ -132,22 +133,22 @@
     </div>
     <div class="an-pair">
       <figure class="an-fig">
-        <a href="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg" data-fancybox="an-pcie-photos" data-caption="Top view: PT Flex transmission line and connector end.">
+        <a href="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg" data-fancybox="an-pcie-photos" data-caption="Top view: &lt;span class=&quot;nowrap&quot;&gt;PT-Flex&lt;/span&gt; transmission line and connector end.">
           <picture>
             <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.webp 1200w" sizes="(max-width:767px) 92vw, 280px">
-            <img src="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg 1200w" sizes="(max-width:767px) 92vw, 280px" width="1200" height="1500" alt="A PT Flex transmission line with an integrated paddle-card connector at one end, photographed from above." loading="lazy" decoding="async">
+            <img src="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg 1200w" sizes="(max-width:767px) 92vw, 280px" width="1200" height="1500" alt="A PT-Flex transmission line with an integrated paddle-card connector at one end, photographed from above." loading="lazy" decoding="async">
           </picture>
         </a>
-        <figcaption>Top view: PT Flex transmission line and connector end.</figcaption>
+        <figcaption>Top view: <span class="nowrap">PT-Flex</span> transmission line and connector end.</figcaption>
       </figure>
       <figure class="an-fig">
-        <a href="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg" data-fancybox="an-pcie-photos" data-caption="Connector side: gold fingers formed on PT Flex.">
+        <a href="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg" data-fancybox="an-pcie-photos" data-caption="Connector side: gold fingers formed on &lt;span class=&quot;nowrap&quot;&gt;PT-Flex&lt;/span&gt;.">
           <picture>
             <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.webp 1200w" sizes="(max-width:767px) 92vw, 280px">
-            <img src="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg 1200w" sizes="(max-width:767px) 92vw, 280px" width="1200" height="1500" alt="Connector end of a PT Flex transmission line, showing gold fingers formed on the flex." loading="lazy" decoding="async">
+            <img src="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg 1200w" sizes="(max-width:767px) 92vw, 280px" width="1200" height="1500" alt="Connector end of a PT-Flex transmission line, showing gold fingers formed on the flex." loading="lazy" decoding="async">
           </picture>
         </a>
-        <figcaption>Connector side: gold fingers formed on PT Flex.</figcaption>
+        <figcaption>Connector side: gold fingers formed on <span class="nowrap">PT-Flex</span>.</figcaption>
       </figure>
     </div>
   </div>
