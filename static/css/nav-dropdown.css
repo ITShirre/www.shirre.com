@@ -7,13 +7,30 @@
    Background-color only: no padding, margin, border, width, or font change. */
 #navbar .navbar-nav>li>a:hover,
 #navbar .navbar-nav>li>a:focus,
+#navbar .navbar-nav>li>a:focus-visible,
 #navbar .navbar-nav>li.is-open>a,
 #navbar .navbar-nav>li:focus-within>a,
 #navbar .navbar-nav>.active>a:hover,
 #navbar .navbar-nav>.active>a:focus,
+#navbar .navbar-nav>.active>a:focus-visible,
 #navbar .navbar-nav>.active.is-open>a,
 #navbar .navbar-nav>.active:focus-within>a{
   background-color:#FCE8F2;
+}
+
+/* Kill Bootstrap 3's a:focus / button:focus ring
+   (outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px).
+   Keyboard focus stays visible: top-level items use the #FCE8F2 tint above;
+   chips use their hover fill and #EC047C border. No extra outline. */
+#navbar .navbar-nav>li>a:focus,
+#navbar .navbar-nav>li>a:focus-visible,
+#navbar .navbar-nav>.active>a:focus,
+#navbar .navbar-nav>.active>a:focus-visible,
+#navbar .nav-sub-list>li>a:focus,
+#navbar .nav-sub-list>li>a:focus-visible,
+#navbar .nav-caret:focus,
+#navbar .nav-caret:focus-visible{
+  outline:none;
 }
 
 .nav-caret{display:none}
@@ -73,14 +90,13 @@
     white-space:nowrap;
   }
   .nav-sub-list>li>a:hover,
-  .nav-sub-list>li>a:focus{
+  .nav-sub-list>li>a:focus,
+  .nav-sub-list>li>a:focus-visible{
     color:#EC047C;
     background:#FCE8F2;
     border-color:#EC047C;
     text-decoration:none;
   }
-  .nav-sub-list>li>a:focus{outline:none}
-  .nav-sub-list>li>a:focus-visible{outline:3px solid #f7a8cf;outline-offset:2px}
   .nav-sub-list>li>a.is-current{
     color:#EC047C;
     background:#FCE8F2;
@@ -120,8 +136,7 @@
     margin-top:-4px;
     transition:transform .15s;
   }
-  .nav-caret:focus{outline:none}
-  .nav-caret:focus-visible{outline:3px solid #f7a8cf;outline-offset:2px;border-radius:4px}
+  .nav-caret:focus-visible{background-color:#FCE8F2}
   .navbar-nav>li.nav-has-sub.is-open>.nav-caret,
   .navbar-nav>li.nav-has-sub:focus-within>.nav-caret{
     background-color:#FCE8F2;
@@ -167,7 +182,8 @@
     text-decoration:none;
   }
   .nav-sub-list>li>a:hover,
-  .nav-sub-list>li>a:focus{
+  .nav-sub-list>li>a:focus,
+  .nav-sub-list>li>a:focus-visible{
     color:#EC047C;
     background:#FCE8F2;
     border-color:#EC047C;

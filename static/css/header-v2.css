@@ -57,6 +57,7 @@
 .hdr2-lockup:focus {
   text-decoration: none;
   color: inherit;
+  outline: none; /* kill Bootstrap 3 a:focus ring on click; keyboard uses :focus-visible below */
 }
 .hdr2-lockup:focus-visible {
   outline: 3px solid rgba(230, 0, 126, 0.35);
