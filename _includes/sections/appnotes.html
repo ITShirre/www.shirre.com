@@ -27,10 +27,20 @@
 .an-page figcaption,.an-page .an-cap{font-size:13px;color:var(--an-muted);margin:8px 0 20px}
 .an-page .an-soon{font-weight:600;color:var(--an-muted)}.an-page .an-draft{margin-top:16px;font-size:12px;color:#B26A00}
 .an-page .an-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px}
-@media (max-width:767px){.an-page .an-tabbar{grid-template-columns:1fr 1fr}.an-page .an-tab:last-child{grid-column:1/-1}.an-page .an-grid,.an-page .an-pair{grid-template-columns:1fr;gap:20px}.an-page h1{font-size:24px}.an-page h2{font-size:22px}}</style>
+.an-page .an-feat-h{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:24px;font-weight:600;line-height:1.25;color:#1A1F24;margin:0 0 10px}
+.an-page .an-grid-pcie{grid-template-columns:1fr 1.1fr}
+.an-page .an-grid-pcie .an-pair{margin-top:0;gap:16px;align-items:start}
+.an-page .an-fig a{display:block;line-height:0}
+.an-page .an-grid-pcie{align-items:start}
+.an-page .an-grid-pcie .an-fig a{aspect-ratio:4/5;overflow:hidden;border-radius:12px;border:1px solid var(--an-line);background:#fff}
+.an-page .an-grid-pcie .an-fig img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:center bottom;border:0;border-radius:0;display:block}
+.an-page .an-grid-pcie figcaption{margin-bottom:0}
+#an-pcie-tab .an-tab-fig{white-space:nowrap}
+@media (max-width:900px) and (min-width:768px){#an-pcie-tab .an-tab-fig{font-size:15px}}
+@media (max-width:767px){.an-page .an-tabbar{grid-template-columns:1fr 1fr}.an-page .an-tab:last-child{grid-column:1/-1}.an-page .an-grid,.an-page .an-pair{grid-template-columns:1fr;gap:20px}.an-page h1{font-size:24px}.an-page h2{font-size:22px}.an-page .an-feat-h{font-size:21px}.an-page .an-grid-pcie{grid-template-columns:1fr}.an-page .an-grid-pcie .an-pair{gap:20px}}</style>
 <div class="an-page" id="appnotes-tabs"><div class="an-wrap">
 <h1><span class="title-section">{{section.name}}</span></h1>
-<div class="an-tabbar" aria-label="Application notes"><button class="an-tab" role="tab" id="an-antenna-tab" aria-controls="an-antenna" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12v9M8 21h8"/><path d="M8.5 8.5a5 5 0 0 1 7 0M5.5 5.5a9 9 0 0 1 13 0"/><circle cx="12" cy="12" r="1.5"/></svg><span class="an-tab-name">mmWave Integrated Antenna</span><span class="an-tab-fig">28–49 GHz</span></button><button class="an-tab" role="tab" id="an-cpc-tab" aria-controls="an-cpc" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="10" rx="1.5"/><path d="M8 7V4M12 7V4M16 7V4M8 20v-3M12 20v-3M16 20v-3"/></svg><span class="an-tab-name">CPC/CPX Module</span><span class="an-tab-fig">112G</span></button><button class="an-tab" role="tab" id="an-usb4-tab" aria-controls="an-usb4" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M12 9V4l-2 2M12 4l2 2"/></svg><span class="an-tab-name">USB4 V2 / TBT5</span><span class="an-tab-fig">12.8 GHz</span></button><button class="an-tab" role="tab" id="an-optical-tab" aria-controls="an-optical" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3"/><path d="M10 12h11M17 9l3 3-3 3"/></svg><span class="an-tab-name">Optical Module</span><span class="an-tab-fig">400Gbps</span></button><button class="an-tab" role="tab" id="an-pcie-tab" aria-controls="an-pcie" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M6 18v2M9 18v2M12 18v2M15 18v2M18 18v2M7 10h10"/></svg><span class="an-tab-name">PCIe Gen5/Gen6 for Edge Computing</span><span class="an-tab-fig">16 / ~26.5 GHz</span></button></div>
+<div class="an-tabbar" aria-label="Application notes"><button class="an-tab" role="tab" id="an-antenna-tab" aria-controls="an-antenna" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12v9M8 21h8"/><path d="M8.5 8.5a5 5 0 0 1 7 0M5.5 5.5a9 9 0 0 1 13 0"/><circle cx="12" cy="12" r="1.5"/></svg><span class="an-tab-name">mmWave Integrated Antenna</span><span class="an-tab-fig">28–49 GHz</span></button><button class="an-tab" role="tab" id="an-cpc-tab" aria-controls="an-cpc" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="16" height="10" rx="1.5"/><path d="M8 7V4M12 7V4M16 7V4M8 20v-3M12 20v-3M16 20v-3"/></svg><span class="an-tab-name">CPC/CPX Module</span><span class="an-tab-fig">112G</span></button><button class="an-tab" role="tab" id="an-usb4-tab" aria-controls="an-usb4" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="6" rx="3"/><path d="M12 9V4l-2 2M12 4l2 2"/></svg><span class="an-tab-name">USB4 V2 / TBT5</span><span class="an-tab-fig">12.8 GHz</span></button><button class="an-tab" role="tab" id="an-optical-tab" aria-controls="an-optical" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="12" r="3"/><path d="M10 12h11M17 9l3 3-3 3"/></svg><span class="an-tab-name">Optical Module</span><span class="an-tab-fig">400Gbps</span></button><button class="an-tab" role="tab" id="an-pcie-tab" aria-controls="an-pcie" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M6 18v2M9 18v2M12 18v2M15 18v2M18 18v2M7 10h10"/></svg><span class="an-tab-name">PCIe Gen5/Gen6 for Edge Computing</span><span class="an-tab-fig">Gen5 · 380 mm</span></button></div>
 <section class="an-panel" role="tabpanel" id="an-antenna" aria-labelledby="an-antenna-tab" tabindex="0">
 <p class="an-label">Application note</p>
 <h2>mmWave Integrated Antenna</h2>
@@ -105,8 +115,43 @@
   <p class="an-label">Application note</p><h2>USB4 V2 / TBT5</h2><p class="an-lede">Flexible interconnects for USB4 Version 2.0 / TBT5 I/O, with the option to embed redrivers/ICs on the flex.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-optical" aria-labelledby="an-optical-tab" tabindex="0">
   <div class="an-grid"><div><figure class="an-fig"><img src="{{ site.baseurl }}/static/assets/img/appnotes/an_optical_module-20261102.jpg" alt="Rigid-flex 400Gbps optical module PCB, 52 mm" loading="lazy"><figcaption>Rigid-flex 400Gbps Optical Module PCB (52 mm).</figcaption></figure></div><div>
   <p class="an-label">Application note</p><h2>400Gbps Optical Module</h2><p class="an-lede">A rigid-flex optical-module PCB built on PheroTetra® FCCL.</p><p class="an-soon">Coming soon.</p></div></div></section><section class="an-panel" role="tabpanel" id="an-pcie" aria-labelledby="an-pcie-tab" tabindex="0">
-  <div class="an-grid"><div><div class="an-imgph" role="img" aria-label="Image coming soon">Coming soon<br><small>PCIe Gen5/Gen6 edge-computing application image</small></div></div><div>
-  <p class="an-label">Application note</p><h2>PCIe Gen5/Gen6 for Edge Computing</h2><p class="an-lede">High-speed flexible interconnects for PCIe Gen5 (16 GHz) and Gen6 (~26.5 GHz) links in edge-computing systems.</p><p class="an-soon">Coming soon.</p></div></div></section>
+  <div class="an-grid an-grid-pcie">
+    <div>
+      <p class="an-label">Application note</p>
+      <h2>PCIe Gen5/Gen6 for Edge Computing</h2>
+      <h3 class="an-feat-h">Integrated paddle card + PT Flex transmission line</h3>
+      <p class="an-lede">A one-piece board that integrates the paddle card with the PT Flex transmission line, so the gold fingers are formed directly on the flex. The design is integrated with a BTB (board-to-board) connector.</p>
+      <ul class="an-pts">
+        <li>Paddle card and transmission line formed as one integrated board</li>
+        <li>Gold fingers made directly on PT Flex</li>
+        <li>Removes one solder joint at each end — two when both ends are integrated</li>
+        <li>Integrated with a BTB (board-to-board) connector for 80+ pin high-speed lines</li>
+        <li>Total thickness 0.29 mm</li>
+        <li>Supports PCIe Gen5 up to 380 mm</li>
+      </ul>
+    </div>
+    <div class="an-pair">
+      <figure class="an-fig">
+        <a href="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg" data-fancybox="an-pcie-photos" data-caption="Top view: PT Flex transmission line and connector end.">
+          <picture>
+            <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.webp 1200w" sizes="(max-width:767px) 92vw, 280px">
+            <img src="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-overview-1200.jpg 1200w" sizes="(max-width:767px) 92vw, 280px" width="1200" height="1500" alt="A PT Flex transmission line with an integrated paddle-card connector at one end, photographed from above." loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <figcaption>Top view: PT Flex transmission line and connector end.</figcaption>
+      </figure>
+      <figure class="an-fig">
+        <a href="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg" data-fancybox="an-pcie-photos" data-caption="Connector side: gold fingers formed on PT Flex.">
+          <picture>
+            <source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-800.webp 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.webp 1200w" sizes="(max-width:767px) 92vw, 280px">
+            <img src="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg" srcset="{{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-800.jpg 800w, {{ site.baseurl }}/static/assets/img/appnotes/pcie-fingers-1200.jpg 1200w" sizes="(max-width:767px) 92vw, 280px" width="1200" height="1500" alt="Connector end of a PT Flex transmission line, showing gold fingers formed on the flex." loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <figcaption>Connector side: gold fingers formed on PT Flex.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 </div></div>
 <script>(function(){var root=document.getElementById('appnotes-tabs');if(!root||!root.querySelector)return;
 var tabs=[].slice.call(root.querySelectorAll('.an-tab'));var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'))});
