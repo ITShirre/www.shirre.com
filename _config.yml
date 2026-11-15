@@ -1,6 +1,6 @@
 # Website settings
 title: Shirre Lab Corp.
-description: Shirre
+description: "PheroTetra® mPTFE FCCL for high bandwidth transmission"
 keywords: Shirre,Shirre Company
 baseurl:   # if you have suburl as homepage like '/homepage', please change it to '/homepage' and your repo's name should be 'homepage'
 #url: https://jarrekk.github.io/Jalpc  # url should be 'http://<github_username>.github.io/homepage' as before
