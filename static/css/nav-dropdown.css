@@ -1,0 +1,185 @@
+/* Homepage nav sub-bar: horizontal chip row under the navbar on desktop,
+   wrapping chips in the hamburger menu on mobile.
+   z-index sits with the fixed navbar (1030) and well below Fancybox (~99992). */
+/* Pale #EC047C tint (#FCE8F2) on the hovered / focused / open top-level item.
+   Full item height, square corners — not a pill — so the block fills the existing
+   hit area, meets the rectangular sub-bar, and leaves the 6px active top bar alone.
+   Background-color only: no padding, margin, border, width, or font change. */
+#navbar .navbar-nav>li>a:hover,
+#navbar .navbar-nav>li>a:focus,
+#navbar .navbar-nav>li.is-open>a,
+#navbar .navbar-nav>li:focus-within>a,
+#navbar .navbar-nav>.active>a:hover,
+#navbar .navbar-nav>.active>a:focus,
+#navbar .navbar-nav>.active.is-open>a,
+#navbar .navbar-nav>.active:focus-within>a{
+  background-color:#FCE8F2;
+}
+
+.nav-caret{display:none}
+.nav-sub{list-style:none;margin:0;padding:0}
+.nav-sub-list{list-style:none;margin:0;padding:0}
+
+@media (min-width:768px){
+  .navbar-fixed-top,
+  .navbar-default,
+  .navbar-wrapper,
+  .navbar-collapse,
+  .navbar-nav{overflow:visible}
+  /* Position the bar against the fixed navbar, not the individual item */
+  .navbar-nav>li.nav-has-sub{position:static}
+  .nav-sub{
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    margin-top:1px;
+    z-index:1035;
+    background:#fff;
+    border-top:1px solid #eef2f5;
+    border-bottom:1px solid #e3e9ef;
+    box-shadow:0 8px 24px -16px rgba(16,40,60,.35);
+    padding:10px 0;
+    box-sizing:border-box;
+  }
+  /* Invisible bridge so the pointer can travel from a nav item into the bar */
+  .nav-sub:before{content:"";position:absolute;left:0;right:0;bottom:100%;height:10px}
+  .navbar-nav>li.nav-has-sub.is-open>.nav-sub{display:block}
+  .nav-sub-list{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:10px;
+    list-style:none;
+    margin:0;
+    padding:0;
+    width:100%;
+    max-width:none;
+  }
+  .nav-sub-list>li{margin:0;padding:0;display:block;list-style:none}
+  .nav-sub-list>li>a{
+    display:inline-block;
+    padding:8px 16px;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:14px;
+    font-weight:600;
+    line-height:1.3;
+    color:#5E6A71;
+    background:#F4F7FA;
+    border:1px solid #e3e9ef;
+    border-radius:8px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-sub-list>li>a:hover,
+  .nav-sub-list>li>a:focus{
+    color:#EC047C;
+    background:#FCE8F2;
+    border-color:#EC047C;
+    text-decoration:none;
+  }
+  .nav-sub-list>li>a:focus{outline:none}
+  .nav-sub-list>li>a:focus-visible{outline:3px solid #f7a8cf;outline-offset:2px}
+  .nav-sub-list>li>a.is-current{
+    color:#EC047C;
+    background:#FCE8F2;
+    border-color:#f7a8cf;
+  }
+}
+
+@media (max-width:767px){
+  .navbar-fixed-top .navbar-collapse.in,
+  .navbar-fixed-top .navbar-collapse.collapsing{
+    overflow:visible;
+    max-height:none;
+  }
+  .navbar-nav>li.nav-has-sub{display:grid;grid-template-columns:1fr 44px;align-items:center}
+  .navbar-nav>li.nav-has-sub>a{grid-column:1;width:auto;max-width:none;min-width:0}
+  .nav-caret{grid-column:2;grid-row:1;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+    width:44px;
+    height:44px;
+    margin:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:#5E6A71;
+    cursor:pointer;
+  }
+  .nav-caret:after{
+    content:"";
+    width:8px;
+    height:8px;
+    border-right:2px solid currentColor;
+    border-bottom:2px solid currentColor;
+    transform:rotate(45deg);
+    margin-top:-4px;
+    transition:transform .15s;
+  }
+  .nav-caret:focus{outline:none}
+  .nav-caret:focus-visible{outline:3px solid #f7a8cf;outline-offset:2px;border-radius:4px}
+  .navbar-nav>li.nav-has-sub.is-open>.nav-caret,
+  .navbar-nav>li.nav-has-sub:focus-within>.nav-caret{
+    background-color:#FCE8F2;
+    align-self:stretch;
+    height:auto;
+  }
+  .navbar-nav>li.nav-has-sub.is-open>.nav-caret{color:#EC047C}
+  .navbar-nav>li.nav-has-sub.is-open>.nav-caret:after{transform:rotate(-135deg);margin-top:2px}
+  .nav-sub{
+    display:none;
+    grid-column:1/-1;
+    width:100%;
+    margin:0;
+    padding:4px 12px 14px;
+    background:transparent;
+    border:0;
+    box-shadow:none;
+  }
+  .navbar-nav>li.nav-has-sub.is-open>.nav-sub{display:block}
+  .nav-sub-list{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+  .nav-sub-list>li{margin:0;padding:0;display:block;list-style:none}
+  .nav-sub-list>li>a{
+    display:inline-block;
+    padding:8px 14px;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:14px;
+    font-weight:600;
+    line-height:1.3;
+    color:#5E6A71;
+    background:#F4F7FA;
+    border:1px solid #e3e9ef;
+    border-radius:8px;
+    text-decoration:none;
+  }
+  .nav-sub-list>li>a:hover,
+  .nav-sub-list>li>a:focus{
+    color:#EC047C;
+    background:#FCE8F2;
+    border-color:#EC047C;
+    text-decoration:none;
+  }
+  .nav-sub-list>li>a.is-current{
+    color:#EC047C;
+    background:#FCE8F2;
+    border-color:#f7a8cf;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .nav-caret:after{transition:none}
+}

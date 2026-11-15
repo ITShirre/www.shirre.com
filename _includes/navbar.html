@@ -3,6 +3,8 @@
   Home: {% include navbar.html %}  -> "#about" links with smooth scrolling (page-scroll).
   Other pages: {% include navbar.html prefix="/" %} -> "/#about" links, plain navigation
   (page-scroll would call $("/#about") and break).
+  Sections with sub-tabs (Solution & Platform, Application Note, Engineering Support)
+  get a hover dropdown on desktop and a tap-to-expand caret on mobile.
 {% endcomment %}
 <div class="navbar-wrapper">
   <nav class="navbar navbar-default navbar-scroll navbar-fixed-top" role="navigation">
@@ -17,7 +19,11 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
           {% for section in site.data.landing %}
-          <li>
+          {% assign has_subs = false %}
+          {% if section.id == "products" or section.id == "appnotes" or section.id == "engineering-support" %}
+            {% assign has_subs = true %}
+          {% endif %}
+          <li{% if has_subs %} class="nav-has-sub"{% endif %}>
             {% if section.page %}
               <a class="page-scroll" id="a_{{section.id}}" href="{{ section.page}}">
             {% elsif include.prefix %}
@@ -28,6 +34,16 @@
               <span class="title-nav">{{ section.name }}</span>
               <!--<div class="nav-svg" style="background-image: url({{ site.title_path | prepend: site.baseurl }}/{{section.id}}.svg);"></div>-->
             </a>
+            {% if section.id == "products" %}
+            <button type="button" class="nav-caret" aria-expanded="false" aria-controls="nav-sub-products" aria-label="Solution and Platform subsections"></button>
+            <div class="nav-sub" id="nav-sub-products"><div class="container"><ul class="nav-sub-list"><li><a href="#pherotetra">PheroTetra<sup>®</sup> mPTFE-based FCCL</a></li><li><a href="#pt-fccl-m9">PT-FCCL for M9/M10-Class</a></li><li><a href="#pt-fccl-m8">PT-FCCL for M8-Class</a></li><li><a href="#pt-fccl-m7">PT-FCCL for M7-Class</a></li></ul></div></div>
+            {% elsif section.id == "appnotes" %}
+            <button type="button" class="nav-caret" aria-expanded="false" aria-controls="nav-sub-appnotes" aria-label="Application Note subsections"></button>
+            <div class="nav-sub" id="nav-sub-appnotes"><div class="container"><ul class="nav-sub-list"><li><a href="#an-antenna">mmWave Integrated Antenna</a></li><li><a href="#an-cpc">CPC/CPX Module</a></li><li><a href="#an-usb4">USB4 V2 / TBT5</a></li><li><a href="#an-optical">Optical Module</a></li><li><a href="#an-pcie">PCIe Gen5/Gen6 for Edge Computing</a></li></ul></div></div>
+            {% elsif section.id == "engineering-support" %}
+            <button type="button" class="nav-caret" aria-expanded="false" aria-controls="nav-sub-eng-support" aria-label="Engineering Support subsections"></button>
+            <div class="nav-sub" id="nav-sub-eng-support"><div class="container"><ul class="nav-sub-list"><li><a href="#fixture-benefits">Benefits for Test Fixtures</a></li><li><a href="#standard-setup">Standard Setup</a></li><li><a href="#rf-single-ended">RF / Single-ended</a></li><li><a href="#differential-pairs">High Speed / Differential Pairs</a></li></ul></div></div>
+            {% endif %}
           </li>
           {% endfor %}
         </ul>
