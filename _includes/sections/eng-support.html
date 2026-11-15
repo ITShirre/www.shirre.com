@@ -78,8 +78,28 @@
 .esp .esp-equip-setup img,.esp .esp-equip-ecal img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 .esp .esp-equip-setup a:after,.esp .esp-equip-ecal a:after{content:"Enlarge";position:absolute;right:12px;bottom:10px;font-size:11px;font-weight:600;letter-spacing:.4px;color:var(--esp-grey);background:rgba(255,255,255,.92);border:1px solid var(--esp-line);border-radius:999px;padding:2px 9px}
 .esp .esp-equip-setup .esp-cap,.esp .esp-equip-ecal .esp-cap{margin:8px 2px 0;font-size:12px;line-height:1.4;color:var(--esp-grey)}
+
+/* Benefits for Test Fixtures tab (first tab) */
+.esp .esp-benefits .esp-body{display:block;padding:22px 26px 24px}
+.esp .esp-benefits .esp-body>.esp-eyebrow{padding-top:0}
+.esp .esp-benefits .esp-list{margin-bottom:0}
+.esp .esp-benefits .esp-list li{padding:10px 0 10px 20px}
+.esp .esp-benefits .esp-list li:before{top:16px}
+.esp .esp-benefits .esp-benefit-lead{display:block;font-weight:700;color:#3D4A52;line-height:1.45;margin:0}
+.esp .esp-benefits .esp-benefit-detail{display:grid;grid-template-rows:auto;transition:grid-template-rows .28s ease}
+.esp .esp-benefits .esp-benefit-detail>.esp-benefit-body{overflow:hidden;min-height:0;display:block;font-weight:400;color:#333;line-height:1.55;padding-top:4px}
+.esp .esp-more{display:none;margin:16px 0 0;padding:8px 16px;border:1px solid var(--esp-mag);border-radius:8px;background:#fff;font:inherit;font-size:15px;font-weight:600;color:var(--esp-mag);cursor:pointer;line-height:1.3;transition:background .15s,color .15s,border-color .15s}
+.esp.esp-js .esp-more{display:inline-block}
+.esp.esp-js .esp-benefits:not(.esp-benefits-open) .esp-benefit-detail{grid-template-rows:0fr}
+.esp.esp-js .esp-benefits.esp-benefits-open .esp-benefit-detail{grid-template-rows:1fr}
+.esp .esp-more:hover,.esp .esp-more:focus{background:#FCE8F2;color:var(--esp-mag)}
+.esp .esp-more:focus{outline:none}
+.esp .esp-more:focus-visible{outline:3px solid #f7a8cf;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){
+  .esp .esp-benefits .esp-benefit-detail{transition:none}
+}
 /* sub-tabs (styled after the Application Note tabs) */
-.esp .esp-tabbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px;margin:0 0 24px}
+.esp .esp-tabbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:28px;margin:0 0 24px}
 .esp .esp-tab{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:14px 16px;border:1px solid var(--esp-line);border-radius:12px;background:#fff;cursor:pointer;font:inherit;color:inherit;transition:border-color .15s,background .15s,box-shadow .15s}
 .esp .esp-tab svg{flex:0 0 auto;width:30px;height:30px;fill:none;stroke:var(--esp-mag);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .esp .esp-tab-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -110,7 +130,7 @@
   .esp .esp-photos-diff .esp-shot-b a{aspect-ratio:1600/780}
   .esp .esp-deembed{grid-template-columns:1fr;margin-top:20px}
   .esp .esp-deembed .esp-thumb{border-right:0;border-bottom:1px solid var(--esp-line)}
-  .esp .esp-tabbar{column-gap:16px}
+  .esp .esp-tabbar{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;row-gap:16px}
   .esp .esp-tab{padding:12px;gap:8px}
   .esp .esp-equip{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"body" "setup" "ecal"}
   .esp .esp-equip-setup{border-left:0;padding:4px 18px 8px;height:auto}
@@ -130,6 +150,7 @@
   .esp .esp-tab svg{width:26px;height:26px}
   .esp .esp-tab-name{font-size:14px}
   .esp .esp-tab-fig{font-size:12px}
+  .esp .esp-benefits .esp-body{padding:20px 26px 20px}
   .esp .esp-equip .esp-body{padding:20px 18px 8px}
   .esp .esp-equip-setup{padding-left:18px;padding-right:18px}
   .esp .esp-equip-ecal{padding-left:18px;padding-right:18px}
@@ -145,12 +166,69 @@
   <div class="esp" id="esp-root">
     <p class="esp-lead">We help you measure Shirre flex interconnects correctly, from the test fixture to de-embedded S-parameters.</p>
     <div class="esp-tabbar" aria-label="Measurement type">
-      <button type="button" class="esp-tab" role="tab" id="esp-tab-setup" aria-controls="esp-panel-setup" aria-selected="true"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="7" cy="16" r="3"/><circle cx="7" cy="24" r="3"/><path d="M13 8h14M13 16h14M13 24h14"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">Standard Setup</span><span class="esp-tab-fig">Core instruments</span></span></button>
+      <button type="button" class="esp-tab" role="tab" id="esp-tab-fixtures" aria-controls="esp-panel-fixtures" aria-selected="true"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="10" width="8" height="12" rx="1.2"/><rect x="22" y="10" width="8" height="12" rx="1.2"/><path d="M10 16c3-7 9-7 12 0"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">Benefits for Test Fixtures</span><span class="esp-tab-fig">PT&nbsp;Flex / PT&nbsp;FCCL</span></span></button><button type="button" class="esp-tab" role="tab" id="esp-tab-setup" aria-controls="esp-panel-setup" aria-selected="false"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="7" cy="16" r="3"/><circle cx="7" cy="24" r="3"/><path d="M13 8h14M13 16h14M13 24h14"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">Standard Setup</span><span class="esp-tab-fig">Core instruments</span></span></button>
       <button type="button" class="esp-tab" role="tab" id="esp-tab-se" aria-controls="esp-panel-se" aria-selected="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 16c2.5-7 5-7 6.5 0s4 7 6.5 0 4-7 6.5 0 4 7 6.5 0"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">RF / Single-ended</span><span class="esp-tab-fig">2-port VNA</span></span></button>
       <button type="button" class="esp-tab" role="tab" id="esp-tab-diff" aria-controls="esp-panel-diff" aria-selected="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12h7l3-3h16M3 20h7l3 3h16"/></svg><span class="esp-tab-txt"><span class="esp-tab-name">High Speed / Differential Pairs</span><span class="esp-tab-fig">4-port VNA</span></span></button>
     </div>
     <div class="esp-panels">
-      <div class="esp-panel" role="tabpanel" id="esp-panel-setup" aria-labelledby="esp-tab-setup" tabindex="0">
+            <div class="esp-panel" role="tabpanel" id="esp-panel-fixtures" aria-labelledby="esp-tab-fixtures" tabindex="0">
+      <article class="esp-card esp-benefits" id="esp-benefits">
+        <div class="esp-body">
+          <p class="esp-eyebrow">Benefits</p>
+          <h2 class="esp-h">Make the fixture invisible: PT&nbsp;Flex and PT&nbsp;FCCL for test fixtures and calibration boards</h2>
+          <p class="esp-p">Every test fixture adds its own loss, reflection and phase to what the VNA measures. The less the fixture adds, the less de-embedding has to remove, and the closer the result is to the DUT itself. PT&nbsp;Flex and PT&nbsp;FCCL (PheroTetra<sup>®</sup>) are low-Dk, low-Df materials that keep the fixture out of the measurement.</p>
+          <ul class="esp-list" id="esp-benefits-details">
+            <li><strong class="esp-benefit-lead">Low loss: more of the measured loss belongs to the DUT.</strong><div class="esp-benefit-detail" id="esp-benefit-d1"><span class="esp-benefit-body">Low Df keeps the fixture's own insertion loss small, so more bandwidth stays usable and the DUT's real loss is easier to see.</span></div></li>
+            <li><strong class="esp-benefit-lead">Low, flat Dk: impedance and phase you can predict.</strong><div class="esp-benefit-detail" id="esp-benefit-d2"><span class="esp-benefit-body">Measured on published PheroTetra<sup>®</sup> striplines: PT150 Dk<sub>eff</sub> ≈ 2.36, flat across 1–49 GHz; hybrid Dk<sub>eff</sub> ~2.32, &lt;1% over 5–63 GHz. Impedance is easier to hold, TRL line lengths are easier to calculate, and the same impedance allows a wider trace.</span></div></li>
+            <li><strong class="esp-benefit-lead">One material family from DUT to calibration standard.</strong><div class="esp-benefit-detail" id="esp-benefit-d3"><span class="esp-benefit-body">When the DUT, the test fixture and the TRL or 2x-Thru standards are all built on PheroTetra<sup>®</sup>, there is no material mismatch between them, so de-embedding is more reliable.</span></div></li>
+            <li><strong class="esp-benefit-lead">Smaller residual error, more repeatable results.</strong><div class="esp-benefit-detail" id="esp-benefit-d4"><span class="esp-benefit-body">A low-loss fixture with stable properties is easier to model, so less error remains after TRL or IEEE 370 2x-Thru de-embedding, and results stay consistent from calibration to measurement. Residuals also depend on the launch, connectors and layout of each design.</span></div></li>
+            <li><strong class="esp-benefit-lead">Flexible where rigid boards can't go.</strong><div class="esp-benefit-detail" id="esp-benefit-d5"><span class="esp-benefit-body">In a rigid-flex fixture, the rigid sections hold the SMA connectors (40 GHz) and the DUT connector firmly, while the flexible PT&nbsp;Flex section routes, bends and conforms. This suits flex DUTs, bend tests and tight test setups that a rigid board cannot reach.</span></div></li>
+          </ul>
+          <button type="button" class="esp-more" id="esp-benefits-more" aria-expanded="false" aria-controls="esp-benefits-details">Learn more</button>
+        </div>
+      </article>
+      <article class="esp-card esp-deembed" id="esp-benefits-chain">
+        <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/vfx-measurement-chain-1200.png" data-fancybox="esp-benefits" data-caption="Measurement chain: a 4-port VNA, SMA connectors (40 GHz), PheroTetra® test boards and a mated Shirre flex DUT. Schematic, not to scale.">
+          <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/vfx-measurement-chain-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/vfx-measurement-chain-1200.png" width="1200" height="670" loading="lazy" alt="Measurement chain: a 4-port VNA connects through two coaxial cables per side to SMA connectors (40 GHz) on two PheroTetra test boards; a Shirre flex interconnect DUT is plugged into a receptacle on each board."></picture>
+        </a>
+        <div class="esp-body">
+          <p class="esp-eyebrow">Measurement chain</p>
+          <h2 class="esp-h">From the 4-port VNA to the DUT</h2>
+          <p class="esp-p">A 4-port VNA drives the differential pair (P / N) through two coaxial cables per side into SMA connectors (40 GHz) on the PheroTetra<sup>®</sup> test boards. The DUT plugs into a receptacle on each board. Coax calibration ends at the SMA; TRL or IEEE 370 2x-Thru de-embedding moves the reference plane to the DUT connector interface and removes test boards A and B.</p>
+        </div>
+      </article>
+      <article class="esp-card esp-deembed" id="esp-benefits-p2">
+        <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/vfx-proposal-2-fixture-loss-share-1200.png" data-fancybox="esp-benefits" data-caption="How much of the measured loss is the fixture? A test fixture on PT&nbsp;Flex / PT&nbsp;FCCL takes up a smaller share of the measured loss. Schematic illustration, not measured data.">
+          <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/vfx-proposal-2-fixture-loss-share-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/vfx-proposal-2-fixture-loss-share-1200.png" width="1200" height="560" loading="lazy" alt="Schematic bars comparing fixture share of total measured insertion loss: a fixture on conventional PI or FR-4 takes a larger share than a fixture on PheroTetra FCCL, leaving more of the measured loss to the DUT."></picture>
+        </a>
+        <div class="esp-body">
+          <p class="esp-eyebrow">Fixture loss share</p>
+          <h2 class="esp-h">How much of the measured loss is the fixture?</h2>
+          <p class="esp-p">PheroTetra<sup>®</sup> has low loss, so a test fixture built on PT&nbsp;Flex / PT&nbsp;FCCL takes up a smaller share of the measured loss and leaves more usable bandwidth. De-embedding has less to remove, and the measurement is more stable and easier to trust. Schematic illustration, not measured data.</p>
+        </div>
+      </article>
+      <article class="esp-card esp-deembed" id="esp-benefits-cal">
+        <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/vfx-calibration-board-1200.png" data-fancybox="esp-benefits" data-caption="Calibration board on PheroTetra® FCCL: TRL standards (Thru, Reflect, Line) and an IEEE 370 2x-Thru. Schematic, not to scale.">
+          <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/vfx-calibration-board-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/vfx-calibration-board-1200.png" width="1200" height="700" loading="lazy" alt="Calibration board on PheroTetra FCCL with TRL standards (Thru, Reflect open and short, two Lines) and an IEEE 370 2x-Thru, with reference planes marked."></picture>
+        </a>
+        <div class="esp-body">
+          <p class="esp-eyebrow">Calibration board</p>
+          <h2 class="esp-h">TRL and 2x-Thru standards on PheroTetra<sup>®</sup> FCCL</h2>
+          <p class="esp-p">TRL standards (Thru, Reflect, Lines) and a 2x-Thru on PheroTetra<sup>®</sup> FCCL. Schematic, not to scale.</p>
+        </div>
+      </article>
+      <article class="esp-card esp-deembed" id="esp-benefits-p3">
+        <a class="esp-thumb" href="{{ site.baseurl }}/static/assets/img/eng-support/vfx-proposal-3-low-dk-cross-section-1200.png" data-fancybox="esp-benefits" data-caption="Same impedance, same thickness: low Dk allows a wider trace. Measured PT150 Dk_eff ≈ 2.36, flat across 1–49 GHz. Schematic, not to scale.">
+          <picture><source type="image/webp" srcset="{{ site.baseurl }}/static/assets/img/eng-support/vfx-proposal-3-low-dk-cross-section-1200.webp"><img src="{{ site.baseurl }}/static/assets/img/eng-support/vfx-proposal-3-low-dk-cross-section-1200.png" width="1200" height="600" loading="lazy" alt="Schematic stripline cross-section: at the same impedance and thickness, low-Dk PheroTetra FCCL allows a wider signal trace than a higher-Dk conventional PI or FR-4 dielectric."></picture>
+        </a>
+        <div class="esp-body">
+          <p class="esp-eyebrow">Low Dk</p>
+          <h2 class="esp-h">Same impedance, same thickness: low Dk allows a wider trace</h2>
+          <p class="esp-p">The same etch variation is a smaller share of a wider trace, so impedance is easier to hold, with lower conductor loss. Measured on PheroTetra<sup>®</sup> PT150 stripline: Dk<sub>eff</sub> ≈ 2.36, flat across 1–49 GHz. Schematic, not to scale.</p>
+        </div>
+      </article>
+      </div>
+<div class="esp-panel" role="tabpanel" id="esp-panel-setup" aria-labelledby="esp-tab-setup" tabindex="0">
       <article class="esp-card esp-equip" id="esp-equip">
         <div class="esp-body">
           <p class="esp-eyebrow">Overview</p>
@@ -299,11 +377,20 @@
   </div>
 </div>
 <script>
-/* Engineering Support sub-tabs: role=tablist, arrow/Home/End keys, aria-selected; default = first tab (RF / Single-ended) */
+/* Engineering Support sub-tabs: role=tablist, arrow/Home/End keys, aria-selected; default = first tab (Benefits for Test Fixtures) */
 (function(){var root=document.getElementById('esp-root');if(!root)return;var bar=root.querySelector('.esp-tabbar');var tabs=[].slice.call(root.querySelectorAll('.esp-tab'));var panels=tabs.map(function(t){return document.getElementById(t.getAttribute('aria-controls'))});
 root.className+=' esp-js';bar.setAttribute('role','tablist');
-function show(i,f){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;if(on)panels[j].removeAttribute('hidden');else panels[j].setAttribute('hidden','')});if(f)tabs[i].focus()}
-tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i,false)});t.addEventListener('keydown',function(e){var n=tabs.length,j=null,k=e.key;if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%n;else if(k==='ArrowLeft'||k==='ArrowUp')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;if(j!==null){e.preventDefault();show(j,true)}})});
-show(0,false);})();
+function show(i,f,p){tabs.forEach(function(t,j){var on=j===i;t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;if(on)panels[j].removeAttribute('hidden');else panels[j].setAttribute('hidden','')});if(f)tabs[i].focus();if(p&&history.replaceState){var friendly={'esp-panel-fixtures':'fixture-benefits','esp-panel-setup':'standard-setup','esp-panel-se':'rf-single-ended','esp-panel-diff':'differential-pairs'};history.replaceState(null,'','#'+(friendly[panels[i].id]||panels[i].id))}}
+function fh(){var h=(location.hash||'').replace(/^#/,''),aliases={'fixture-benefits':'esp-panel-fixtures','standard-setup':'esp-panel-setup','rf-single-ended':'esp-panel-se','differential-pairs':'esp-panel-diff'};var id=aliases[h]||h;for(var i=0;i<panels.length;i++)if(panels[i]&&panels[i].id===id)return i;return -1}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i,false,true)});t.addEventListener('keydown',function(e){var n=tabs.length,j=null,k=e.key;if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%n;else if(k==='ArrowLeft'||k==='ArrowUp')j=(i-1+n)%n;else if(k==='Home')j=0;else if(k==='End')j=n-1;if(j!==null){e.preventDefault();show(j,true,true)}})});
+var s=fh();show(s<0?0:s,false,false);
+function sc(){var n=document.querySelector('.navbar-fixed-top,.navbar'),o=n?n.offsetHeight:0,sec=document.getElementById('engineering-support');if(!sec)return;window.scrollTo(0,sec.getBoundingClientRect().top+window.pageYOffset-o)}
+if(s>=0){sc();window.addEventListener('load',function(){setTimeout(sc,50)})}
+window.addEventListener('hashchange',function(){var i=fh();if(i>=0){show(i,false,false);sc()}});
+var card=document.getElementById('esp-benefits');var more=document.getElementById('esp-benefits-more');
+if(card&&more){var details=[].slice.call(card.querySelectorAll('.esp-benefit-detail'));
+function setOpen(open){card.classList.toggle('esp-benefits-open',open);more.setAttribute('aria-expanded',open?'true':'false');more.textContent=open?'Show less':'Learn more';details.forEach(function(d){d.setAttribute('aria-hidden',open?'false':'true')})}
+more.addEventListener('click',function(){setOpen(more.getAttribute('aria-expanded')!=='true')});setOpen(false);}
+})();
 </script>
 <!-- END eng-support -->
