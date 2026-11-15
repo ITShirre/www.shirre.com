@@ -64,11 +64,14 @@
   border-radius: 6px;
 }
 
-/* Enlarged wordmark ~2× prior ~36px (matches reference preview PNG box). */
+/* Restored to pre-8b00389 rendered size of the composite lockup JPG.
+   Measured at 1440 / 820 / 390 on commit 76a8bf6: visible "shirre" letters
+   33.67 / 20.67 / 29.00 css px. The wordmark PNG (618×165) has 157px of
+   letters, so .hdr2-logo height = visible × 165/157 → 36 / 22 / 30 px. */
 .hdr2-logo {
   display: block;
   flex: 0 0 auto;
-  height: 72px;
+  height: 36px;
   width: auto;
   max-width: 42vw;
   margin: 0; /* override body img { margin: auto } */
@@ -77,10 +80,11 @@
 .hdr2-rule {
   flex: 0 0 auto;
   width: 1px;
-  align-self: stretch;
-  min-height: 52px;
+  align-self: center; /* fixed height = logo height; was stretch, which grew with the tagline */
+  height: 36px;       /* was min-height: 52px */
+  min-height: 0;
   background: var(--hdr2-line);
-  margin: 4px 0;
+  margin: 0;
 }
 
 .hdr2-tagline {
@@ -113,7 +117,8 @@
 }
 
 @media (max-width: 991px) {
-  .hdr2-logo { height: 60px; }
+  .hdr2-logo { height: 22px; }
+  .hdr2-rule { height: 22px; }
   .hdr2-tagline-l1,
   .hdr2-tagline-l2 { font-size: 15px; }
   .hdr2-lockup { gap: 16px; }
@@ -126,7 +131,7 @@
     gap: 12px 14px;
     margin: 8px 0 8px;
   }
-  .hdr2-logo { height: 48px; max-width: 70vw; }
+  .hdr2-logo { height: 30px; max-width: 70vw; }
   .hdr2-rule { display: none; }
   .hdr2-tagline {
     flex: 1 1 100%;
