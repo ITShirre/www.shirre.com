@@ -45,3 +45,10 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# Application Note — Optical Module: hideable blocks.
+# Default shows the structure section, product photos, and the Reference
+# measurement block (heading, eye diagram, fixed caption, follow-up sentence).
+# Set a flag false to hide that block. Do not add a classification label on the page.
+an_optical_show_sample_photos: true
+an_optical_show_measurements: true
